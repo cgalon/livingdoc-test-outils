@@ -32,3 +32,16 @@ URLs de test :
 ```
 Permet de générer un changelog en Markdown du projet
 
+## TODO
+
+La liste des courses en vrac :
+- Génération de doc Asciidoc avec l'image Docker de Asciidoctor et pas le plugin Maven
+- Doc des services REST générée par Swagger
+- Assemblage des différentes docs dans un seul index.html
+- Génération d'un glossaire à partir d'annotations spécifiques
+- Génération d'un changelog en asciidoc
+- Génération d'un changelog ne prenant en compte que les messages au format attendu
+- Génération de doc à partir de tests
+  - Avec Serenity
+  - Avec le plugin spring-restdocs-mockmvc
+
