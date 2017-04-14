@@ -19,6 +19,7 @@
         "nettoie": "mvn clean",
         "construit": "mvn package",
         "lance-dev": "mvn clean spring-boot:run",
+        "genere-la-doc": "mvn generate-sources",
         "passe-a-la-version-suivante": "npm install && node scripts/composant-passe-version-suivante.js"
     }
 }
