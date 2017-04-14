@@ -4,17 +4,31 @@ Projet de tests divers et vériés sur la génération de documentation à parti
 
 ## Utilisation
 
-### Avant de partager
-- `npm run nettoie`
-- `npm run produit` => Execute les tests depuis la console
-- `npm run docker-cree-image`
-- `npm run docker-execute-ti`
+- `npm run nettoie` => Supprime tous les répertoires de génération (exécutables ou documentation).
+- `npm run construit` => `nettoie` et créé les exécutables.
+- `npm run lance-dev` => `nettoie`, construit et lance le jar SpringBoot.
+- `npm run genere-la-doc` => Génére la documentation du projet.
+- `npm run passe-a-la-version-suivante` => Créé un tag de la version courante, augmente le 3eme digit de la version et effectue un commit
+ avec ce nouveau numéro de version.
 
-## Integration continue
-- `npm run produit` => `install`,`nettoie`,`test`,`construit`
-- `npm run qualimetrie`
-- `npm run docker-cree-image`
-- `npm run docker-execute-ti`
-- Versionning du composant
+## Le code du projet
 
+Projet Springboot ultra simple servant de support à la génération de la doc.
+
+URLs de test : 
+- [http://localhost:8080/personne/random]
+- [http://localhost:8080/personne?id=2]
+
+
+
+## Les outils de génération de doc testés
+
+### Plugin de génération de changelog Git
+
+```xml
+<groupId>se.bjurr.gitchangelog</groupId>
+<artifactId>git-changelog-maven-plugin</artifactId>
+<version>1.44</version>
+```
+Permet de générer un changelog en Markdown du projet
 

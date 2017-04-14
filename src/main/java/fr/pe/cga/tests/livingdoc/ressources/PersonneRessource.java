@@ -17,7 +17,7 @@ public class PersonneRessource {
 
     @RequestMapping(path = "/random", method = RequestMethod.GET)
     public Personne recupereUnePersonneAuHasard() {
-        return new Personne(4, "Mon nom", "Mon prénom");
+        return new Personne(4, "Mon nom random", "Mon prénom random");
     }
 
 }
