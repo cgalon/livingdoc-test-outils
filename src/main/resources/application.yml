@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: livingdoc
+management:
+  security:
+    enabled: false
