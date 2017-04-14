@@ -44,6 +44,24 @@
             </plugin>
             <!--
             =======================================
+            Nettoyage des répertoires de génération
+            =======================================
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>2.4.1</version>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>src/doc/gen</directory>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+            <!--
+            =======================================
             Génération du changelog
             =======================================
             -->
