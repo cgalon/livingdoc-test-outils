@@ -1,0 +1,23 @@
+{
+    "groupe": "test-cga",
+    "name": "livingdoc",
+    "version": "0.0.1",
+    "description": "Projet de tests de génération de documentation",
+    "private": true,
+    "artifactory": {
+        "docker": {
+            "snapshot": "docker-snapshots.artefact-repo.pole-emploi.intra",
+            "release": "docker-private.artefact-repo.pole-emploi.intra"
+        }
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "npm-incubateur-composant": "^0.1.6",
+        "npm-incubateur-docker": "^0.2.13"
+    },
+    "scripts": {
+        "nettoie": "mvn clean",
+        "construit": "mvn package",
+        "lance-dev": "mvn clean spring-boot:run"
+    }
+}
