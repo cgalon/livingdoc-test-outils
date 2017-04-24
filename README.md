@@ -35,6 +35,8 @@ Permet de générer un changelog en Markdown du projet
 ## TODO
 
 La liste des courses en vrac :
+- Tester les plugins de l'archétype "living doc" du github du même nom (Benoit Prioux)
+- Test des liens dans les fichiers générés par Asciidoctor 
 - Génération de doc Asciidoc avec l'image Docker de Asciidoctor et pas le plugin Maven
 - Doc des services REST générée par Swagger
 - Assemblage des différentes docs dans un seul index.html

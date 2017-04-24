@@ -1,5 +1,11 @@
 package fr.pe.cga.tests.livingdoc.donnees;
 
+import fr.pe.cga.tests.livingdoc.doc.Glossary;
+
+/**
+ * Une personne avec un nom et un prénom... Formidable!!!
+ */
+@Glossary
 public class Personne {
 
     private final int id;

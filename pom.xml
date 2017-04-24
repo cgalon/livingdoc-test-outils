@@ -83,6 +83,25 @@
                     </execution>
                 </executions>
             </plugin>
+            <!--
+            =======================================
+            Génération du glossaire
+            =======================================
+            -->
+            <plugin>
+                <groupId>io.github.livingdocumentation</groupId>
+                <artifactId>livingdoc-maven-plugin</artifactId>
+                <version>0.3</version>
+                <executions>
+                    <execution>
+                        <id>glossary</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>glossary</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>
