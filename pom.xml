@@ -102,6 +102,43 @@
                     </execution>
                 </executions>
             </plugin>
+            <!--
+            =======================================
+            Génération du "word cloud"
+            =======================================
+            -->
+            <plugin>
+                <groupId>io.github.livingdocumentation</groupId>
+                <artifactId>livingdoc-maven-plugin</artifactId>
+                <version>0.3</version>
+                <executions>
+                    <execution>
+                        <id>wordcloud</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>wordcloud</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-remote-resources-plugin</artifactId>
+                <version>1.5</version>
+                <configuration>
+                    <resourceBundles>
+                        <resourceBundle>io.github.livingdocumentation:shared-resources:0.3</resourceBundle>
+                    </resourceBundles>
+                    <outputDirectory>target/generated-docs</outputDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>process</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>
