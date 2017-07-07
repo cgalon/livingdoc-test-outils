@@ -120,7 +120,33 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>            <plugin>
+            </plugin>
+            <!--
+            =======================================
+            Génération du diagramme basé sur l'architecture hexagonale
+            =======================================
+            -->
+            <plugin>
+                <groupId>io.github.livingdocumentation</groupId>
+                <artifactId>livingdoc-maven-plugin</artifactId>
+                <version>0.3</version>
+                <executions>
+                    <execution>
+                        <id>diagram</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>diagram</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <prefix>fr.pe.sned.incubateur.cdv.api.voyage</prefix>
+                    <coreDomain>ressource</coreDomain>
+                </configuration>
+            </plugin>
+
+
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-remote-resources-plugin</artifactId>
                 <version>1.5</version>
