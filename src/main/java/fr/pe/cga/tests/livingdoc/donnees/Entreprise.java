@@ -7,4 +7,6 @@ import fr.pe.cga.tests.livingdoc.doc.Glossary;
  */
 @Glossary
 public class Entreprise {
+    public String nom;
+    public int nombreDEmployes;
 }

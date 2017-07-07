@@ -1,0 +1,139 @@
+#%RAML 1.0
+---
+title: Tests de génération de doc
+version: 1
+protocols: [ HTTP, HTTPS ]
+baseUri: http://localhost:8080/
+mediaType: application/json
+
+securitySchemes:
+  oauth_2_0:
+    type: OAuth 2.0
+    settings:
+      authorizationUri: https://cdv-r.pe-qvr.fr/api/authentification/accreditation
+      accessTokenUri: https://cdv-r.pe-qvr.fr/api/authentification/token
+      authorizationGrants: [ client_credentials ]
+    describedBy:
+      headers:
+        Authorization:
+          description: |
+             Used to send a valid OAuth 2 access token. Do not use
+             with the "access_token" query string parameter.
+          type: string
+      queryParameters:
+        access_token:
+          description: |
+             Used to send a valid OAuth 2 access token. Do not use with
+             the "Authorization" header.
+          type: string
+      responses:
+        401:
+          description: |
+              Bad or expired token. This can happen if the user or Dropbox
+              revoked or expired an access token. To fix, re-authenticate
+              the user.
+        403:
+          description: |
+              Bad OAuth request (wrong consumer key, bad nonce, expired
+              timestamp...). Unfortunately, re-authenticating the user won't help here.
+
+securedBy: [ oauth_2_0 ]
+
+documentation:
+   - title: Description
+     content: Un projet de test des possibilités de génération de documentation
+
+types:
+  Personne:
+    description: Toutes les données de la personne
+    displayName: Une personne physique
+    type: object
+    properties:
+      id:
+        type: string
+        required: true
+      nom: string
+        type: string
+        required: true
+      prenom: string
+        type: string
+        required: true
+  Entreprise:
+    description: Toutes les données de l'entreprise
+    displayName: Mon Entreprise Super Sympa
+    type: object
+    properties:
+      nom:
+        type: string
+        required: true
+      nombreDEmployes: number
+
+/personne:
+  get:
+    displayName: Ressource Personne
+    description: Retourne une personne recherchée par son identifiant
+    queryParameters:
+      id:
+        description: identifiant de la personne
+        type: number
+        required: true
+    responses:
+      200:
+        body:
+          application/json:
+            type: Personne
+            example:
+                id: 1
+                nom: Kenobi
+                prenom: Obiwan
+      404:
+        body:
+          properties:
+            error:
+          example:
+            error: Personne non trouvée
+      418:
+        body:
+          properties:
+            error:
+          example:
+            error: Je suis une théière
+
+/personne/random:
+  get:
+    description: Retourne une personne au hasard
+    responses:
+      200:
+        body:
+          application/json:
+            type: Personne
+            example:
+                id: 2
+                nom: Skywalker
+                prenom: Luke
+
+/vehicules:
+  get:
+    responses:
+      200:
+        body:
+          type: Vehicule[]
+  post:
+    body:
+      type: Vehicule
+    responses:
+      201:
+        headers:
+          Location:
+            example: /vehicules/45612
+        body:
+          application/json:
+            type: !include schemas/vehicule.json
+          text/xml:
+            type: !include schemas/vehicule.xsd
+      422:
+        body:
+          properties:
+            error:
+          example:
+            error: Impossible de traiter les instructions : données erronées
