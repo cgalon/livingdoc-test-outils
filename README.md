@@ -25,25 +25,29 @@ URLs de test :
 
 ### TODO
 Ce qui est à faire :
-- Test des liens dans les fichiers générés par Asciidoctor 
-- Génération de doc Asciidoc avec l'image Docker de Asciidoctor et pas le plugin Maven
-- Doc d'API des services REST générée par Swagger
 - Doc d'API des services REST générée avec API-Console CLI (https://github.com/mulesoft/api-console/blob/master/docs/build-tools.md)
+- osprey-mock-service pour générer des bouchons à partir du fichier RAML
+- abao pour vérifier que l'implémentation des ressources correspond à la spec du fichier RAML
 - Génération d'un changelog en asciidoc avec un module NPM
+- Plugin de test des liens dans les fichiers générés par Asciidoctor
 - Assemblage des différentes docs dans un seul index.html
 - Génération d'un glossaire à partir d'annotations spécifiques
 - Génération d'un changelog ne prenant en compte que les messages au format attendu
 - Génération de doc à partir de tests
   - Avec Serenity
   - Avec le plugin spring-restdocs-mockmvc
+- Doc d'API des services REST générée par Swagger
 
+### Ressources
+
+Conférence sur RAML (DEVOXX) : https://www.youtube.com/watch?v=4oLUXZXUZYc
 
 ### DONE
 
 Ce qui a été fait :
 - Tester les plugins de l'archétype "living doc" du github du même nom (Benoit Prioux) (glossary / diagram / wordcloud)
 - Doc d'API des services REST générée à partir du RAML
-- Génération d'un changelog en asciidoc avec Maven
+- Génération d'un changelog en asciidoc avec un plugin Maven
 
 
 
