@@ -36,11 +36,11 @@ titre: Check-list des sources de données pour avoir une documentation généré
       - role: développeur
 - documentation:
     nom: changelog
-    description: Changelog des projets / Releases notes
+    description: Changelog des projets
     sources:
       - source:
           description: Liste des changements dans Git
-          format: changelog Git
+          format: Git log
     destinations:
       - destination:
           format: html
@@ -48,7 +48,21 @@ titre: Check-list des sources de données pour avoir une documentation généré
           commentLaGenerer: plugin Maven ou module npm
     destinataires:
       - role: développeur
+- documentation:
+    nom: Release notes
+    description: Releases notes
+    sources:
+      - source:
+          description: Liste des changements dans Git
+          format: Git log
+    destinations:
+      - destination:
+          format: html
+          ouLaTrouver: regrouper avec le reste de la doc
+          commentLaGenerer: module npm
+    destinataires:
       - role: utilisateur
+
 
 
 
