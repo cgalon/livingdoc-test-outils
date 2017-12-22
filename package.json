@@ -22,7 +22,7 @@
         "nettoie": "mvn clean",
         "construit": "npm run nettoie && mvn package",
         "lance-dev": "npm run nettoie && mvn spring-boot:run",
-        "genere-la-doc": "npm run nettoie && mvn process-resources && raml2html livingdoc.raml > src/doc/gen/livingdoc-api.html",
+        "genere-la-doc": "npm run nettoie && mvn process-resources && raml2html livingdoc.raml > target/generated-docs/livingdoc-api.html",
         "genere-les-releases-notes": "node scripts/release-notes.js"
     }
 }

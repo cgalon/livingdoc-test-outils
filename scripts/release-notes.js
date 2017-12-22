@@ -14,9 +14,6 @@ var cheminDuProjetRacineGit = "/home/icga1070/git/incubateur-cdv";
 var listeDesProjetsGit = getDirectories(cheminDuProjetRacineGit);
 
 listeDesProjetsGit.forEach(function(unCheminDeProjet){
-    console.log("********************************************************");
-    console.log("Projet en cours de traitement : " + unCheminDeProjet);
-    console.log("********************************************************");
     traiteLaListeDesCommitsDUnRepertoire(unCheminDeProjet);
 
 });
@@ -26,11 +23,14 @@ listeDesProjetsGit.forEach(function(unCheminDeProjet){
  */
 
 function traiteLaListeDesCommitsDUnRepertoire(cheminDuRepertoire) {
+    console.log("********************************************************");
+    console.log("Projet en cours de traitement : " + cheminDuRepertoire);
+    console.log("********************************************************");
     var gitlog = require('gitlog')
         , options =
         {
             repo: cheminDuRepertoire
-            , number: 2000
+            , number: 2
             , fields:
             ['subject',
                 'authorName',

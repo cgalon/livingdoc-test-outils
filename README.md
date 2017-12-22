@@ -1,6 +1,6 @@
 # Living Documentation
 
-Projet de tests divers et variés sur la génération de documentation à partir du code.
+Projet de test sur la génération de documentation à partir du code.
 
 ## Utilisation
 
@@ -8,8 +8,6 @@ Projet de tests divers et variés sur la génération de documentation à partir
 - `npm run construit` => `nettoie` et créé les exécutables.
 - `npm run lance-dev` => `nettoie`, construit et lance le jar SpringBoot.
 - `npm run genere-la-doc` => Génére la documentation du projet.
-- `npm run passe-a-la-version-suivante` => Créé un tag de la version courante, augmente le 3eme digit de la version et effectue un commit
- avec ce nouveau numéro de version.
 
 ## Le code du projet
 
@@ -135,6 +133,7 @@ Permet de générer un diagramme basé sur l'architecture hexagonale pour aider 
 </goals>
 ```
 
-**_Verdict :_** Fonctionne avec la lib viz.js. Ne prend pas en compte toutes les dépendances d'un classe vers d'autres classes (seuls les
- attributs d'instance ont l'air d'être pris en compte). L'idée parait intéressante mais il faudrait améliorer le plugin. 
+**_Verdict :_** Fonctionne avec la lib viz.js. Ne prend pas en 
+compte toutes les dépendances d'une classe vers d'autres classes (seuls les attributs d'instance ont l'air d'être pris en compte).  
+L'idée parait intéressante mais il faudrait améliorer le plugin. 
 
