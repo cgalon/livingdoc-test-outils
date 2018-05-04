@@ -22,7 +22,7 @@ URLs de test :
 ## La liste des courses
 
 ### TODO
-Ce qui est à faire :
+Ce qui serait à tester :
 - Doc d'API des services REST générée avec API-Console CLI (https://github.com/mulesoft/api-console/blob/master/docs/build-tools.md)
 - osprey-mock-service pour générer des bouchons à partir du fichier RAML
 - abao pour vérifier que l'implémentation des ressources correspond à la spec du fichier RAML
