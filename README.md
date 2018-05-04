@@ -2,6 +2,7 @@
 
 Projet de test sur la génération de documentation à partir du code.
 
+
 ## Utilisation
 
 - `npm run nettoie` => Supprime tous les répertoires de génération (exécutables ou documentation).
@@ -9,7 +10,8 @@ Projet de test sur la génération de documentation à partir du code.
 - `npm run lance-dev` => `nettoie`, construit et lance le jar SpringBoot.
 - `npm run genere-la-doc` => Génére la documentation du projet.
 
-## Le code du projet
+
+## Le code source
 
 Projet Springboot ultra simple servant de support à la génération de la doc.
 
@@ -18,38 +20,21 @@ URLs de test :
 - [http://localhost:8080/personne?id=2]
 
 
+## Génération de la documentation
 
-## La liste des courses
-
-### TODO
-Ce qui serait à tester :
-- Doc d'API des services REST générée avec API-Console CLI (https://github.com/mulesoft/api-console/blob/master/docs/build-tools.md)
-- osprey-mock-service pour générer des bouchons à partir du fichier RAML
-- abao pour vérifier que l'implémentation des ressources correspond à la spec du fichier RAML
-- Génération d'un changelog en asciidoc avec un module NPM
-- Plugin de test des liens dans les fichiers générés par Asciidoctor
-- Assemblage des différentes docs dans un seul index.html
-- Génération d'un glossaire à partir d'annotations spécifiques
-- Génération d'un changelog ne prenant en compte que les messages au format attendu
-- Génération de doc à partir de tests
-  - Avec Serenity
-  - Avec le plugin spring-restdocs-mockmvc
-- Doc d'API des services REST générée par Swagger
-
-### Ressources
-
-Conférence sur RAML (DEVOXX) : https://www.youtube.com/watch?v=4oLUXZXUZYc
-
-### DONE
-
-Ce qui a été fait :
-- Tester les plugins de l'archétype "living doc" du github du même nom (Benoit Prioux) (glossary / diagram / wordcloud)
-- Doc d'API des services REST générée à partir du RAML
-- Génération d'un changelog en asciidoc avec un plugin Maven
-
+Tous les outils testés (cf. chapitre ci-dessous) génèrent leurs docs dans le répertoire `target/generated-docs`.
 
 
 ## Les outils de génération de doc testés
+
+### Génération de changelog via un package npm
+
+[Repo NPM](https://www.npmjs.com/package/gitlog)
+
+[Source](https://github.com/domharrington/node-gitlog)
+
+**_En cours_** 
+
 
 ### Plugin Maven de génération de changelog Git
 
@@ -80,7 +65,7 @@ Permet de générer de la doc à partir d'une annotation @Glossaire
     <goal>glossary</goal>
 </goals>
 ```
-**_Verdict :_** Rendu pas terrible. Utilise la javadoc pour la définition.
+**_Verdict :_** Rendu très sobre. Utilise la javadoc pour la définition.
 
 
 
@@ -136,4 +121,34 @@ Permet de générer un diagramme basé sur l'architecture hexagonale pour aider 
 **_Verdict :_** Fonctionne avec la lib viz.js. Ne prend pas en 
 compte toutes les dépendances d'une classe vers d'autres classes (seuls les attributs d'instance ont l'air d'être pris en compte).  
 L'idée parait intéressante mais il faudrait améliorer le plugin. 
+
+
+
+## La liste des courses
+
+### TODO
+Ce qui serait à tester :
+- `En cours` Génération d'un changelog en asciidoc avec un module NPM
+- `En cours` Génération d'un changelog ne prenant en compte que les messages au format attendu
+- Doc d'API des services REST générée avec API-Console CLI (https://github.com/mulesoft/api-console/blob/master/docs/build-tools.md)
+- osprey-mock-service pour générer des bouchons à partir du fichier RAML
+- abao pour vérifier que l'implémentation des ressources correspond à la spec du fichier RAML
+- Plugin de test des liens dans les fichiers générés par Asciidoctor
+- Assemblage des différentes docs dans un seul index.html
+- Génération d'un glossaire à partir d'annotations spécifiques
+- Génération de doc à partir de tests
+  - Avec Serenity
+  - Avec le plugin spring-restdocs-mockmvc
+- Doc d'API des services REST générée par Swagger
+
+### Ressources
+
+Conférence sur RAML (DEVOXX) : https://www.youtube.com/watch?v=4oLUXZXUZYc
+
+### DONE
+
+Ce qui a été fait :
+- Tester les plugins de l'archétype "living doc" du github du même nom (Benoit Prioux) (glossary / diagram / wordcloud)
+- Doc d'API des services REST générée à partir du RAML
+- Génération d'un changelog en asciidoc avec un plugin Maven
 
