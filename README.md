@@ -128,8 +128,9 @@ L'idée parait intéressante mais il faudrait améliorer le plugin.
 
 ### TODO
 Ce qui serait à tester :
-- `En cours` Génération d'un changelog en asciidoc avec un module NPM
-- `En cours` Génération d'un changelog ne prenant en compte que les messages au format attendu
+- `En cours` Génération d'un site de documentation à partir de fichiers Asciidoctor avec Antora (https://antora.org/)
+- `Bloqué` Génération d'un changelog en asciidoc avec un module NPM
+- `Bloqué` Génération d'un changelog ne prenant en compte que les messages au format attendu
 - Doc d'API des services REST générée avec API-Console CLI (https://github.com/mulesoft/api-console/blob/master/docs/build-tools.md)
 - osprey-mock-service pour générer des bouchons à partir du fichier RAML
 - abao pour vérifier que l'implémentation des ressources correspond à la spec du fichier RAML
