@@ -25,6 +25,37 @@ URLs de test :
 Tous les outils testés (cf. chapitre ci-dessous) génèrent leurs docs dans le répertoire `target/generated-docs`.
 
 
+
+## TODO liste
+
+### Ce qui serait à tester
+
+- `En cours` Génération d'un site de documentation à partir de fichiers Asciidoctor avec Antora (https://antora.org/)
+- `Bloqué` Génération d'un changelog en asciidoc avec un module NPM
+- `Bloqué` Génération d'un changelog ne prenant en compte que les messages au format attendu
+- Doc d'API des services REST générée avec API-Console CLI (https://github.com/mulesoft/api-console/blob/master/docs/build-tools.md)
+- osprey-mock-service pour générer des bouchons à partir du fichier RAML
+- abao pour vérifier que l'implémentation des ressources correspond à la spec du fichier RAML
+- Plugin de test des liens dans les fichiers générés par Asciidoctor
+- Assemblage des différentes docs dans un seul index.html
+- Génération d'un glossaire à partir d'annotations spécifiques
+- Génération de doc à partir de tests
+  - Avec Serenity
+  - Avec le plugin spring-restdocs-mockmvc
+- Doc d'API des services REST générée par Swagger
+
+### Ressources
+
+Conférence sur RAML (DEVOXX) : https://www.youtube.com/watch?v=4oLUXZXUZYc
+
+### DONE
+
+Ce qui a été fait :
+- Tester les plugins de l'archétype "living doc" du github du même nom (Benoit Prioux) (glossary / diagram / wordcloud)
+- Doc d'API des services REST générée à partir du RAML
+- Génération d'un changelog en asciidoc avec un plugin Maven
+
+
 ## Les outils de génération de doc testés
 
 ### Génération de changelog via un package npm
@@ -121,35 +152,3 @@ Permet de générer un diagramme basé sur l'architecture hexagonale pour aider 
 **_Verdict :_** Fonctionne avec la lib viz.js. Ne prend pas en 
 compte toutes les dépendances d'une classe vers d'autres classes (seuls les attributs d'instance ont l'air d'être pris en compte).  
 L'idée parait intéressante mais il faudrait améliorer le plugin. 
-
-
-
-## La liste des courses
-
-### TODO
-Ce qui serait à tester :
-- `En cours` Génération d'un site de documentation à partir de fichiers Asciidoctor avec Antora (https://antora.org/)
-- `Bloqué` Génération d'un changelog en asciidoc avec un module NPM
-- `Bloqué` Génération d'un changelog ne prenant en compte que les messages au format attendu
-- Doc d'API des services REST générée avec API-Console CLI (https://github.com/mulesoft/api-console/blob/master/docs/build-tools.md)
-- osprey-mock-service pour générer des bouchons à partir du fichier RAML
-- abao pour vérifier que l'implémentation des ressources correspond à la spec du fichier RAML
-- Plugin de test des liens dans les fichiers générés par Asciidoctor
-- Assemblage des différentes docs dans un seul index.html
-- Génération d'un glossaire à partir d'annotations spécifiques
-- Génération de doc à partir de tests
-  - Avec Serenity
-  - Avec le plugin spring-restdocs-mockmvc
-- Doc d'API des services REST générée par Swagger
-
-### Ressources
-
-Conférence sur RAML (DEVOXX) : https://www.youtube.com/watch?v=4oLUXZXUZYc
-
-### DONE
-
-Ce qui a été fait :
-- Tester les plugins de l'archétype "living doc" du github du même nom (Benoit Prioux) (glossary / diagram / wordcloud)
-- Doc d'API des services REST générée à partir du RAML
-- Génération d'un changelog en asciidoc avec un plugin Maven
-
