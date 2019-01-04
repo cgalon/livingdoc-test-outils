@@ -9,7 +9,6 @@ Projet de test sur la génération de documentation à partir du code.
 - `npm run construit` => `nettoie` et créé les exécutables.
 - `npm run lance-dev` => `nettoie`, construit et lance le jar SpringBoot.
 - `npm run genere-la-doc` => Génère la documentation du projet.
-- `npm run genere-les-releases-notes` => Lance le script de génération de la release note 
 
 ## Le code source
 
