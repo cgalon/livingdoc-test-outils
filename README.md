@@ -29,6 +29,7 @@ Tous les outils testés (cf. chapitre ci-dessous) génèrent leurs docs dans le 
 ### Backlog
 
 - `En cours` Génération d'un site de documentation à partir de fichiers Asciidoctor avec Antora (https://antora.org/)
+
 - Doc d'API des services REST générée avec API-Console CLI (https://github.com/mulesoft/api-console/blob/master/docs/build-tools.md)
 - osprey-mock-service pour générer des bouchons à partir du fichier RAML
 - abao pour vérifier que l'implémentation des ressources correspond à la spec du fichier RAML
@@ -53,6 +54,24 @@ Ce qui a été fait :
 
 
 ## Les outils de génération de doc testés
+
+### Génération de fichiers Asciidoctor en PDF
+
+Ecriture de docs en Ascidoctor :  
+- [Source](https://asciidoctor.org/)
+- [CheatSheet](https://powerman.name/doc/asciidoc)
+
+Utilisation d'une image Docker spécifique qui embarque tous les composants nécessaires.  
+
+```bash
+docker pull asciidoctor/docker-asciidoctor
+```
+
+Utilisation d'un alias Linux :  
+```bash
+alias genere-les-docs-de-ce-repertoire-en-pdf='docker run --rm -v $(pwd):/documents/ asciidoctor/docker-asciidoctor asciidoctor-pdf *.adoc'
+```
+
 
 ### Génération de changelog via une lib JS
 
