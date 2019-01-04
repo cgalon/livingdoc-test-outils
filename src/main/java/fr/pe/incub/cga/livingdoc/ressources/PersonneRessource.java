@@ -1,6 +1,6 @@
-package fr.pe.cga.tests.livingdoc.ressources;
+package fr.pe.incub.cga.livingdoc.ressources;
 
-import fr.pe.cga.tests.livingdoc.donnees.Personne;
+import fr.pe.incub.cga.livingdoc.donnees.Personne;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;

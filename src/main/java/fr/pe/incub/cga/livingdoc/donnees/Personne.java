@@ -1,6 +1,6 @@
-package fr.pe.cga.tests.livingdoc.donnees;
+package fr.pe.incub.cga.livingdoc.donnees;
 
-import fr.pe.cga.tests.livingdoc.doc.Glossary;
+import fr.pe.incub.cga.livingdoc.doc.Glossary;
 
 /**
  * Une personne avec un nom et un prénom... Formidable!!!
