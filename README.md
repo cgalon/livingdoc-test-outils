@@ -10,7 +10,7 @@ Projet de test sur la génération de documentation à partir du code.
 - `npm run lance-dev` => `nettoie`, construit et lance le jar SpringBoot.
 - `npm run genere-la-doc` => Génère la documentation du projet.
 
-## Le code source
+## L'application de test
 
 Projet Springboot ultra simple servant de support à la génération de la doc.
 
@@ -19,38 +19,14 @@ URLs de test :
 - [http://localhost:8080/personne?id=2]
 
 
+## Backlog
+
+[Lien public vers la backlog](http://kanboard.dckxm011.sii24.pole-emploi.intra/public/board/1acc2f5ea04b759e662e8fb3f42bc697f1c637fe1ee7fb124289796efd1e)
+
+
 ## Génération de la documentation
 
 Tous les outils testés (cf. chapitre ci-dessous) génèrent leurs docs dans le répertoire `target/generated-docs`.
-
-
-## TODO
-
-### Backlog
-
-- `En cours` Génération d'un site de documentation à partir de fichiers Asciidoctor avec Antora (https://antora.org/)
-
-- Doc d'API des services REST générée avec API-Console CLI (https://github.com/mulesoft/api-console/blob/master/docs/build-tools.md)
-- osprey-mock-service pour générer des bouchons à partir du fichier RAML
-- abao pour vérifier que l'implémentation des ressources correspond à la spec du fichier RAML
-- Plugin de test des liens dans les fichiers générés par Asciidoctor
-- Assemblage des différentes docs dans un seul index.html
-- Génération d'un glossaire à partir d'annotations spécifiques
-- Génération de doc à partir de tests
-  - Avec Serenity
-  - Avec le plugin spring-restdocs-mockmvc
-- Doc d'API des services REST générée par Swagger
-
-### Ressources
-
-Conférence sur RAML (DEVOXX) : https://www.youtube.com/watch?v=4oLUXZXUZYc
-
-### DONE
-
-Ce qui a été fait :
-- Tester les plugins de l'archétype "living doc" du github du même nom (Benoit Prioux) (glossary / diagram / wordcloud)
-- Doc d'API des services REST générée à partir du RAML
-- Génération d'un changelog en asciidoc avec un plugin Maven
 
 
 ## Les outils de génération de doc testés
