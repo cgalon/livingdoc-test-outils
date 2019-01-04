@@ -1,0 +1,61 @@
+= Teaser
+
+Un sujet cool : La documentation!
+
+Le Manifeste Agile : Un logiciel qui fonctionne plus qu’une documentation exhaustive. -> On a pas dit  : Pas de doc du tout.
+
+.Une bonne documentation est une documentation vivante.
+- Créée sans effort
+- Collaborative
+- FIABLE!
+
+Une doc qui n'est pas fiable, c'est pas une doc, c'est du temps perdu pour tout le monde.
+
+Un but : La transmission du savoir
+
+Une doc doit répondre à 2 impératifs : Pour qui? Pourquoi faire?
+
+.Le gourou de la Living Documentation : Cyrille Martraire
+- Co-fondateur d'Arolla
+- Conférencier
+- DDD et Software craftmanship
+- Auteur du livre référence
+- Invité Brown Bag Lunch à la DSI il y a quelques mois sur le DDD
+
+.Différentes formes : 
+- Conversation
+- Schéma sur un bout de papier
+- Diagramme
+- Code
+- Pair programming
+- Document texte (généré de préférence)
+
+.La fête à Dédé :
+- TDD (Test Driven Development)
+- BDD (Behaviour Driven Development)
+- DDD (Domain Driven Design)
+- TDD (Type Driven Documentation)
+- DDD (D3) (Data Driven Documents)
+
+.Le plan :
+* Les concepts et les outils
+** Pérennité de la documentation
+** DDD - Ubiquitous language
+** Outils et frameworks
+* Les langages
+** Markdown
+** Asciidoc
+* Le code c'est la doc
+** Comment rendre son code expressif
+** Comment générer de la doc à partir du code
+* BDD et tests
+** Les bonnes pratiques
+** Les frameworks
+* A la DSI
+** Clean Code
+** TI
+** Asciidoctor
+** Des présentations qui claquent
+
+But de ces 5 jours : Vous montrer que faire de la doc, c'est cool!
+

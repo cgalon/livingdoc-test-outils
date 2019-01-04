@@ -1,0 +1,29 @@
+= A la DSI
+
+.Clean Code
+* Pas une option, c'est notre boulot
+* TDD
+* Orientation métier dans le code
+
+.Les TI
+* Avec Cucumber ou Serenity
+* Framework recommandés et supportés
+* Ne devrait pas être un option non plus
+
+.Génération de la doc
+* A partir d'annotations
+** Outil "apt" du JDK
+** Doclet
+* A partir de messages de commits
+** Norme Angular
+** Génération possible de release notes
+
+.Pour installer Asciidoc (en fait Asciidoctor) :
+* Installer Ruby
+* Installer la "gem" asciidoctor
+* Ditaa utilisable par défaut
+
+.Pour des présentations qui claquent
+* reveal.js
+* Directement exécutables via les GitLab Pages
+
