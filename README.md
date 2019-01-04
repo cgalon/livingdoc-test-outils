@@ -74,9 +74,9 @@ Permet de générer un changelog à partir des commits Git
 
 ```xml
 <plugin>
-  <groupId>se.bjurr.gitchangelog</groupId>
-  <artifactId>git-changelog-maven-plugin</artifactId>
-  <version>1.44</version>
+    <groupId>se.bjurr.gitchangelog</groupId>
+    <artifactId>git-changelog-maven-plugin</artifactId>
+    <version>1.44</version>
 </plugin>
 ```
 **_Commentaires :_**  
@@ -91,13 +91,15 @@ Permet de générer de la doc à partir d'une annotation @Glossaire
 [Sources](https://github.com/LivingDocumentation/livingdoc-maven-plugin)
 
 ```xml
-<groupId>io.github.livingdocumentation</groupId>
-<artifactId>livingdoc-maven-plugin</artifactId>
-<version>0.3</version>
-...
-<goals>
-    <goal>glossary</goal>
-</goals>
+<plugin>
+    <groupId>io.github.livingdocumentation</groupId>
+    <artifactId>livingdoc-maven-plugin</artifactId>
+    <version>0.3</version>
+    ...
+    <goals>
+        <goal>glossary</goal>
+    </goals>
+</plugin>
 ```
 **_Commentaires :_** 
 - Rendu très sobre. 
@@ -112,13 +114,15 @@ Permet de générer un nuage mots à partir du code source
 [Sources](https://github.com/LivingDocumentation/livingdoc-maven-plugin)
 
 ```xml
-<groupId>io.github.livingdocumentation</groupId>
-<artifactId>livingdoc-maven-plugin</artifactId>
-<version>0.3</version>
-...
-<goals>
-    <goal>wordcloud</goal>
-</goals>
+<plugin>
+    <groupId>io.github.livingdocumentation</groupId>
+    <artifactId>livingdoc-maven-plugin</artifactId>
+    <version>0.3</version>
+    ...
+    <goals>
+        <goal>wordcloud</goal>
+    </goals>
+</plugin>
 ```
 
 **_Commentaires :_**  
@@ -145,13 +149,15 @@ Permet de générer un diagramme basé sur l'architecture hexagonale pour aider 
 [Sources](https://github.com/LivingDocumentation/livingdoc-maven-plugin)
 
 ```xml
-<groupId>io.github.livingdocumentation</groupId>
-<artifactId>livingdoc-maven-plugin</artifactId>
-<version>0.3</version>
-...
-<goals>
-    <goal>diagram</goal>
-</goals>
+<plugin>
+    <groupId>io.github.livingdocumentation</groupId>
+    <artifactId>livingdoc-maven-plugin</artifactId>
+    <version>0.3</version>
+    ...
+    <goals>
+        <goal>diagram</goal>
+    </goals>
+</plugin>
 ```
 
 **_Commentaires :_**  
