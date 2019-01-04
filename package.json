@@ -23,7 +23,6 @@
         "nettoie": "mvn clean",
         "construit": "npm run nettoie && mvn package",
         "lance-dev": "npm run nettoie && mvn spring-boot:run",
-        "genere-la-doc": "./scripts/genere-la-doc.sh",
-        "genere-les-releases-notes": "node scripts/release-notes.js"
+        "genere-la-doc": "./scripts/genere-la-doc.sh"
     }
 }

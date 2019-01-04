@@ -13,27 +13,38 @@ const getDirectories = source =>
 var cheminDuProjetRacineGit = "/home/icga1070/git/incubateur-cdv";
 var listeDesProjetsGit = getDirectories(cheminDuProjetRacineGit);
 
-listeDesProjetsGit.forEach(function (unCheminDeProjet) {
-    traiteLaListeDesCommitsDUnRepertoire(unCheminDeProjet);
+var listeDesFeaturesDeTousLesProjets = {};
 
+// Crée la liste des commits pour tous les projets
+listeDesProjetsGit.forEach(function (unCheminDeProjet) {
+    var nomDuProjet = recupereLeNomDuProjet(unCheminDeProjet);
+    var listeDesCommits = traiteLaListeDesCommitsDUnRepertoire(unCheminDeProjet);
+    listeDesFeaturesDeTousLesProjets[nomDuProjet] = listeDesCommits;
 });
 
-/*
- * Fonctions
- */
+// Sauvegarde la liste des commits
+var donneesEnJSON = JSON.stringify(listeDesFeaturesDeTousLesProjets);
+console.log(donneesEnJSON);
 
+
+
+/*
+ * ********************
+ * Fonctions
+ * ********************
+ */
 function metEnFormeLeMessage(commit) {
 
-    return "[" + commit.projet + "] [" + commit.authorDate.split(" ")[0] + "] " + commit.subject + " - " + commit.authorName;
+    return "[" + commit.authorDate.split(" ")[0] + "] " + commit.subject + " - " + commit.authorName;
+}
+
+function recupereLeNomDuProjet(cheminDuRepertoire) {
+    var elementsDuChemin = cheminDuRepertoire.split("/");
+    var nomDuProjet = elementsDuChemin[elementsDuChemin.length - 1];
+    return nomDuProjet;
 }
 
 function traiteLaListeDesCommitsDUnRepertoire(cheminDuRepertoire) {
-    var elementsDuChemin = cheminDuRepertoire.split("/");
-    var nomDuProjet = elementsDuChemin[elementsDuChemin.length-1];
-
-    console.log("********************************************************");
-    console.log("Projet en cours de traitement : " + nomDuProjet);
-    console.log("********************************************************");
     var gitlog = require('gitlog')
         , options =
         {
@@ -56,8 +67,6 @@ function traiteLaListeDesCommitsDUnRepertoire(cheminDuRepertoire) {
     let listeDeCommitsInitiale = gitlog(options);
 
     var listeFiltree = listeDeCommitsInitiale.map(function(commit){
-        // On ajoute le nom du projet d'origine dans le commit
-        commit.projet = nomDuProjet;
         return commit;
     }).filter(function (commit) {
         // On filtre les commits automatiques
@@ -70,7 +79,6 @@ function traiteLaListeDesCommitsDUnRepertoire(cheminDuRepertoire) {
         return metEnFormeLeMessage(commit);
     });
 
-    console.log(listeFiltree);
-
+    return listeFiltree;
 }
 
