@@ -61,14 +61,25 @@
                         <version>1.44</version>
                         <executions>
                             <execution>
-                                <id>GenerateGitChangelog</id>
+                                <id>GenereLeChangeLogEnMD</id>
                                 <phase>generate-sources</phase>
                                 <goals>
                                     <goal>git-changelog</goal>
                                 </goals>
                                 <configuration>
                                     <filePath>target/generated-docs/CHANGELOG.md</filePath>
-                                    <templateFile>src/doc/template/changelog.mustache</templateFile>
+                                    <templateFile>src/doc/template/changelog.md.mustache</templateFile>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>GenereLeChangeLogEnHTML</id>
+                                <phase>generate-sources</phase>
+                                <goals>
+                                    <goal>git-changelog</goal>
+                                </goals>
+                                <configuration>
+                                    <filePath>target/generated-docs/CHANGELOG.html</filePath>
+                                    <templateFile>src/doc/template/changelog.html.mustache</templateFile>
                                 </configuration>
                             </execution>
                         </executions>

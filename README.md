@@ -25,10 +25,9 @@ URLs de test :
 Tous les outils testés (cf. chapitre ci-dessous) génèrent leurs docs dans le répertoire `target/generated-docs`.
 
 
+## TODO
 
-## TODO liste
-
-### Ce qui serait à tester
+### Backlog
 
 - `En cours` Génération d'un site de documentation à partir de fichiers Asciidoctor avec Antora (https://antora.org/)
 - `Bloqué` Génération d'un changelog en asciidoc avec un module NPM
@@ -69,16 +68,20 @@ Ce qui a été fait :
 
 ### Plugin Maven de génération de changelog Git
 
-Permet de générer un changelog en Markdown du projet
+Permet de générer un changelog à partir des commits Git
 
 [Sources](https://github.com/tomasbjerre/git-changelog-maven-plugin)
 
 ```xml
-<groupId>se.bjurr.gitchangelog</groupId>
-<artifactId>git-changelog-maven-plugin</artifactId>
-<version>1.44</version>
+<plugin>
+  <groupId>se.bjurr.gitchangelog</groupId>
+  <artifactId>git-changelog-maven-plugin</artifactId>
+  <version>1.44</version>
+</plugin>
 ```
-**_Verdict :_** Le markdown généré est propre. A essayer sur nos projets qui ont beaucoup plus de commits.
+**_Commentaires :_**  
+- Utilise un template `mustache` permettant de générer le changelog dans plusieurs langages.  
+- Le rapport peut facilement être customisé.  
 
 
 ### Plugin Maven de génération de glossaire
@@ -96,22 +99,11 @@ Permet de générer de la doc à partir d'une annotation @Glossaire
     <goal>glossary</goal>
 </goals>
 ```
-**_Verdict :_** Rendu très sobre. Utilise la javadoc pour la définition.
-
-
-
-### Plugin de génération de doc d'API à partir de RAML
-
-[Sources](https://github.com/raml2html/raml2html)
-
-```text
-raml2html livingdoc.raml > livingdoc-api.html
-```
-
-**_Verdict :_** 
-Rendu sympa sur une seule page HTML.
-
-
+**_Commentaires :_** 
+- Rendu très sobre. 
+- Utilise la javadoc pour la définition.  
+- Génère du .adoc et du .html.  
+- Pourrait être amélioré ou réécrit pour ajouter des paramètres, par exemple.  
 
 ### Plugin Maven de génération d'un nuage de mots
 
@@ -129,8 +121,21 @@ Permet de générer un nuage mots à partir du code source
 </goals>
 ```
 
-**_Verdict :_** Rendu assez joli mais pas très utile.
+**_Commentaires :_**  
+- Rendu assez joli.  
+- Surtout utilisé pour vérifier que le code "parle" bien du métier plutôt que de la technique.  
 
+
+### Plugin de génération de doc d'API à partir de RAML
+
+[Sources](https://github.com/raml2html/raml2html)
+
+```text
+raml2html livingdoc.raml > livingdoc-api.html
+```
+
+**_Verdict :_** 
+Rendu sympa sur une seule page HTML.
 
 
 ### Plugin Maven de génération d'un diagramme basé sur l'architecture hexagonale
@@ -149,6 +154,7 @@ Permet de générer un diagramme basé sur l'architecture hexagonale pour aider 
 </goals>
 ```
 
-**_Verdict :_** Fonctionne avec la lib viz.js. Ne prend pas en 
-compte toutes les dépendances d'une classe vers d'autres classes (seuls les attributs d'instance ont l'air d'être pris en compte).  
-L'idée parait intéressante mais il faudrait améliorer le plugin. 
+**_Commentaires :_**  
+- Fonctionne avec la lib viz.js. 
+- Ne prend pas en compte toutes les dépendances d'une classe vers d'autres classes (seuls les attributs d'instance ont l'air d'être pris en compte).  
+- L'idée parait intéressante mais il faudrait améliorer le plugin. 

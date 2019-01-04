@@ -1,0 +1,29 @@
+# Changelog du projet Livingdoc
+
+Test de génération de changelog en Markdown à partir du plugin Maven **git-changelog-maven-plugin**.
+
+{{#tags}}
+## {{name}}
+{{#issues}}
+{{#hasIssue}}
+    {{#hasLink}}
+        ### {{name}} [{{issue}}]({{link}}) {{title}}
+    {{/hasLink}}
+    {{^hasLink}}
+        ### {{name}} {{issue}} {{title}}
+    {{/hasLink}}
+{{/hasIssue}}
+{{^hasIssue}}
+    ### {{name}}
+{{/hasIssue}}
+
+{{#commits}}
+    [{{hash}}](http://git-scm.pole-emploi.intra/incubateur-poc/livingdoc/commit/{{hash}}) {{authorName}} _{{commitTime}}_
+    **{{{messageTitle}}}**
+    {{#messageBodyItems}}
+        * {{.}}
+    {{/messageBodyItems}}
+{{/commits}}
+
+    {{/issues}}
+{{/tags}}
