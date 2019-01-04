@@ -30,8 +30,6 @@ Tous les outils testés (cf. chapitre ci-dessous) génèrent leurs docs dans le 
 ### Backlog
 
 - `En cours` Génération d'un site de documentation à partir de fichiers Asciidoctor avec Antora (https://antora.org/)
-- `Bloqué` Génération d'un changelog en asciidoc avec un module NPM
-- `Bloqué` Génération d'un changelog ne prenant en compte que les messages au format attendu
 - Doc d'API des services REST générée avec API-Console CLI (https://github.com/mulesoft/api-console/blob/master/docs/build-tools.md)
 - osprey-mock-service pour générer des bouchons à partir du fichier RAML
 - abao pour vérifier que l'implémentation des ressources correspond à la spec du fichier RAML
@@ -57,14 +55,18 @@ Ce qui a été fait :
 
 ## Les outils de génération de doc testés
 
-### Génération de changelog via un package npm
+### Génération de changelog via une lib JS
 
-[Repo NPM](https://www.npmjs.com/package/gitlog)
+Permet de générer un changelog à partir des commits Git de un ou plusieurs projets, en JS
 
-[Source](https://github.com/domharrington/node-gitlog)
+[Repo NPM](https://www.npmjs.com/package/gitlog)  
+[Source](https://github.com/domharrington/node-gitlog)  
 
-**_En cours_** 
-
+**_Commentaires :_** 
+- Accès direct aux données des commits  
+- Permet de manipuler des objets JS  
+- Permet de générer le changelog au format que l'on veut  
+- Fonctionne très bien  
 
 ### Plugin Maven de génération de changelog Git
 
