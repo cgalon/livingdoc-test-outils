@@ -15,8 +15,8 @@ Projet Springboot ultra simple servant de support à la génération de la doc.
 
 URLs de test :
 
-- [http://localhost:8080/personne/random]
-- [http://localhost:8080/personne?id=2]
+- [http://localhost:8080/personne/random](http://localhost:8080/personne/random)
+- [http://localhost:8080/personne?id=2](http://localhost:8080/personne?id=2)
 
 ### Réécriture application support
 
@@ -73,7 +73,7 @@ Permet de générer un changelog à partir des commits Git de un ou plusieurs pr
 [Repo NPM](https://www.npmjs.com/package/gitlog)  
 [Source](https://github.com/domharrington/node-gitlog)  
 
-**_Commentaires :_** 
+**_Commentaires :_**
 
 - Accès direct aux données des commits  
 - Permet de manipuler des objets JS  
@@ -97,7 +97,8 @@ Permet de générer un changelog à partir des commits Git
 **_Commentaires :_**  
 
 - Utilise un template `mustache` permettant de générer le changelog dans plusieurs langages.  
-- Le rapport peut facilement être customisé.  
+- Le rapport peut facilement être customisé.
+- Pas d'accès direct à l'historique de Git  
 
 ### Plugin Maven de génération de glossaire
 
@@ -160,7 +161,7 @@ Rendu sympa sur une seule page HTML.
 
 ### Plugin Maven de génération d'un diagramme basé sur l'architecture hexagonale
 
-Permet de générer un diagramme basé sur l'architecture hexagonale pour aider à vérifier la conception du domaine. 
+Permet de générer un diagramme basé sur l'architecture hexagonale pour aider à vérifier la conception du domaine.
 
 [Sources](https://github.com/LivingDocumentation/livingdoc-maven-plugin)
 
@@ -178,6 +179,6 @@ Permet de générer un diagramme basé sur l'architecture hexagonale pour aider 
 
 **_Commentaires :_**  
 
-- Fonctionne avec la lib viz.js. 
+- Fonctionne avec la lib viz.js.
 - Ne prend pas en compte toutes les dépendances d'une classe vers d'autres classes (seuls les attributs d'instance ont l'air d'être pris en compte).  
 - L'idée parait intéressante mais il faudrait améliorer le plugin.
