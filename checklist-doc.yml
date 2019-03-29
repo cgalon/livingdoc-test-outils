@@ -26,11 +26,11 @@ titre: Check-list des sources de données pour avoir une documentation généré
     destinations:
       - destination:
           format: html
-          ouLaTrouver: regrouper avec le reste de la doc
+          ouLaTrouver: regrouper avec le reste de la glossaire
           commentLaGenerer: raml2html
       - destination:
           format: html (avec live reload)
-          ouLaTrouver: regrouper avec le reste de la doc
+          ouLaTrouver: regrouper avec le reste de la glossaire
           commentLaGenerer: apiconsole
     destinataires:
       - role: développeur
@@ -44,7 +44,7 @@ titre: Check-list des sources de données pour avoir une documentation généré
     destinations:
       - destination:
           format: html
-          ouLaTrouver: regrouper avec le reste de la doc
+          ouLaTrouver: regrouper avec le reste de la glossaire
           commentLaGenerer: plugin Maven ou module npm
     destinataires:
       - role: développeur
@@ -58,7 +58,7 @@ titre: Check-list des sources de données pour avoir une documentation généré
     destinations:
       - destination:
           format: html
-          ouLaTrouver: regrouper avec le reste de la doc
+          ouLaTrouver: regrouper avec le reste de la glossaire
           commentLaGenerer: module npm
     destinataires:
       - role: utilisateur

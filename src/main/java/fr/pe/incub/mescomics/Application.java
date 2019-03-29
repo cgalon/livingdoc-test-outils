@@ -1,4 +1,4 @@
-package fr.pe.incub.cga.livingdoc;
+package fr.pe.incub.mescomics;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

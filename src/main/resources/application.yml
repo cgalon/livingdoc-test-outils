@@ -1,6 +1,6 @@
 spring:
   application:
-    name: livingdoc
+    name: mes-collection
 management:
   security:
     enabled: false
