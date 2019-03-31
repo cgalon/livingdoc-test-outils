@@ -1,0 +1,198 @@
+= Générer sa doc
+Equipe SNED Incubateur <frederic.moreau@pole-emploi.fr>
+:toc2:
+:numbered:
+
+ifeval::["{outfilesuffix}"==".html"]
+link:{docname}.pdf[image:pdf_icon.png[] Format PDF]
+endif::[]
+
+== Le contexte
+Non, rédiger de la doc n'est pas le summum du fun. Surtout lorsque l'on sait qu'elle est destinée à végéter dans un coin de disque dur,
+ou pire, sur une étagère après que l'on ait tué un arbre pour l'imprimer, sans que personne n'aille la voir ou la mettre à jour.
+
+Cyrille Martraire est un des leader du mouvement "Software Craftmanship" en France
+footnoteref:[1, http://www.touilleur-express.fr/2011/01/20/craftsmanship]. Dans son livre "Living Documentation"
+footnoteref:[2, https://leanpub.com/livingdocumentation], il prone notamment l'utilisation d'une documentation utile et vivante.
+Ceci passe notamment par l'utilisation d'une documentation générée.
+
+L'objectif de cet article est de montrer comment, dans le projet de démonstration du SNED Incubateur, nous avons utilisé le format Asciidoc
+pour coder notre doc et la générer à chaque build afin d'avoir une documentation le plus possible à jour. +
+De plus le fait de pouvoir "coder sa doc" dans un IDE est tout de même plus intéressant que faire du Word.
+
+== ASCIIDOC et son écosystème
+Asciidoc est un langage de formatage des données proche du Markdown. La syntaxe est donc beaucoup plus légère que pour du HTML. Même si les
+IDE commencent à avoir des plugins pour gérer ce format, il est très simple de coder de l'asciidoc avec un simple
+éditeur de texte.
+
+Le premier processeur de fichiers Asciidoc (et le plus utilisé) a été écrit en Ruby. Mais le succès du format est tel qu'il a été
+ré-implémenté dans bon nombre de langages (Javascript, Java...) et sous forme de plugins (Maven, Ant...). Tous ces processeurs permettent
+de générer la documentation sous divers format : HTML, PDF, Docbook, ePub, manpage...
+ 
+Il est possible de modifier la feuille de style fournie par défaut mais celle-ci est suffisante dans la majorité des cas. *Cela permet donc
+de se focaliser sur le contenu du document plutôt que sur sa forme.*
+
+NOTE: Le site de référence sur Asciidoc est lui-même écrit en Asciidoc avec la feuille de style standard. footnoteref:[3, http://asciidoc.org/] +
+Certains livres commerciaux ont également été écrits avec ce langage. footnoteref:[4, http://shop.oreilly.com/product/0636920033073.do]
+
+== Les fonctionnalités intéressantes
+Le format Asciidoc permet de mettre en oeuvre quelque fonctionnalités intéressantes pour de la doc technique.
+
+=== Inclusion d'autres fichiers asciidoc
+On peut modulariser sa doc par chapitre pour faciliter l'écriture, la maintenance et le travail collaboratif.
+[source] 
+----
+\include::mon_fichier_a_inclure.txt[]
+----
+TIP: L'utilisation d'une extension _.txt_ permet d'inclure le fichier dans un autre sans qu'il soit généré individuellement. 
+
+=== Inclusion de liens ou d'images
+L'inclusion de liens se fait de manière très simple :
+[source] 
+----
+link:http://powerman.name/doc/asciidoc[Référence Asciidoc]
+----
+
+[source]
+----
+image::fichier_image.png[] 
+----
+
+=== Inclusion de fichiers sources avec coloration syntaxique
+On peut inclure tout ou partie d'un fichier source en bénéficiant de la coloration syntaxique du langage. +
+Par exemple le code ci-dessous...
+[source] 
+----
+[source,java]
+.Exemple de référence à un fichier source
+---
+\include::chemin/vers/ma/classe/MaClasseDExemple.java[tags=balise-pour-marquer-le-segment-de-code-a-inclure]
+---
+----
+\... pourrait donner le résultat suivant :
+ 
+.Exemple de référence à un fichier source
+[source,java] 
+----
+public class Calculatrice {
+	public int plus(int a, int b) {
+		int res = a + b;
+		return res;
+	}
+----
+L'inclusion étant effectuée à chaque build, la documentation produite est forcément à jour.
+
+CAUTION: Le refactoring des noms de classes avec IntelliJ modifie également leur nom dans les fichiers asciidoc. 
+Mais le refactoring des noms de package à toutes les chances de casser les liens.
+
+=== Inclusion de diagrammes
+Il est possible de coder ses propres diagrammes et de les inclure dans la doc générée. +
+Plus de détails sur la mise en place dans un cadre Pôle emploi : link:article_asciidoc_diag{outfilesuffix}[Créer des diagrammes en Asciidoc]
+
+== Intégration dans Maven
+.L'utilisation du plugin Asciidoc de Maven se fait comme suit :
+[source, xml]
+----
+<plugin>
+    <groupId>org.asciidoctor</groupId>
+    <artifactId>asciidoctor-maven-plugin</artifactId>
+    <version>1.5.3</version>
+    <configuration>
+        <sourceDirectory>${repertoire-de-la-documentation-valorisee}</sourceDirectory>
+        <outputDirectory>${project.build.directory}/documentation</outputDirectory>
+        <imagesDir>images</imagesDir>
+        <requires>
+            <require>asciidoctor-diagram</require>
+        </requires>
+    </configuration>
+    <executions>
+        <execution>
+            <id>gen-doc-html</id>
+            <phase>prepare-package</phase>
+            <goals>
+                <goal>process-asciidoc</goal>
+            </goals>
+            <configuration>
+                <backend>html</backend>
+                <sourceHighlighter>coderay</sourceHighlighter>
+            </configuration>
+        </execution>
+        <execution>
+            <id>gen-doc-pdf</id>
+            <phase>prepare-package</phase>
+            <goals>
+                <goal>process-asciidoc</goal>
+            </goals>
+            <configuration>
+                <backend>pdf</backend>
+                <sourceHighlighter>coderay</sourceHighlighter>
+                <attributes>
+                    <icons>font</icons>
+                    <pagenums />
+                    <toc />
+                    <idprefix />
+                    <idseparator>-</idseparator>
+                </attributes>
+            </configuration>
+        </execution>
+    </executions>
+    <dependencies>
+        <dependency>
+            <groupId>org.asciidoctor</groupId>
+            <artifactId>asciidoctorj-pdf</artifactId>
+            <version>1.5.0-alpha.11</version>
+        </dependency>
+        <!-- Utilise jruby ou lieu de ruby -->
+        <dependency>
+            <groupId>org.jruby</groupId>
+            <artifactId>jruby-complete</artifactId>
+            <version>9.0.4.0</version>
+        </dependency>
+        <!-- Utilise la version maven de asciidoc -->
+        <dependency>
+            <groupId>org.asciidoctor</groupId>
+            <artifactId>asciidoctorj</artifactId>
+            <version>1.5.4</version>
+        </dependency>
+    </dependencies>
+</plugin>
+----
+
+== Limitations
+.Malgré toutes ses qualités, l'utilisation d'Asciidoc présente tout de même quelques limitations :
+* Il peut y avoir quelques différences (assez minimes) d'interprétation de la syntaxe Asciidoc suivant le générateur utilisé.
+Tous les générateurs ne sont pas forcément au niveau de celui en Ruby.
+
+* Il peut y avoir également des différences au niveau du document produit en fonction du format de sortie choisi. 
+(Dans le cadre de l'incubateur, nous avons constaté quelques différences entre le HTML et le PDF produit).
+
+* Malgré la simplicité de la syntaxe, le support du langage est loin d'être parfait dans les IDEs ou les éditeurs de texte (cf. chapitre
+ci-dessous).
+
+== Les outils
+
+*IntelliJ* : Il propose un éditeur sans réelle coloration syntaxique mais avec un volet de prévisualisation (qui n'est pas parfait).
+
+*Eclipse* : Il propose également un éditeur avec prévisualisation ainsi qu'une vue "outline" pour avoir le plan du document mais là aussi le
+résultat n'est pas encore complètement abouti.
+
+*Editeurs de texte* : La plupart des éditeurs de texte du marché proposent une coloration syntaxique de l'Asciidoc.
+
+*Navigateurs Web* : Chrome et Firefox possèdent des plugins de prévisualisation de fichiers "adoc" de très bonne qualité et qui
+fonctionnent en mode "live reload". Il peut être intéressant de coder son document dans son IDE préféré
+et de voir le résultat se mettre à jour après chaque sauvegarde dans son navigateur. Pour ceux qui ont un double écran, le confort de
+travail est encore meilleur.
+
+== Quelques liens pour débuter
+link:http://asciidoc.org/[Le site de référence du langage]
+
+link:http://asciidoctor.org/[Le générateur AsciiDoctor]
+
+link:https://github.com/asciidoctor[Tous les projets AsciiDoctor]
+
+link:https://github.com/asciidoctor/asciidoctor[Le Github d'AsciiDoctor regorge d'exemples]
+
+link:https://github.com/asciidoctor/asciidoctor-maven-plugin[Le plugin Maven]
+
+link:http://wiki.eclipse.org/Mylyn/WikiText/AsciiDoc[Plugin Asciidoc pour Eclipse]
+

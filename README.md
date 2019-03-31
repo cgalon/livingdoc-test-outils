@@ -11,31 +11,17 @@ Projet de test sur la génération de documentation à partir du code.
 
 ## L'application de support
 
-Projet Springboot ultra simple servant de support à la génération de la doc.
+Il s'agit d'une application de gestion d'une collection de Comics. Elle est conçue en DDD.  
+L'application n'est pas fonctionnelle. Il manque des ressources REST, de la persistance... Néanmoins il y a suffisamment de code pour tester les différents outils de génération de documentation ci-dessous.  
 
-URLs de test :
+L'application comprend un seul domaine et 3 "bounded context" :  
+* Le référentiel des comics existants  
+* La collection des comics possédés par l'utilisateur  
+* La liste des comics manquants  
 
-- [http://localhost:8080/personne/random](http://localhost:8080/personne/random)
-- [http://localhost:8080/personne?id=2](http://localhost:8080/personne?id=2)
+La liste d'achat (comics manquants) est générée par delta entre les séries définies dans le référentiel et la liste des comics déjà acquis par l'utilisateur.
 
-### Réécriture application support
-
-L'application support actuelle est vraiment trop simpliste pour être représentative d'un domaine fonctionnel.  
-La proposition est de prendre un nouveau sujet d'exemple pour le réécrire en DDD avec de l'Event Sourcing.
-
-**Notes :**
-
-- Proposition de sujet : Gestion d'une collection de BDs.
-- Plusieurs Bounded Contexts
-  - Collection de mangas
-  - Collections de comics
-  - Collection d'albums classiques
-  - Wish List
-- Ecriture en DDD
-- Ecriture en TDD
-- Implémenter des TI
-- Utiliser une architecture hexagonale
-- Utilisation de CQRS/ES
+L'application est couverte par des tests unitaires et utilise l'architecture hexagonale pour chacun de ses contextes bornés.
 
 ## Backlog
 
@@ -43,7 +29,7 @@ La proposition est de prendre un nouveau sujet d'exemple pour le réécrire en D
 
 ## Génération de la documentation
 
-Tous les outils testés (cf. chapitre ci-dessous) génèrent leurs docs dans le répertoire `target/generated-docs`.
+Tous les outils testés (cf. chapitre ci-dessous) génèrent leurs docs dans le répertoire `target/generated-docs`. Ils sont tous référencés dans la page `index.html`.
 
 ## Les outils de génération de doc testés
 
@@ -65,6 +51,11 @@ Utilisation d'un alias Linux :
 ```bash
 alias genere-les-docs-de-ce-repertoire-en-pdf='docker run --rm -v $(pwd):/documents/ asciidoctor/docker-asciidoctor asciidoctor-pdf *.adoc'
 ```
+
+**_Commentaires :_**
+
+L'exemple de génération de document (HTML et PDF) utilisé dans ce projet est basé sur 2 articles sur Asciidoctor écrits en 2016 par l'Incubateur. Ils contiennent tout ce qu'il y a à savoir sur Asciidoctor. 
+
 
 ### Génération de changelog via une lib JS
 
