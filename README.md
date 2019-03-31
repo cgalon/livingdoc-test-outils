@@ -52,10 +52,11 @@ Utilisation d'un alias Linux :
 alias genere-les-docs-de-ce-repertoire-en-pdf='docker run --rm -v $(pwd):/documents/ asciidoctor/docker-asciidoctor asciidoctor-pdf *.adoc'
 ```
 
+**NB :** Dans le projet actuel, il y a un bug avec la génération de diagramme avec Ditaa. En cours d'investigation.
+
 **_Commentaires :_**
 
 L'exemple de génération de document (HTML et PDF) utilisé dans ce projet est basé sur 2 articles sur Asciidoctor écrits en 2016 par l'Incubateur. Ils contiennent tout ce qu'il y a à savoir sur Asciidoctor. 
-
 
 ### Génération de changelog via une lib JS
 
@@ -115,6 +116,7 @@ Permet de générer de la doc à partir d'une annotation @Glossaire
 - Utilise la javadoc pour la définition.  
 - Génère du .adoc et du .html.  
 - Pourrait être amélioré ou réécrit pour ajouter des paramètres, par exemple.  
+- **NB :** Actuellement ne fonctionne plus suite à la réécriture de l'application. Nécessite de remettre les annotations sur les objets métier.
 
 ### Plugin Maven de génération d'un nuage de mots
 
@@ -137,7 +139,8 @@ Permet de générer un nuage mots à partir du code source
 **_Commentaires :_**
 
 - Rendu assez joli.  
-- Surtout utilisé pour vérifier que le code "parle" bien du métier plutôt que de la technique.  
+- Surtout utilisé pour vérifier que le code "parle" bien du métier plutôt que de la technique.
+- **NB :** Actuellement ne fonctionne pas. A investiguer.
 
 ### Plugin de génération de doc d'API à partir de RAML
 
@@ -148,7 +151,8 @@ raml2html livingdoc.raml > livingdoc-api.html
 ```
 
 **_Commentaires :_**  
-Rendu sympa sur une seule page HTML.
+
+- Rendu sympa sur une seule page HTML.
 
 ### Plugin Maven de génération d'un diagramme basé sur l'architecture hexagonale
 
@@ -173,3 +177,4 @@ Permet de générer un diagramme basé sur l'architecture hexagonale pour aider 
 - Fonctionne avec la lib viz.js.
 - Ne prend pas en compte toutes les dépendances d'une classe vers d'autres classes (seuls les attributs d'instance ont l'air d'être pris en compte).  
 - L'idée parait intéressante mais il faudrait améliorer le plugin.
+- **NB :** Actuellement ne fonctionne pas. Message : ReferenceError: Viz is not defined
