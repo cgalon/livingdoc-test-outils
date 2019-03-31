@@ -139,7 +139,7 @@ Permet de générer un nuage mots à partir du code source
 
 - Rendu assez joli.  
 - Surtout utilisé pour vérifier que le code "parle" bien du métier plutôt que de la technique.
-- **NB :** Actuellement ne fonctionne pas. A investiguer.
+- **NB :** Actuellement ne fonctionne pas. Le contenu de la page est bien généré mais la dernière version de d3.js n'est pas compatible avec le code généré. La ligne `var fill = d3.scale.category20();` ne fonctionne pas avec la version 5.9.2 de d".js. 
 
 ### Plugin de génération de doc d'API à partir de RAML
 
