@@ -1,5 +1,6 @@
 package fr.pe.incub.mescomics.referentiel.domaine;
 
+import fr.pe.incub.livingdoc.glossaire.Glossary;
 import fr.pe.incub.mescomics.referentiel.domaine.exception.EpisodeNonTrouveException;
 
 import java.time.LocalDate;
@@ -8,6 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@Glossary
+/**
+ * Parution d'une instance de revue à une date précise. Un numéro peut contenir un ou plusieurs épisodes de un ou plusieurs héros.
+ */
 public class Numero {
 
     public final String nomDeLaRevue;

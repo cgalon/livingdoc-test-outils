@@ -116,7 +116,6 @@ Permet de générer de la doc à partir d'une annotation @Glossaire
 - Utilise la javadoc pour la définition.  
 - Génère du .adoc et du .html.  
 - Pourrait être amélioré ou réécrit pour ajouter des paramètres, par exemple.  
-- **NB :** Actuellement ne fonctionne plus suite à la réécriture de l'application. Nécessite de remettre les annotations sur les objets métier.
 
 ### Plugin Maven de génération d'un nuage de mots
 

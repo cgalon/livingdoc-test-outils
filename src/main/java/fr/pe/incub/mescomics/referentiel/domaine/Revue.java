@@ -1,9 +1,14 @@
 package fr.pe.incub.mescomics.referentiel.domaine;
 
+import fr.pe.incub.livingdoc.glossaire.Glossary;
 import fr.pe.incub.mescomics.referentiel.domaine.exception.ParutionRevueTermineeException;
 
 import java.util.Objects;
 
+@Glossary
+/**
+ * Une parution sortant régulièrement (généralement mensuellement) et relatant les aventures de un ou plusieurs héros.
+ */
 public class Revue {
     public final String titre;
     private int nombreDeNumeros;

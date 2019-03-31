@@ -1,7 +1,13 @@
 package fr.pe.incub.mescomics.collection.domaine;
 
+import fr.pe.incub.livingdoc.glossaire.Glossary;
+
 import java.util.Objects;
 
+@Glossary
+/**
+ * Le numéro d'une revue détenu par l'utilisateur.
+ */
 public class Comics {
 
     public final String titreDeLaRevue;

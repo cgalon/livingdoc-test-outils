@@ -1,7 +1,13 @@
 package fr.pe.incub.mescomics.referentiel.domaine;
 
+import fr.pe.incub.livingdoc.glossaire.Glossary;
+
 import java.util.Objects;
 
+@Glossary
+/**
+ * Morceau d'histoire d'un héros paru dans un numéro d'une revue.
+ */
 public class Episode{
     private final String heros;
     private final String titre;

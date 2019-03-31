@@ -1,7 +1,13 @@
 package fr.pe.incub.mescomics.listeachat.domaine;
 
+import fr.pe.incub.livingdoc.glossaire.Glossary;
+
 import java.time.LocalDate;
 
+@Glossary
+/**
+ * Un numéro d'une revue à acheter.
+ */
 public class NumeroManquant {
 
     public final String serie;

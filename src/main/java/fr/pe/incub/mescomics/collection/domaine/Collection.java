@@ -1,10 +1,16 @@
 package fr.pe.incub.mescomics.collection.domaine;
 
+import fr.pe.incub.livingdoc.glossaire.Glossary;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Glossary
+/**
+ * La liste des comics détenus par l'utilisateur.
+ */
 public class Collection {
 
     private List<Comics> tousLesComics = new ArrayList<>();
