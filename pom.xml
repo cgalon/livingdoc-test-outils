@@ -137,9 +137,41 @@
                             </execution>
                         </executions>
                         <configuration>
-                            <prefix>fr.pe.incub.mescomics.listeachat</prefix>
+                            <includes>
+                                <include>**/domaine/**/*.java</include>
+                            </includes>
+                            <!--
+                            <excludes>
+                                <exclude>**/annotations/**</exclude>
+                                <exclude>**/package-info.java</exclude>
+                            </excludes>
+                            -->
+                            <prefix>fr.pe.incub.mescomics</prefix>
                             <coreDomain>ressource</coreDomain>
                         </configuration>
+                    </plugin>
+                    <!--
+                    =======================================
+                    Récupération des ressources du plugin livingdoc
+                    =======================================
+                    -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-remote-resources-plugin</artifactId>
+                        <version>1.5</version>
+                        <configuration>
+                            <resourceBundles>
+                                <resourceBundle>io.github.livingdocumentation:shared-resources:0.3</resourceBundle>
+                            </resourceBundles>
+                            <outputDirectory>target/generated-docs</outputDirectory>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>process</goal>
+                                </goals>
+                            </execution>
+                        </executions>
                     </plugin>
                     <!--
                     =======================================

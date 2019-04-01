@@ -15,9 +15,9 @@ Il s'agit d'une application de gestion d'une collection de Comics. Elle est con�
 L'application n'est pas fonctionnelle. Il manque des ressources REST, de la persistance... Néanmoins il y a suffisamment de code pour tester les différents outils de génération de documentation ci-dessous.  
 
 L'application comprend un seul domaine et 3 "bounded context" :  
-* Le référentiel des comics existants  
-* La collection des comics possédés par l'utilisateur  
-* La liste des comics manquants  
+- Le référentiel des comics existants.  
+- La collection des comics possédés par l'utilisateur.  
+- La liste des comics manquants.  
 
 La liste d'achat (comics manquants) est générée par delta entre les séries définies dans le référentiel et la liste des comics déjà acquis par l'utilisateur.
 
@@ -56,7 +56,7 @@ alias genere-les-docs-de-ce-repertoire-en-pdf='docker run --rm -v $(pwd):/docume
 
 **_Commentaires :_**
 
-L'exemple de génération de document (HTML et PDF) utilisé dans ce projet est basé sur 2 articles sur Asciidoctor écrits en 2016 par l'Incubateur. Ils contiennent tout ce qu'il y a à savoir sur Asciidoctor. 
+L'exemple de génération de document (HTML et PDF) utilisé dans ce projet est basé sur 2 articles sur Asciidoctor écrits en 2016 par l'Incubateur. Ils contiennent tout ce qu'il y a à savoir sur Asciidoctor.  
 
 ### Génération de changelog via une lib JS
 
@@ -67,14 +67,14 @@ Permet de générer un changelog à partir des commits Git de un ou plusieurs pr
 
 **_Commentaires :_**
 
-- Accès direct aux données des commits  
-- Permet de manipuler des objets JS  
-- Permet de générer le changelog au format que l'on veut  
-- Fonctionne très bien  
+- Accès direct aux données des commits.  
+- Permet de manipuler des objets JS.  
+- Permet de générer le changelog au format que l'on veut.  
+- Fonctionne très bien.  
 
 ### Plugin Maven de génération de changelog Git
 
-Permet de générer un changelog à partir des commits Git
+Permet de générer un changelog à partir des commits Git.
 
 [Sources](https://github.com/tomasbjerre/git-changelog-maven-plugin)
 
@@ -90,11 +90,38 @@ Permet de générer un changelog à partir des commits Git
 
 - Utilise un template `mustache` permettant de générer le changelog dans plusieurs langages.  
 - Le rapport peut facilement être customisé.
-- Pas d'accès direct à l'historique de Git  
+- Pas d'accès direct à l'historique de Git.
 
-### Plugin Maven de génération de glossaire
+### Plugin Maven de LivingDoc
 
-Permet de générer de la doc à partir d'une annotation @Glossaire
+Plugin Maven "multi-usage" proposant des outils de génération de documentation à partir du code.
+
+**NB :** Les 3 outils suivants nécessitent la récupération de ressources spécifiques afin que le rendu des résultats fonctionne correctement.
+
+```xml
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-remote-resources-plugin</artifactId>
+    <version>1.5</version>
+    <configuration>
+        <resourceBundles>
+            <resourceBundle>io.github.livingdocumentation:shared-resources:0.3</resourceBundle>
+        </resourceBundles>
+        <outputDirectory>target/generated-docs</outputDirectory>
+    </configuration>
+    <executions>
+        <execution>
+            <goals>
+                <goal>process</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+```
+
+#### Génération de glossaire
+
+Permet de générer de la doc à partir d'une annotation @Glossary
 
 [Sources](https://github.com/LivingDocumentation/livingdoc-maven-plugin)
 
@@ -117,7 +144,7 @@ Permet de générer de la doc à partir d'une annotation @Glossaire
 - Génère du .adoc et du .html.  
 - Pourrait être amélioré ou réécrit pour ajouter des paramètres, par exemple.  
 
-### Plugin Maven de génération d'un nuage de mots
+#### Génération d'un nuage de mots
 
 Permet de générer un nuage mots à partir du code source
 
@@ -139,21 +166,8 @@ Permet de générer un nuage mots à partir du code source
 
 - Rendu assez joli.  
 - Surtout utilisé pour vérifier que le code "parle" bien du métier plutôt que de la technique.
-- **NB :** Actuellement ne fonctionne pas. Le contenu de la page est bien généré mais la dernière version de d3.js n'est pas compatible avec le code généré. La ligne `var fill = d3.scale.category20();` ne fonctionne pas avec la version 5.9.2 de d".js. 
 
-### Plugin de génération de doc d'API à partir de RAML
-
-[Sources](https://github.com/raml2html/raml2html)
-
-```text
-raml2html livingdoc.raml > livingdoc-api.html
-```
-
-**_Commentaires :_**  
-
-- Rendu sympa sur une seule page HTML.
-
-### Plugin Maven de génération d'un diagramme basé sur l'architecture hexagonale
+#### Génération d'un diagramme basé sur l'architecture hexagonale
 
 Permet de générer un diagramme basé sur l'architecture hexagonale pour aider à vérifier la conception du domaine.
 
@@ -175,5 +189,18 @@ Permet de générer un diagramme basé sur l'architecture hexagonale pour aider 
 
 - Fonctionne avec la lib viz.js.
 - Ne prend pas en compte toutes les dépendances d'une classe vers d'autres classes (seuls les attributs d'instance ont l'air d'être pris en compte).  
+- Le visuel n'est pas parfait mais il permet de vérifier certaines dépendances (et le sens de ces dépendances) entre les objets.
 - L'idée parait intéressante mais il faudrait améliorer le plugin.
-- **NB :** Actuellement ne fonctionne pas. Message : ReferenceError: Viz is not defined
+
+### Plugin de génération de doc d'API à partir de RAML
+
+[Sources](https://github.com/raml2html/raml2html)
+
+```text
+raml2html livingdoc.raml > livingdoc-api.html
+```
+
+**_Commentaires :_**  
+
+- Rendu sympa sur une seule page HTML.
+
