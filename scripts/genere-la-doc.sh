@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 mvn verify -P genere-la-doc
 
+mvn surefire-report:report
+cp target/site/surefire-report.html target/generated-docs
+mvn site
+
 raml2html livingdoc.raml > target/generated-docs/livingdoc-api.html
 
 node scripts/release-notes.js > target/generated-docs/changelog-cdv.json
