@@ -15,16 +15,22 @@ Langages de balisages : SGML, HTML --> Pas top, on se préoccupe de la forme
 Langages de balisages légers : Markdown, Asciidoc --> Les plus utilisés
 
 .Markdown
-CAUTION: TODO - A préciser
+* Le plus répandu, notamment grâce au README.md
+* Quelques fonctionnalités importantes
+** Titres
+** Listes à puces
+** Tableaux
+** Mise en forme de blocs de code
+* Pas le plus puissant
+* Possibilités limitées
 
 .Asciidoc le plus évolué :
 * Plus de possibilités de mise en forme
-** Titres
 ** Génération de TOC
 ** Mise en forme de paragraphe (WARNING, TIP...)
 ** Mise en forme de code
 * Extraction de bout de code source (attention au refactoring)
-* Generation de diagrammes (1 diagramme --> 1 sujet)
+* Génération de diagrammes (1 diagramme --> 1 sujet)
 * Possibilité de changer la feuille de style
 * Génération en PDF, HTML, EPUB
 * Possibilité d'ajouter des plugins

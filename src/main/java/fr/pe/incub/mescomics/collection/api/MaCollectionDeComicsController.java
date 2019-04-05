@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-
+/**
+ * Ressource de gestion de la collection de Comics détenus par l'utilisateur.
+ */
 @RestController
 public class MaCollectionDeComicsController {
 

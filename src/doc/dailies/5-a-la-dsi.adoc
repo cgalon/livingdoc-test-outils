@@ -2,6 +2,7 @@
 
 .Clean Code
 * Pas une option, c'est notre boulot
+* La qualité d'aujourd'hui est la productivité de demain (A. Lemaire)
 * TDD
 * Orientation métier dans le code
 

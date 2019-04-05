@@ -11,7 +11,7 @@ Il doit faire ressortir les notions métier (DDD)
 ** Ils sont là car on a un problème dans le code
 ** Existe-t-il un commentaire dont on est vraiment fier?
 * Test Driven Development
-** Les tests reflètent le comportement attendu et les specifs
+** Les tests reflètent le comportement attendu et les spécifs
 
 .On peut/doit générer de la doc à partir du code
 * Javadoc : Un premier niveau
@@ -23,7 +23,6 @@ Il doit faire ressortir les notions métier (DDD)
 ** Plutôt utilisé comme un indicateur
 ** Si ce qui ressort est technique --> c'est raté
 * Design patterns
-* Documentation refactorable
 
 La doc doit être générée (et disponible) à chaque build
 

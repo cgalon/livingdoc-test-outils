@@ -35,7 +35,6 @@ Une doc doit répondre à 2 impératifs : Pour qui? Pourquoi faire?
 - BDD (Behaviour Driven Development)
 - DDD (Domain Driven Design)
 - TDD (Type Driven Documentation)
-- DDD (D3) (Data Driven Documents)
 
 .Le plan :
 * Les concepts et les outils

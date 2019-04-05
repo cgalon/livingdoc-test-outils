@@ -27,7 +27,7 @@ Une doc doit répondre à un besoin et avoir une cible
 
 .Les outils :
 * CMS
-* Wikis
+* Wikis (Bof)
 * Frameworks de blog : Hexo (JS), Jekyll(Ruby)
 ** Utilisent un moteur de templating
 * Frameworks de présentation
