@@ -1,0 +1,15 @@
+= Exemple de génération de rapport de test avec Spring RestDocs
+
+Utilisation de la ressource *PUT* du path */revue* implémenté dans la ressource *fr.pe.incub.mescomics.referentiel.ressource.ReferentielDeRevuesController*.
+
+.Requête CURL
+include::curl-request.adoc[]
+
+.Requête HTTPIE
+include::httpie-request.adoc[]
+
+.Requête HTTP
+include::http-request.adoc[]
+
+.Réponse
+include::http-response.adoc[]

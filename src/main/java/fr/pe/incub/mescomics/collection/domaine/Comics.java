@@ -2,14 +2,18 @@ package fr.pe.incub.mescomics.collection.domaine;
 
 import fr.pe.incub.livingdoc.glossaire.Glossary;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Objects;
 
 @Glossary
 /**
  * Le numéro d'une revue détenu par l'utilisateur.
  */
+@Entity
 public class Comics {
 
+    @Id
     public final String titreDeLaRevue;
     public final int numero;
     public int valeurEnEuros;

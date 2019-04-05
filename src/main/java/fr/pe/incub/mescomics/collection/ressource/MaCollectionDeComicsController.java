@@ -1,5 +1,6 @@
-package fr.pe.incub.mescomics.collection.api;
+package fr.pe.incub.mescomics.collection.ressource;
 
+import fr.pe.incub.mescomics.collection.api.MaCollectionDeComics;
 import fr.pe.incub.mescomics.collection.domaine.Comics;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

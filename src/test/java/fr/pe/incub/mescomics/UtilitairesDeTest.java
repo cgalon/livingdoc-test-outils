@@ -6,6 +6,8 @@ import fr.pe.incub.mescomics.listeachat.infrastructure.NumeroPresent;
 import fr.pe.incub.mescomics.listeachat.infrastructure.RevueReferencee;
 import fr.pe.incub.mescomics.referentiel.domaine.Numero;
 import fr.pe.incub.mescomics.referentiel.domaine.Revue;
+import fr.pe.incub.mescomics.referentiel.infrastructure.NumeroDAO;
+import fr.pe.incub.mescomics.referentiel.infrastructure.RevueDAO;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -132,5 +134,13 @@ public class UtilitairesDeTest {
 
     public Numero creeUnPremierNumeroDeStrange() {
         return new Numero("Strange",1, LocalDate.of(1970, 1, 1));
+    }
+
+    public RevueDAO creeUneRevueDAOStrange() {
+        return new RevueDAO("Strange", 20, "Lug", false);
+    }
+
+    public NumeroDAO creeUnPremierNumeroDAODeStrange() {
+        return new NumeroDAO("Strange",1, LocalDate.of(1970, 1, 1));
     }
 }

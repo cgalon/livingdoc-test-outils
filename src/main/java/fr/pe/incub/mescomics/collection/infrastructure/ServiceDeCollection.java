@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class ServiceDeCollection {
 
-    @Autowired
     EntrepotDeComics entrepotDeComics;
 
+    @Autowired
     public ServiceDeCollection(EntrepotDeComics entrepotDeComics) {
         this.entrepotDeComics = entrepotDeComics;
     }

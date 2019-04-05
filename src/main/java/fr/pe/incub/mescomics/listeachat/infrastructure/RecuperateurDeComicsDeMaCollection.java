@@ -12,9 +12,9 @@ import java.util.stream.Collectors;
 @Service
 public class RecuperateurDeComicsDeMaCollection {
 
-    @Autowired
     private MaCollectionDeComics maCollectionDeComics;
 
+    @Autowired
     public RecuperateurDeComicsDeMaCollection(MaCollectionDeComics maCollectionDeComics) {
         this.maCollectionDeComics = maCollectionDeComics;
     }

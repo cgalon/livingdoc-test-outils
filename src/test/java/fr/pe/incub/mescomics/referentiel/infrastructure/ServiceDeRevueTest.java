@@ -24,7 +24,7 @@ public class ServiceDeRevueTest {
 
     @Test
     public void doitRecupererUneRevueParSonTitre() {
-        when(entrepotDeRevues.findOne("Strange")).thenReturn(utilitairesDeTest.creeUneRevueStrange());
+        when(entrepotDeRevues.findOne("Strange")).thenReturn(utilitairesDeTest.creeUneRevueDAOStrange());
         ServiceDeRevue serviceDeRevue = new ServiceDeRevue(entrepotDeRevues, entrepotDeNumeros);
 
         Revue strange = serviceDeRevue.retrouveLaRevuePourCeTitre("Strange");
@@ -34,7 +34,7 @@ public class ServiceDeRevueTest {
 
     @Test
     public void doitRecupererLePremierNumeroDUneRevue() {
-        when(entrepotDeNumeros.findOne("Strange-1")).thenReturn(utilitairesDeTest.creeUnPremierNumeroDeStrange());
+        when(entrepotDeNumeros.findOne("Strange-1")).thenReturn(utilitairesDeTest.creeUnPremierNumeroDAODeStrange());
         ServiceDeRevue serviceDeRevue = new ServiceDeRevue(entrepotDeRevues, entrepotDeNumeros);
 
         Numero premierStrange = serviceDeRevue.retrouveLePremierNumeroPourCetteRevue(utilitairesDeTest.creeUneRevueStrange());

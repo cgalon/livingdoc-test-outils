@@ -8,22 +8,23 @@ import org.springframework.stereotype.Service;
 @Service
 public class ServiceDeRevue {
 
-    @Autowired
     EntrepotDeRevues entrepotDeRevues;
 
-    @Autowired
     EntrepotDeNumeros entrepotDeNumeros;
 
+    @Autowired
     public ServiceDeRevue(EntrepotDeRevues entrepotDeRevues, EntrepotDeNumeros entrepotDeNumeros) {
         this.entrepotDeRevues = entrepotDeRevues;
         this.entrepotDeNumeros = entrepotDeNumeros;
     }
 
     public Revue retrouveLaRevuePourCeTitre(String titre) {
-        return entrepotDeRevues.findOne(titre);
+        RevueDAO revueDAO = entrepotDeRevues.findOne(titre);
+        return new Revue(revueDAO.titre, revueDAO.recupereLeNombreDeNumeros(), revueDAO.nomDeLEditeur, revueDAO.encoreDesNumerosAParaitre());
     }
 
     public Numero retrouveLePremierNumeroPourCetteRevue(Revue revue) {
-        return entrepotDeNumeros.findOne(revue.titre + "-1");
+        NumeroDAO numeroDAO = entrepotDeNumeros.findOne(revue.titre + "-1");
+        return new Numero(numeroDAO.nomDeLaRevue, numeroDAO.numeroDansLaSerie, numeroDAO.dateDeParution);
     }
 }

@@ -11,9 +11,9 @@ import java.util.List;
 @Component
 public class MaCollectionDeComics {
 
-    @Autowired
     ServiceDeCollection serviceDeCollection;
 
+    @Autowired
     public MaCollectionDeComics(ServiceDeCollection serviceDeCollection) {
         this.serviceDeCollection = serviceDeCollection;
     }

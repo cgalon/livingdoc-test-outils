@@ -1,8 +1,9 @@
 package fr.pe.incub.mescomics.referentiel.infrastructure;
 
-import fr.pe.incub.mescomics.referentiel.domaine.Revue;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-public interface EntrepotDeRevues extends CrudRepository<Revue, String> {
+@Repository
+public interface EntrepotDeRevues extends CrudRepository<RevueDAO, String> {
 
 }

@@ -13,3 +13,6 @@ docker run --rm -v $PWD/src/doc/asciidoctor:/documents/ asciidoctor/docker-ascii
 mv -f $PWD/src/doc/asciidoctor/*.html target/generated-docs/
 mv -f $PWD/src/doc/asciidoctor/*.pdf target/generated-docs/
 cp $PWD/src/doc/asciidoctor/*.png target/generated-docs/
+
+cp $PWD/src/doc/index/index-test-spring-restdocs.adoc target/generated-docs/test-spring-restdocs
+docker run --rm -v $PWD/target/generated-docs/test-spring-restdocs:/documents/ asciidoctor/docker-asciidoctor asciidoctor *.adoc

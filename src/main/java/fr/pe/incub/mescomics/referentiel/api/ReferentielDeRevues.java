@@ -11,9 +11,9 @@ import java.util.Optional;
 @Component
 public class ReferentielDeRevues {
 
-    @Autowired
     ServiceDeRevue serviceDeRevue;
 
+    @Autowired
     public ReferentielDeRevues(ServiceDeRevue serviceDeRevue) {
         this.serviceDeRevue = serviceDeRevue;
     }

@@ -12,9 +12,9 @@ import java.util.Optional;
 @Service
 public class RecuperateurDeRevueReferencee {
 
-    @Autowired
     ReferentielDeRevues referentielDeRevues;
 
+    @Autowired
     public RecuperateurDeRevueReferencee(ReferentielDeRevues referentielDeRevues) {
         this.referentielDeRevues = referentielDeRevues;
     }
