@@ -1,16 +1,10 @@
 package fr.pe.incub.mescomics.referentiel.infrastructure;
 
-import fr.pe.incub.livingdoc.glossaire.Glossary;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Objects;
 
-@Glossary
-/**
- * Morceau d'histoire d'un héros paru dans un numéro d'une revue.
- */
 @Entity
 public class EpisodeDAO {
     @Id

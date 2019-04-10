@@ -1,9 +1,7 @@
 package fr.pe.incub.mescomics;
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -15,9 +13,7 @@ import javax.persistence.EntityManager;
 import javax.sql.DataSource;
 
 @Configuration
-@EnableAutoConfiguration
-@ComponentScan({"fr.pe.incub.mescomics", "fr.pe.incub.mescomics.referentiel.api"})
-@EntityScan("fr.pe.incub.mescomics")
+@EntityScan(basePackageClasses = {Application.class})
 @EnableJpaRepositories("fr.pe.incub.mescomics")
 public class ConfigurationDeLApplication {
 

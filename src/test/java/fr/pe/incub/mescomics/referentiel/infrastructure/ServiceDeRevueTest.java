@@ -6,7 +6,7 @@ import fr.pe.incub.mescomics.referentiel.domaine.Revue;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.when;
@@ -24,7 +24,7 @@ public class ServiceDeRevueTest {
 
     @Test
     public void doitRecupererUneRevueParSonTitre() {
-        when(entrepotDeRevues.findOne("Strange")).thenReturn(utilitairesDeTest.creeUneRevueDAOStrange());
+        when(entrepotDeRevues.findById("Strange-id")).thenReturn(utilitairesDeTest.creeUneRevueDAOStrange());
         ServiceDeRevue serviceDeRevue = new ServiceDeRevue(entrepotDeRevues, entrepotDeNumeros);
 
         Revue strange = serviceDeRevue.retrouveLaRevuePourCeTitre("Strange");
@@ -34,7 +34,7 @@ public class ServiceDeRevueTest {
 
     @Test
     public void doitRecupererLePremierNumeroDUneRevue() {
-        when(entrepotDeNumeros.findOne("Strange-1")).thenReturn(utilitairesDeTest.creeUnPremierNumeroDAODeStrange());
+        when(entrepotDeNumeros.findById("Strange-id")).thenReturn(utilitairesDeTest.creeUnPremierNumeroDAODeStrange());
         ServiceDeRevue serviceDeRevue = new ServiceDeRevue(entrepotDeRevues, entrepotDeNumeros);
 
         Numero premierStrange = serviceDeRevue.retrouveLePremierNumeroPourCetteRevue(utilitairesDeTest.creeUneRevueStrange());

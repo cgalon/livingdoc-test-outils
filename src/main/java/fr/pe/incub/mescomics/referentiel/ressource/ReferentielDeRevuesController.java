@@ -5,7 +5,6 @@ import fr.pe.incub.mescomics.referentiel.domaine.Numero;
 import fr.pe.incub.mescomics.referentiel.domaine.Revue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -17,20 +16,22 @@ import java.util.Optional;
 @RequestMapping("/revue")
 public class ReferentielDeRevuesController {
 
-//    @Autowired
-//    private ReferentielDeRevues referentielDeRevues;
+    private ReferentielDeRevues referentielDeRevues;
+
+    @Autowired
+    public ReferentielDeRevuesController(ReferentielDeRevues referentielDeRevues) {
+        this.referentielDeRevues = referentielDeRevues;
+    }
 
     @RequestMapping
     public Optional<Revue> retrouveLaRevuePourCeTitre(@RequestParam String titre) {
-//        return referentielDeRevues.retrouveLaRevuePourCeTitre(titre);
-        return null;
+        return referentielDeRevues.retrouveLaRevuePourCeTitre(titre);
     }
 
     @RequestMapping(value="/{titre}/numero", method = RequestMethod.GET)
     public Optional<Numero> retrouveLePremierNumeroPourCetteRevue(@PathVariable("titre") String titre) {
-//        Revue revueRecherchee = referentielDeRevues.retrouveLaRevuePourCeTitre(titre).get();
-//        return referentielDeRevues.retrouveLePremierNumeroPourCetteRevue(revueRecherchee);
-        return null;
+        Revue revueRecherchee = referentielDeRevues.retrouveLaRevuePourCeTitre(titre).get();
+        return referentielDeRevues.retrouveLePremierNumeroPourCetteRevue(revueRecherchee);
     }
 
     /**

@@ -1,4 +1,4 @@
-package fr.pe.incub.mescomics.referentiel.ressource;
+package fr.pe.incub.mescomics.collection.ressource;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,24 +9,21 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
 @AutoConfigureRestDocs(outputDir = "target/generated-docs")
-public class ReferentielDeRevuesRessourceTest {
+public class MaCollectionDeComicsRessourceTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    public void doitModifierLeNombreDeNumerosDUneRevue() throws Exception {
-        this.mockMvc.perform(put("/revue")
-                .param("nouveauNombreDeNumeros", "15"))
-                .andExpect(status().isOk())
-                .andDo(document("test-spring-restdocs"));
+    public void doitSupprimerUneListeDeComicsEnFonctionDUnTitre() throws Exception {
+        this.mockMvc.perform(delete("/collection/titre").param("titre", "Strange"))
+                .andExpect(status().isOk());
     }
 }

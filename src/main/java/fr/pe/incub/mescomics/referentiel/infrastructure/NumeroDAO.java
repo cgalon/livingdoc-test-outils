@@ -1,6 +1,5 @@
 package fr.pe.incub.mescomics.referentiel.infrastructure;
 
-import fr.pe.incub.livingdoc.glossaire.Glossary;
 import fr.pe.incub.mescomics.referentiel.domaine.exception.EpisodeNonTrouveException;
 
 import javax.persistence.Entity;
@@ -13,10 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-@Glossary
-/**
- * Parution d'une instance de revue à une date précise. Un numéro peut contenir un ou plusieurs épisodes de un ou plusieurs héros.
- */
 @Entity
 public class NumeroDAO {
 

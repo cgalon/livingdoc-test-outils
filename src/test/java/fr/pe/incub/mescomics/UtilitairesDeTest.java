@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class UtilitairesDeTest {
 
@@ -136,11 +137,11 @@ public class UtilitairesDeTest {
         return new Numero("Strange",1, LocalDate.of(1970, 1, 1));
     }
 
-    public RevueDAO creeUneRevueDAOStrange() {
-        return new RevueDAO("Strange", 20, "Lug", false);
+    public Optional<RevueDAO> creeUneRevueDAOStrange() {
+        return Optional.of(new RevueDAO("Strange", 20, "Lug", false));
     }
 
-    public NumeroDAO creeUnPremierNumeroDAODeStrange() {
-        return new NumeroDAO("Strange",1, LocalDate.of(1970, 1, 1));
+    public Optional<NumeroDAO> creeUnPremierNumeroDAODeStrange() {
+        return Optional.of(new NumeroDAO("Strange",1, LocalDate.of(1970, 1, 1)));
     }
 }

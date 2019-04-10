@@ -1,6 +1,5 @@
 package fr.pe.incub.mescomics.referentiel.infrastructure;
 
-import fr.pe.incub.livingdoc.glossaire.Glossary;
 import fr.pe.incub.mescomics.referentiel.domaine.exception.ParutionRevueTermineeException;
 
 import javax.persistence.Entity;
@@ -8,10 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Objects;
 
-@Glossary
-/**
- * Une parution sortant régulièrement (généralement mensuellement) et relatant les aventures de un ou plusieurs héros.
- */
 @Entity
 public class RevueDAO {
     @Id

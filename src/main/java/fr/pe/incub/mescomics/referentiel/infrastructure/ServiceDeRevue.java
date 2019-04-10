@@ -19,12 +19,18 @@ public class ServiceDeRevue {
     }
 
     public Revue retrouveLaRevuePourCeTitre(String titre) {
-        RevueDAO revueDAO = entrepotDeRevues.findOne(titre);
+        String identifiantDeLaRevue = retrouveLIdentifiantDuneRevueParSonTitre(titre);
+        RevueDAO revueDAO = entrepotDeRevues.findById(identifiantDeLaRevue).get();
         return new Revue(revueDAO.titre, revueDAO.recupereLeNombreDeNumeros(), revueDAO.nomDeLEditeur, revueDAO.encoreDesNumerosAParaitre());
     }
 
     public Numero retrouveLePremierNumeroPourCetteRevue(Revue revue) {
-        NumeroDAO numeroDAO = entrepotDeNumeros.findOne(revue.titre + "-1");
+        String identifiantDeLaRevue = retrouveLIdentifiantDuneRevueParSonTitre(revue.titre);
+        NumeroDAO numeroDAO = entrepotDeNumeros.findById(identifiantDeLaRevue).get();
         return new Numero(numeroDAO.nomDeLaRevue, numeroDAO.numeroDansLaSerie, numeroDAO.dateDeParution);
+    }
+
+    private String retrouveLIdentifiantDuneRevueParSonTitre(String titre) {
+        return titre + "-id";
     }
 }

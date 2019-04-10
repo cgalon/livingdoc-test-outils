@@ -10,12 +10,11 @@ import java.util.List;
 
 public class CreateurDeListeDAchat {
 
-    @Autowired
     private RecuperateurDeComicsDeMaCollection recuperateurDeMaCollectionDeComics;
 
-    @Autowired
     private RecuperateurDeRevueReferencee recuperateurDeRevueReferencee;
 
+    @Autowired
     public CreateurDeListeDAchat(RecuperateurDeComicsDeMaCollection recuperateurDeMaCollectionDeComics, RecuperateurDeRevueReferencee recuperateurDeRevueReferencee) {
         this.recuperateurDeMaCollectionDeComics = recuperateurDeMaCollectionDeComics;
         this.recuperateurDeRevueReferencee = recuperateurDeRevueReferencee;
