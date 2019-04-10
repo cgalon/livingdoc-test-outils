@@ -1,23 +1,26 @@
-= BDD et tests
+== BDD et les tests
 
 Le BDD permet de définir les intentions en définissant un contexte, des scénarios et des exemples concrets
 
-* Gerkin comme langage de support
-** Permet d'avoir un langage naturel et métier sans bruit technique partagé entre les fonctionnels et les développeurs
-** Ne doit pas être redondant avec le code
-* Cucumber permet d'effectuer la réconciliation entre le métier et le code
-** Permet de tester la documentation (et les specs)
-** En utilisant les bonnes conventions, permet de générer du langage naturel
-* Une approche un peu plus orientée développeurs : Serenity ou JGiven
-** Démarche inverse, on part du code pour générer les specs compréhensibles par le métier
-** Générent des rapports en langage naturel sous forme de site Web
-** Permettent de coder des tests en Java
-** Refactorable
-** Les rapports ont plusieurs avantages
-*** Beaux et propres
-*** Transparence totale.
-*** Peuvent servir de base de communication avec les fonctionnels
+. Gerkin comme langage de support
+* Permet d'avoir un langage naturel et métier sans bruit technique partagé entre les fonctionnels et les développeurs
+* Ne doit pas être redondant avec le code
 
-.TDD
-CAUTION: TODO - A préciser
+. Cucumber permet d'effectuer la réconciliation entre le métier et le code
+* Permet de tester la documentation (et les specs)
+* En utilisant les bonnes conventions, permet de générer du langage naturel
 
+. Une approche un peu plus orientée développeurs : Serenity ou JGiven
+* Démarche inverse, on part du code pour générer les specs compréhensibles par le métier
+* Générent des rapports en langage naturel sous forme de site Web
+* Permettent de coder des tests en Java
+* Refactorable
+* Les rapports ont plusieurs avantages
+** Beaux et propres
+** Transparence totale.
+** Peuvent servir de base de communication avec les fonctionnels
+
+. Le TDD permet également de définir les intentions du code mais à un niveau plus fin
+* Les bénéfices du TDD sont déjà connus
+* Permet d'affiner les spécifications
+* Clean Code : Robert Martin

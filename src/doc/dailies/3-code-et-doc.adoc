@@ -1,4 +1,4 @@
-= Le code c'est la doc
+== Le code c'est la doc
 
 Il doit faire ressortir les notions métier (DDD)
 
@@ -29,6 +29,3 @@ La doc doit être générée (et disponible) à chaque build
 Si c'est trop dur de générer de la doc --> signal d'alerte
 
 Pair programming / mod programming : autre forme de documentation
-
-Clean Code : Robert Martin
-

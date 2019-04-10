@@ -1,4 +1,4 @@
-= Les langages et les outils
+== Les langages et les outils
 
 Permet de mettre sa doc en conf et de voir les différences
 
@@ -52,4 +52,5 @@ Tous ces outils sont packagés dans une seule image Docker
 * reveal.js
 ** Pour coder sa présentation en HTML/CSS ou en Markdown
 ** Il existe de nombreux plugins
-
+* D3.js
+** Data Driven Documents

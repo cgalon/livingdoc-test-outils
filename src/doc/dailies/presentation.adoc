@@ -1,0 +1,84 @@
+= Living Documentation - Introduction
+:experimental: 
+:pdf-page-size: 9in x 6in 
+
+== Un sujet cool : La documentation!
+
+.Une bonne documentation est une documentation vivante.
+- Créée sans effort
+- Collaborative
+- FIABLE!
+
+Un but : La transmission du savoir
+
+2 impératifs : Pour qui? Pourquoi faire?
+
+Le gourou de la Living Documentation : Cyrille Martraire
+
+La fête à DD
+
+*La doc doit être générée (et disponible) à chaque build*
+
+<<<
+
+== Les concepts
+
+*Une doc doit répondre à un besoin et avoir une cible.*
+
+.Pérennité de la documentation
+* Longue (Evergreen document)
+* Moyenne
+* Courte
+
+.Les outils :
+* CMS
+* Wikis
+* Frameworks de blogging
+* Frameworks de présentation
+
+.Très lié au DDD
+* L'ubiquitous langage
+* Les bounded contexts
+
+<<<
+
+== Les langages et les outils
+
+On se focalise sur le fond et pas sur la forme.
+
+.Plusieurs types de langages:
+* Langages de mise en forme des données : XML, JSON, YAML, RAML --> Un bon début
+* Langages de balisages : SGML, HTML --> Pas top, on se préoccupe de la forme
+
+.Les langages dédiés à la doc
+* Markdown
+* Asciidoc le plus évolué :
+**Pour les diagrammes :
+*** Ditaa : Pour faire des diagrammes en mode texte
+*** Graphviz
+*** PlantUML
+
+.Pour les présentations :
+* Reveal.js
+* D3.js
+
+<<<
+
+== Le code c'est la doc
+
+*Le code est une specification dont on peut tirer de la documentation!*
+
+Il doit faire ressortir les notions métier (DDD)
+
+Le code doit être expressif
+
+On peut/doit générer de la doc à partir du code
+
+.Le BDD permet de définir les intentions en définissant un contexte, des scénarios et des exemples concrets.
+* Gerkin comme langage de support
+* Cucumber permet d'effectuer la réconciliation entre le métier et le code
+* Une approche un peu plus orientée développeurs : Serenity ou JGiven
+
+Rappel : Le TDD n'est plus vraiment une option
+
+Pair programming / mod programming : autre forme de documentation

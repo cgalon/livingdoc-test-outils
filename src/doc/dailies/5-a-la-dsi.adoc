@@ -1,4 +1,4 @@
-= A la DSI
+== A la DSI
 
 .Clean Code
 * Pas une option, c'est notre boulot

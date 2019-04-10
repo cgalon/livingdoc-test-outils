@@ -58,3 +58,13 @@ Une doc doit répondre à 2 impératifs : Pour qui? Pourquoi faire?
 
 But de ces 5 jours : Vous montrer que faire de la doc, c'est cool!
 
+include::1-concepts.adoc[]
+
+include::2-langages-et-outils.adoc[]
+
+include::3-code-et-doc.adoc[]
+
+include::4-bdd-et-tests.adoc[]
+
+include::5-a-la-dsi.adoc[]
+
