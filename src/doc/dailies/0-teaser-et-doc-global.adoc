@@ -1,4 +1,7 @@
-= Teaser
+= Living Documentation : Dailies
+
+
+== Le teaser
 
 Un sujet cool : La documentation!
 
@@ -58,13 +61,13 @@ Une doc doit répondre à 2 impératifs : Pour qui? Pourquoi faire?
 
 But de ces 5 jours : Vous montrer que faire de la doc, c'est cool!
 
-include::1-concepts.adoc[]
+include::includes/1-concepts.adoc[]
 
-include::2-langages-et-outils.adoc[]
+include::includes/2-langages-et-outils.adoc[]
 
-include::3-code-et-doc.adoc[]
+include::includes/3-code-et-doc.adoc[]
 
-include::4-bdd-et-tests.adoc[]
+include::includes/4-bdd-et-tests.adoc[]
 
-include::5-a-la-dsi.adoc[]
+include::includes/5-a-la-dsi.adoc[]
 
