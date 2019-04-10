@@ -1,5 +1,5 @@
 = Living Documentation : Dailies
-
+:experimental:
 
 == Le teaser
 
@@ -61,13 +61,23 @@ Une doc doit répondre à 2 impératifs : Pour qui? Pourquoi faire?
 
 But de ces 5 jours : Vous montrer que faire de la doc, c'est cool!
 
+<<<
+
 include::includes/1-concepts.adoc[]
+
+<<<
 
 include::includes/2-langages-et-outils.adoc[]
 
+<<<
+
 include::includes/3-code-et-doc.adoc[]
 
+<<<
+
 include::includes/4-bdd-et-tests.adoc[]
+
+<<<
 
 include::includes/5-a-la-dsi.adoc[]
 

@@ -44,23 +44,39 @@ La fête à DD
 
 == Les langages et les outils
 
+Une première étape : Coder sa documentation
 On se focalise sur le fond et pas sur la forme.
 
 .Plusieurs types de langages:
 * Langages de mise en forme des données : XML, JSON, YAML, RAML --> Un bon début
 * Langages de balisages : SGML, HTML --> Pas top, on se préoccupe de la forme
 
-.Les langages dédiés à la doc
-* Markdown
-* Asciidoc le plus évolué :
-**Pour les diagrammes :
-*** Ditaa : Pour faire des diagrammes en mode texte
-*** Graphviz
-*** PlantUML
-
 .Pour les présentations :
 * Reveal.js
 * D3.js
+
+<<<
+
+== Les langages dédiés à la documentation
+
+.Markdown
+* Le plus répandu
+* Mises en formes basiques
+* Pas le plus puissant
+
+.Asciidoc le plus évolué :
+* Plus de possibilités de mise en forme
+* Extraction de bout de code source (attention au refactoring)
+* Génération de diagrammes
+* Possibilité de changer la feuille de style
+* Génération en PDF, HTML, EPUB
+
+.Pour les diagrammes :
+* Ditaa : Pour faire des diagrammes en mode texte
+* Graphviz : Tous types de diagrammes
+* PlantUML : Diagrammes UML générés à partir de texte
+
+Tous ces outils sont packagés dans une seule image Docker
 
 <<<
 
