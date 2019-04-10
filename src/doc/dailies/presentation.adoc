@@ -59,15 +59,13 @@ On se focalise sur le fond et pas sur la forme.
 
 == Les langages dédiés à la documentation
 
-.Markdown
-* Le plus répandu
+.Markdown : Le plus répandu
 * Mises en formes basiques
 * Pas le plus puissant
 
-.Asciidoc le plus évolué :
+.Asciidoc : Le plus évolué
 * Plus de possibilités de mise en forme
 * Extraction de bout de code source (attention au refactoring)
-* Génération de diagrammes
 * Possibilité de changer la feuille de style
 * Génération en PDF, HTML, EPUB
 
@@ -76,7 +74,7 @@ On se focalise sur le fond et pas sur la forme.
 * Graphviz : Tous types de diagrammes
 * PlantUML : Diagrammes UML générés à partir de texte
 
-Tous ces outils sont packagés dans une seule image Docker
+Image Docker Asciidoctor très complète.
 
 <<<
 
