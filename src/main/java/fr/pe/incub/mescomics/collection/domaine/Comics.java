@@ -1,6 +1,8 @@
 package fr.pe.incub.mescomics.collection.domaine;
 
 import fr.pe.incub.livingdoc.glossaire.Glossary;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -11,11 +13,15 @@ import java.util.Objects;
  * Le numéro d'une revue détenu par l'utilisateur.
  */
 @Entity
+@ApiModel(description = "Un numéro de comics possédé par l'utilisateur.")
 public class Comics {
 
     @Id
+    @ApiModelProperty(notes = "Titre de la revue")
     public final String titreDeLaRevue;
+    @ApiModelProperty(notes = "Numéro de parution")
     public final int numero;
+    @ApiModelProperty(notes = "Prix du numéro d'occasion")
     public int valeurEnEuros;
 
     public Comics(String nomDeLaRevue, int numero) {

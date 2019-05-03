@@ -224,3 +224,34 @@ Permet de générer un rapport d'exécution de tests de composants REST écrits 
 - Mise en forme minimale.
 - Besoin d'un autre fichier .adoc pour les agréger.
 - Permet de faire un rapport HTML ou PDF pas mal si on passe un peu de temps pour agréger tous les fichiers en sortie.
+
+### Swagger UI
+
+Permet de générer une documentation de ressources REST.
+
+[Site](https://swagger.io/tools/swagger-ui/)
+[Pour débuter](https://springframework.guru/spring-boot-restful-api-documentation-with-swagger-2/)
+
+```xml
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger2</artifactId>
+    <version>2.8.0</version>
+    <scope>compile</scope>
+</dependency>
+
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger-ui</artifactId>
+    <version>2.8.0</version>
+    <scope>compile</scope>
+</dependency>
+```
+
+**_Commentaires :_**  
+
+- Nécessite l'ajout d'annotations spécifiques à Swagger.
+- Nécessite que l'application fonctionne.
+- Génère une documentation très claire et très agréable à consulter.
+- La documentation produite permet de tester les ressources.
+- Ne produit que de la documentation de ressources REST, pas documentation "métier".
