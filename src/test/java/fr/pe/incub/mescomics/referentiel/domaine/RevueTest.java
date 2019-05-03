@@ -1,9 +1,10 @@
 package fr.pe.incub.mescomics.referentiel.domaine;
 
 import fr.pe.incub.mescomics.referentiel.domaine.exception.ParutionRevueTermineeException;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class RevueTest {
 
@@ -26,11 +27,13 @@ public class RevueTest {
         assertEquals(55, uneRevue.recupereLeNombreDeNumeros());
     }
 
-    @Test(expected = ParutionRevueTermineeException.class)
+    @Test
     public void doitRetournerUneExceptionSiOnModifieLeNombreDeNumerosDUneRevueQuiNeParaitPlus() throws ParutionRevueTermineeException {
         Revue uneRevue = new Revue("Strange", 228, "Lug", false);
 
-        uneRevue.modifieLeNombreDeNumeros(229);
+        assertThrows(ParutionRevueTermineeException.class, () -> {
+            uneRevue.modifieLeNombreDeNumeros(229);
+        });
     }
 
 

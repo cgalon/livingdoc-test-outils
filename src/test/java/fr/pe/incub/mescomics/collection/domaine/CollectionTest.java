@@ -1,13 +1,13 @@
 package fr.pe.incub.mescomics.collection.domaine;
 
 import fr.pe.incub.mescomics.UtilitairesDeTest;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CollectionTest {
 

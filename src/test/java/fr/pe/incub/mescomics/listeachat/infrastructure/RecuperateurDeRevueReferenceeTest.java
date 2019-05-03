@@ -3,17 +3,18 @@ package fr.pe.incub.mescomics.listeachat.infrastructure;
 import fr.pe.incub.mescomics.UtilitairesDeTest;
 import fr.pe.incub.mescomics.referentiel.api.ReferentielDeRevues;
 import fr.pe.incub.mescomics.referentiel.domaine.Revue;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Optional;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.when;
 
-@RunWith(MockitoJUnitRunner.class)
+@ExtendWith(MockitoExtension.class)
 public class RecuperateurDeRevueReferenceeTest {
 
     @Mock

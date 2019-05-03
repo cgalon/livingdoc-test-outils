@@ -1,11 +1,12 @@
 package fr.pe.incub.mescomics.referentiel.domaine;
 
 import fr.pe.incub.mescomics.referentiel.domaine.exception.EpisodeNonTrouveException;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class NumeroTest {
 
@@ -42,7 +43,7 @@ public class NumeroTest {
         assertEquals(unEpisode, episodeIronMan);
     }
 
-    @Test(expected = EpisodeNonTrouveException.class)
+    @Test
     public void doitRemonterUneExceptionSiLaRechercheDUnEpisodeParHerosNeFonctionnePas() throws EpisodeNonTrouveException {
         Numero unNumero = creeUnNumeroVide();
         Episode unEpisode = new Episode("Iron Man", "Iron Man est né", "Don Heck");
@@ -51,7 +52,9 @@ public class NumeroTest {
         unNumero.ajouteUnEpisode(unEpisode);
         unNumero.ajouteUnEpisode(unAutreEpisode);
 
-        Episode episodeIronMan = unNumero.recupereUnEpisodeParLeNomDuHeros("Spiderman");
+        assertThrows(EpisodeNonTrouveException.class, () -> {
+            Episode episodeIronMan = unNumero.recupereUnEpisodeParLeNomDuHeros("Spiderman");
+        });
     }
 
     private Numero creeUnNumeroVide() {

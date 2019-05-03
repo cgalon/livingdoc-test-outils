@@ -8,7 +8,6 @@ import fr.pe.incub.mescomics.referentiel.domaine.Numero;
 import fr.pe.incub.mescomics.referentiel.domaine.Revue;
 import fr.pe.incub.mescomics.referentiel.infrastructure.NumeroDAO;
 import fr.pe.incub.mescomics.referentiel.infrastructure.RevueDAO;
-import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
