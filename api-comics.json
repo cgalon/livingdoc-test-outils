@@ -1,0 +1,338 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Application d'exemple de génération de documentation",
+    "version": "1.0.0",
+    "title": "Gestion d'une collection de comics",
+    "contact": {
+      "name": "Christophe Galon",
+      "url": "http://incubateur.git-scm.pole-emploi.intra",
+      "email": "christophe.galon@pole-emploi.fr"
+    }
+  },
+  "host": "localhost:8080",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "ma-collection-de-comics-controller",
+      "description": "Ressource de gestion de la collection de Comics détenus par l'utilisateur."
+    },
+    {
+      "name": "referentiel-de-revues-controller",
+      "description": "Ressource de gestion du référentiel de Comics. Permet d'ajouter ou de supprimer des numéros."
+    }
+  ],
+  "paths": {
+    "/collection/titre": {
+      "get": {
+        "tags": [
+          "ma-collection-de-comics-controller"
+        ],
+        "summary": "Retourne une liste de comics pour la titre passé en paramètre.",
+        "operationId": "retourneMaListeDeComicsPourCeTitreUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "titre",
+            "in": "query",
+            "description": "titre",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Liste trouvée",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Comics"
+              }
+            }
+          },
+          "401": {
+            "description": "Opération non autorisée"
+          },
+          "403": {
+            "description": "Opération interdite"
+          },
+          "404": {
+            "description": "Pas de comics trouvé pour ce titre"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ma-collection-de-comics-controller"
+        ],
+        "summary": "Supprime la liste de comics correspondants au titre passé en paramètre.",
+        "operationId": "supprimeUneListeDeComicsPourCeTitreUsingDELETE",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "titre",
+            "in": "query",
+            "description": "titre",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Suppression effectuée avec succès"
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Opération non autorisée"
+          },
+          "403": {
+            "description": "Opération interdite"
+          },
+          "404": {
+            "description": "Pas de comics à supprimer pour ce titre"
+          }
+        }
+      }
+    },
+    "/revue": {
+      "get": {
+        "tags": [
+          "referentiel-de-revues-controller"
+        ],
+        "summary": "Retourne une revue correspondante au titre passé en paramètre.",
+        "operationId": "retrouveLaRevuePourCeTitreUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "titre",
+            "in": "query",
+            "description": "titre",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Recherche effectuée avec succès.",
+            "schema": {
+              "$ref": "#/definitions/Optional«Revue»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Pas de revue référencée pour le titre spécifié."
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "referentiel-de-revues-controller"
+        ],
+        "summary": "Modifie le nombre de numeros d'une revue.",
+        "operationId": "modifieLeNombreDeNumerosDUnerevueUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "nouveauNombreDeNumeros",
+            "in": "query",
+            "description": "nouveauNombreDeNumeros",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Modification effectuée avec succès."
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "referentiel-de-revues-controller"
+        ],
+        "summary": "Supprime une revue correspondante au titre passé en paramètre.",
+        "operationId": "supprimeLaRevuePourCeTitreUsingDELETE",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "titre",
+            "in": "query",
+            "description": "titre",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Suppression effectuée avec succès."
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/revue/{titre}/numero": {
+      "get": {
+        "tags": [
+          "referentiel-de-revues-controller"
+        ],
+        "summary": "Retourne le premier numero d'une revue correspondante au titre passé en paramètre.",
+        "operationId": "retrouveLePremierNumeroPourCetteRevueUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "titre",
+            "in": "path",
+            "description": "titre",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Recherche effectuée avec succès.",
+            "schema": {
+              "$ref": "#/definitions/Optional«Numero»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Comics": {
+      "type": "object",
+      "properties": {
+        "numero": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Numéro de parution",
+          "allowEmptyValue": false
+        },
+        "titreDeLaRevue": {
+          "type": "string",
+          "description": "Titre de la revue",
+          "allowEmptyValue": false
+        },
+        "valeurEnEuros": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Prix du numéro d'occasion",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "Comics",
+      "description": "Un numéro de comics possédé par l'utilisateur."
+    },
+    "Numero": {
+      "type": "object",
+      "properties": {
+        "dateDeParution": {
+          "type": "string",
+          "format": "date",
+          "description": "Date de parution du numéro",
+          "allowEmptyValue": false
+        },
+        "nomDeLaRevue": {
+          "type": "string",
+          "description": "Titre de la revue",
+          "allowEmptyValue": false
+        },
+        "numeroDansLaSerie": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Numéro de la revue",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "Numero",
+      "description": "Les informations particulière à un numéro d'une revue."
+    },
+    "Optional«Numero»": {
+      "type": "object",
+      "properties": {
+        "present": {
+          "type": "boolean"
+        }
+      },
+      "title": "Optional«Numero»"
+    },
+    "Optional«Revue»": {
+      "type": "object",
+      "properties": {
+        "present": {
+          "type": "boolean"
+        }
+      },
+      "title": "Optional«Revue»"
+    },
+    "Revue": {
+      "type": "object",
+      "properties": {
+        "nomDeLEditeur": {
+          "type": "string",
+          "description": "Nom de l'éditeur de la revue",
+          "allowEmptyValue": false
+        },
+        "titre": {
+          "type": "string",
+          "description": "Titre de la revue",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "Revue",
+      "description": "Les informations d'une revue de référence."
+    }
+  }
+}

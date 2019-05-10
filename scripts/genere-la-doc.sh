@@ -4,7 +4,8 @@ mvn verify -P genere-la-doc
 mvn surefire-report:report
 cp target/site/surefire-report.html target/generated-docs
 
-raml2html livingdoc.raml > target/generated-docs/livingdoc-api.html
+raml2html api-securisee.raml > target/generated-docs/raml-api-securisee.html
+raml2html api-comics.raml > target/generated-docs/raml-api-comics.html
 
 node scripts/release-notes.js > target/generated-docs/changelog-cdv.json
 

@@ -1,0 +1,247 @@
+#%RAML 1.0
+title: Gestion d'une collection de comics
+description: Application d'exemple de génération de documentation
+version: 1.0.0
+(oas-info):
+  contact:
+    name: Christophe Galon
+    url: 'http://incubateur.git-scm.pole-emploi.intra'
+    email: christophe.galon@pole-emploi.fr
+annotationTypes:
+  oas-info:
+    properties:
+      termsOfService?: string
+      contact?:
+        properties:
+          name?: string
+          url?: string
+          email?: string
+      license?:
+        properties:
+          name?: string
+          url?: string
+    allowedTargets: API
+  oas-tags-definition:
+    allowedTargets: API
+    type: array
+    items:
+      properties:
+        name: string
+        description?: string
+        externalDocs?:
+          properties:
+            url: string
+            description?: string
+  oas-allowEmptyValue:
+    type: boolean
+  oas-schema-title:
+    type: string
+    allowedTargets: TypeDeclaration
+  oas-definition-name:
+    type: string
+    allowedTargets: TypeDeclaration
+  oas-summary:
+    type: string
+    allowedTargets: Method
+  oas-tags:
+    type: 'string[]'
+    allowedTargets: Method
+(oas-tags-definition):
+  - name: ma-collection-de-comics-controller
+    description: Ressource de gestion de la collection de Comics détenus par l'utilisateur.
+  - name: referentiel-de-revues-controller
+    description: Ressource de gestion du référentiel de Comics. Permet d'ajouter ou de supprimer des numéros.
+baseUri: 'http://localhost:8080/'
+types:
+  Comics:
+    description: Un numéro de comics possédé par l'utilisateur.
+    type: object
+    properties:
+      numero:
+        description: Numéro de parution
+        type: integer
+        format: int32
+        (oas-allowEmptyValue): false
+      titreDeLaRevue:
+        description: Titre de la revue
+        type: string
+        (oas-allowEmptyValue): false
+      valeurEnEuros:
+        description: Prix du numéro d'occasion
+        type: integer
+        format: int32
+        (oas-allowEmptyValue): false
+    (oas-schema-title): Comics
+  Numero:
+    description: Les informations particulière à un numéro d'une revue.
+    type: object
+    properties:
+      dateDeParution:
+        description: Date de parution du numéro
+        type: date-only
+        (oas-allowEmptyValue): false
+      nomDeLaRevue:
+        description: Titre de la revue
+        type: string
+        (oas-allowEmptyValue): false
+      numeroDansLaSerie:
+        description: Numéro de la revue
+        type: integer
+        format: int32
+        (oas-allowEmptyValue): false
+    (oas-schema-title): Numero
+  Optional_Numero_:
+    type: object
+    properties:
+      present:
+        type: boolean
+    (oas-schema-title): Optional«Numero»
+    (oas-definition-name): Optional«Numero»
+  Optional_Revue_:
+    type: object
+    properties:
+      present:
+        type: boolean
+    (oas-schema-title): Optional«Revue»
+    (oas-definition-name): Optional«Revue»
+  Revue:
+    description: Les informations d'une revue de référence.
+    type: object
+    properties:
+      nomDeLEditeur:
+        description: Nom de l'éditeur de la revue
+        type: string
+        (oas-allowEmptyValue): false
+      titre:
+        description: Titre de la revue
+        type: string
+        (oas-allowEmptyValue): false
+    (oas-schema-title): Revue
+/revue:
+  get:
+    displayName: retrouveLaRevuePourCeTitreUsingGET
+    responses:
+      '200':
+        description: Recherche effectuée avec succès.
+        body:
+          '*/*':
+            type: Optional_Revue_
+      '401':
+        description: Unauthorized
+      '403':
+        description: Forbidden
+      '404':
+        description: Pas de revue référencée pour le titre spécifié.
+    queryParameters:
+      titre:
+        description: titre
+        type: string
+    (oas-summary): Retourne une revue correspondante au titre passé en paramètre.
+    (oas-tags):
+      - referentiel-de-revues-controller
+  put:
+    displayName: modifieLeNombreDeNumerosDUnerevueUsingPUT
+    responses:
+      '200':
+        description: Modification effectuée avec succès.
+      '201':
+        description: Created
+      '401':
+        description: Unauthorized
+      '403':
+        description: Forbidden
+      '404':
+        description: Not Found
+    queryParameters:
+      nouveauNombreDeNumeros:
+        description: nouveauNombreDeNumeros
+        type: integer
+        format: int32
+    (oas-summary): Modifie le nombre de numeros d'une revue.
+    (oas-tags):
+      - referentiel-de-revues-controller
+  delete:
+    displayName: supprimeLaRevuePourCeTitreUsingDELETE
+    responses:
+      '200':
+        description: Suppression effectuée avec succès.
+      '204':
+        description: No Content
+      '401':
+        description: Unauthorized
+      '403':
+        description: Forbidden
+    queryParameters:
+      titre:
+        description: titre
+        type: string
+    (oas-summary): Supprime une revue correspondante au titre passé en paramètre.
+    (oas-tags):
+      - referentiel-de-revues-controller
+  '/{titre}':
+    /numero:
+      get:
+        displayName: retrouveLePremierNumeroPourCetteRevueUsingGET
+        responses:
+          '200':
+            description: Recherche effectuée avec succès.
+            body:
+              '*/*':
+                type: Optional_Numero_
+          '401':
+            description: Unauthorized
+          '403':
+            description: Forbidden
+          '404':
+            description: Not Found
+        (oas-summary): Retourne le premier numero d'une revue correspondante au titre passé en paramètre.
+        (oas-tags):
+          - referentiel-de-revues-controller
+    uriParameters:
+      titre:
+        description: titre
+        type: string
+/collection/titre:
+  get:
+    displayName: retourneMaListeDeComicsPourCeTitreUsingGET
+    responses:
+      '200':
+        description: Liste trouvée
+        body:
+          '*/*':
+            type: array
+            items:
+              type: Comics
+      '401':
+        description: Opération non autorisée
+      '403':
+        description: Opération interdite
+      '404':
+        description: Pas de comics trouvé pour ce titre
+    queryParameters:
+      titre:
+        description: titre
+        type: string
+    (oas-summary): Retourne une liste de comics pour la titre passé en paramètre.
+    (oas-tags):
+      - ma-collection-de-comics-controller
+  delete:
+    displayName: supprimeUneListeDeComicsPourCeTitreUsingDELETE
+    responses:
+      '200':
+        description: Suppression effectuée avec succès
+      '204':
+        description: No Content
+      '401':
+        description: Opération non autorisée
+      '403':
+        description: Opération interdite
+      '404':
+        description: Pas de comics à supprimer pour ce titre
+    queryParameters:
+      titre:
+        description: titre
+        type: string
+    (oas-summary): Supprime la liste de comics correspondants au titre passé en paramètre.
+    (oas-tags):
+      - ma-collection-de-comics-controller
