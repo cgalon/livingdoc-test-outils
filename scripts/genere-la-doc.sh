@@ -19,3 +19,5 @@ cp $PWD/src/doc/asciidoctor/*.png target/generated-docs/
 
 cp $PWD/src/doc/index/index-test-spring-restdocs.adoc target/generated-docs/test-spring-restdocs
 docker run --rm -v $PWD/target/generated-docs/test-spring-restdocs:/documents/ asciidoctor/docker-asciidoctor asciidoctor *.adoc
+
+firefox target/generated-docs/index.html &
