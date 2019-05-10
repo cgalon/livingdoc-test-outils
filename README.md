@@ -201,9 +201,11 @@ Permet de générer un diagramme basé sur l'architecture hexagonale pour aider 
 raml2html livingdoc.raml > livingdoc-api.html
 ```
 
+[Un convertisseur RAML <--> OAS en ligne](https://mulesoft.github.io/oas-raml-converter/)
 **_Commentaires :_**  
 
 - Rendu sympa sur une seule page HTML.
+- Le format RAML dispose d'une grosse communauté et propose de nombreux outils ([RAML projects](https://raml.org/projects))
 
 ### Module de génération de rapports de test de ressources REST Spring RestDocs
 
