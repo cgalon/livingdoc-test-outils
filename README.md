@@ -257,3 +257,25 @@ Permet de générer une documentation de ressources REST.
 - Génère une documentation très claire et très agréable à consulter.
 - La documentation produite permet de tester les ressources.
 - Ne produit que de la documentation de ressources REST, pas documentation "métier".
+
+### QDox
+
+API donnant accès au contenu de classes Java d'un répertoire.
+
+[Site](https://github.com/paul-hammant/qdox)
+
+```xml
+<dependency>
+    <artifactId>qdox</artifactId>
+    <groupId>com.thoughtworks.qdox</groupId>
+    <version>2.0-M10</version>
+</dependency>
+```
+
+**_Commentaires :_**  
+
+- Lit les fichiers sources du projet.
+- Permet d'extraire toutes les informations d'une classe sous forme d'objets Java.
+- API très simple à utiliser et très complète.
+- Pas de formattage en sortie. chacun doit se débrouiller avec les informations brutes.
+- Très intéressant pour générer de la doc à partir de code source.

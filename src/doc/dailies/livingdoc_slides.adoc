@@ -17,8 +17,6 @@ Le gourou de la Living Documentation : Cyrille Martraire
 
 La fête à DD
 
-*La doc doit être générée (et disponible) à chaque build*
-
 <<<
 
 == Les concepts
@@ -86,7 +84,7 @@ Il doit faire ressortir les notions métier (DDD)
 
 Le code doit être expressif
 
-On peut/doit générer de la doc à partir du code
+*La doc doit être générée (et disponible) à chaque build*
 
 .Le BDD permet de définir les intentions en définissant un contexte, des scénarios et des exemples concrets.
 * Gerkin comme langage de support
@@ -96,3 +94,15 @@ On peut/doit générer de la doc à partir du code
 Rappel : Le TDD n'est plus vraiment une option
 
 Pair programming / mod programming : autre forme de documentation
+
+<<<
+
+== Quelques outils intéressants
+
+- Projets livingdoc sur GitHub
+
+- RAML (et son éco-système)
+
+- Swagger (et son éco-système)
+
+- Antora

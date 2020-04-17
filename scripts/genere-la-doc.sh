@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-mvn verify -P genere-la-doc
+mvn verify -P documentation
 
 mvn surefire-report:report
 cp target/site/surefire-report.html target/generated-docs
@@ -21,3 +21,5 @@ cp $PWD/src/doc/index/index-test-spring-restdocs.adoc target/generated-docs/test
 docker run --rm -v $PWD/target/generated-docs/test-spring-restdocs:/documents/ asciidoctor/docker-asciidoctor asciidoctor *.adoc
 
 firefox target/generated-docs/index.html &
+
+java -cp target/livingdoc-jar-with-dependencies.jar fr.pe.incub.livingdoc.qdox.ExplorateurDeClasses
