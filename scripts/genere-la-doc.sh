@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 mvn verify -P documentation
 
-mvn surefire-report:report
-cp target/site/surefire-report.html target/generated-docs
-
 raml2html api-securisee.raml > target/generated-docs/raml-api-securisee.html
 raml2html api-comics.raml > target/generated-docs/raml-api-comics.html
 
@@ -23,3 +20,7 @@ docker run --rm -v $PWD/target/generated-docs/test-spring-restdocs:/documents/ a
 firefox target/generated-docs/index.html &
 
 java -cp target/livingdoc-jar-with-dependencies.jar fr.pe.incub.livingdoc.qdox.ExplorateurDeClasses
+
+mvn site:site
+
+mvn io.qameta.allure:allure-maven:report -P documentation

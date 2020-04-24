@@ -272,10 +272,51 @@ API donnant accès au contenu de classes Java d'un répertoire.
 </dependency>
 ```
 
-**_Commentaires :_**  
+**_Commentaires :_**
 
 - Lit les fichiers sources du projet.
 - Permet d'extraire toutes les informations d'une classe sous forme d'objets Java.
 - API très simple à utiliser et très complète.
 - Pas de formattage en sortie. chacun doit se débrouiller avec les informations brutes.
 - Très intéressant pour générer de la doc à partir de code source.
+
+### Linkchecker
+
+Plugin Maven de vérification des liens HTML dans une arborescence.
+
+[Site](http://maven.apache.org/plugins/maven-linkcheck-plugin/)
+
+```xml
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-linkcheck-plugin</artifactId>
+    <version>1.2</version>
+    <configuration>
+        <baseURL>${project.build.directory}/generated-docs</baseURL>
+        <forceSite>false</forceSite>
+    </configuration>
+</plugin>
+```
+- Créer un rapport de test que l'on peut inclure dans un site généré par Maven.
+- Quelques soucis pour vérifier les liens externes (surement dû au proxy PE, à investiguer).
+- Peut être utile pour vérifier les liens d'une doc générée.
+
+### Allure
+
+Framework de mise en forme de rapports de test. Ici, test du plugin Maven pour les tests unitaires de Surefire.
+
+[Site](http://allure.qatools.ru/)
+
+```xml
+<plugin>
+    <groupId>io.qameta.allure</groupId>
+    <artifactId>allure-maven</artifactId>
+    <version>2.10.0</version>
+</plugin>
+```
+**_Commentaires :_**
+
+- Très belle mise en forme de rapports Surefire.
+- Ne lance pas les tests lui-même mais utilise les données générées.
+- Soucis de compatibilité (CORS) avec les navigateurs récents.
+- Fournit un petit serveur Web intégré pour répondre au problème des CORS.
