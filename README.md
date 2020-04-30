@@ -320,3 +320,16 @@ Framework de mise en forme de rapports de test. Ici, test du plugin Maven pour l
 - Ne lance pas les tests lui-même mais utilise les données générées.
 - Soucis de compatibilité (CORS) avec les navigateurs récents.
 - Fournit un petit serveur Web intégré pour répondre au problème des CORS.
+
+### Mermaid
+
+Bibliothèque JS de génération graphique de diagrammes à partir écrits en texte.
+
+[Site](https://mermaid-js.github.io/mermaid/#/) 
+
+**_Commentaires :_**
+
+- Très simple à utiliser (Juste une lib JS à ajouter dans une page HTML)
+- Graphiques très beaux et très propres
+- Syntaxe très simple à écrire ou à générer 
+- Même syntaxe que pour PlantUML pour les diagrammes UML

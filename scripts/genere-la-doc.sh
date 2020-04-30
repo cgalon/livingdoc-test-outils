@@ -24,3 +24,5 @@ java -cp target/livingdoc-jar-with-dependencies.jar fr.pe.incub.livingdoc.qdox.E
 mvn site:site
 
 mvn io.qameta.allure:allure-maven:report -P documentation
+
+cp -f $PWD/src/doc/mermaid/*.html target/generated-docs/
