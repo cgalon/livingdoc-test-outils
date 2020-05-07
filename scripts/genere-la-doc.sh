@@ -25,4 +25,4 @@ mvn site:site
 
 mvn io.qameta.allure:allure-maven:report -P documentation
 
-cp -f $PWD/src/doc/mermaid/*.html target/generated-docs/
+cp -f $PWD/src/doc/graphiques_js/*.html target/generated-docs/

@@ -1,0 +1,54 @@
+<!doctype html>
+<head>
+	<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-base.min.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="exemple-simple" style="width: 500px; height: 400px;"></div>
+<br>
+<h2>Le code Javascript</h2>
+<pre><code>
+    anychart.onDocumentLoad(function () {
+        // create an instance of a pie chart
+        var chart = anychart.pie();
+        // set the data
+        chart.data([
+            ["Organisation", 5],
+            ["Initialisation", 3],
+            ["Environnement", 6],
+            ["Test", 1],
+            ["Conteneurisation", 5],
+            ["Déploiement", 9]
+        ]);
+        // set chart title
+        chart.title("Les livrables TMJ-M par thème");
+        // set the container element
+        chart.container("exemple-simple");
+        // initiate chart display
+        chart.draw();
+    });
+</code></pre>
+
+<script>
+    anychart.onDocumentLoad(function () {
+        // create an instance of a pie chart
+        var chart = anychart.pie();
+        // set the data
+        chart.data([
+            ["Organisation", 5],
+            ["Initialisation", 3],
+            ["Environnement", 6],
+            ["Test", 1],
+            ["Conteneurisation", 5],
+            ["Déploiement", 9]
+        ]);
+        // set chart title
+        chart.title("Les livrables TMJ-M par thème");
+        // set the container element
+        chart.container("exemple-simple");
+        // initiate chart display
+        chart.draw();
+    });
+</script>
+
+</body>
+</html>

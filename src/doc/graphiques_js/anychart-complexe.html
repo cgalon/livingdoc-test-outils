@@ -1,0 +1,172 @@
+<!doctype html>
+<head>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-base.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-polar.min.js"></script>
+</head>
+<style>
+    html, body, #container {
+        width: 95%;
+        height: 95%;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<body>
+<div id="container"></div>
+<h2>Le code Javascript</h2>
+<pre><code>
+    anychart.onDocumentLoad(function () {
+
+    var stage = anychart.graphics.create("container");
+
+    // create variable for custom theme
+    var customTheme = {
+      "defaultFontSettings": {
+        "fontSize": 9
+      }
+    };
+    // apply custom theme
+    anychart.theme(customTheme);
+
+    var lesDonnees = [
+        ["Organisation", 5],
+        ["Initialisation", 3],
+        ["Environnement", 6],
+        ["Test", 1],
+        ["Conteneurisation", 5],
+        ["Déploiement", 9]
+    ];
+    var lesDonnees2 = [
+        ["Lundi 20/04", 132],
+        ["Mardi 21/04", 157],
+        ["Mercredi 22/04", 123],
+        ["Jeudi 23/04", 111],
+        ["Vendredi 24/04", 108]
+    ];
+
+    ////////////////////////
+    // Diagramme numéro 1 //
+    ////////////////////////
+    var chart_1 = anychart.polar();
+    chart_1.polygon(lesDonnees);
+    chart_1.xScale("ordinal");
+    chart_1.sortPointsByX(true);
+    chart_1.innerRadius(50);
+    chart_1.title("Les livrables TMJ-M par thème (Radar)");
+    chart_1.bounds(0, 0, "50%", "40%");
+    chart_1.container(stage);
+    chart_1.draw();
+
+    ////////////////////////
+    // Diagramme numéro 2 //
+    ////////////////////////
+    var chart_2 = anychart.pie();
+    chart_2.data(lesDonnees);
+    chart_2.title("Les livrables TMJ-M par thème (Camembert)");
+    chart_2.bounds("50%", 0, "50%", "40%");
+    chart_2.container(stage);
+    chart_2.draw();
+
+    ////////////////////////
+    // Diagramme numéro 3 //
+    ////////////////////////
+
+    var chart_3 = anychart.line();
+    chart_3.data(lesDonnees2);
+    chart_3.title("Visites sur le site TMJ  (Ligne)");
+    chart_3.bounds(0, "50%", "50%", "40%");
+    chart_3.container(stage);
+    chart_3.draw();
+
+    ////////////////////////
+    // Diagramme numéro 4 //
+    ////////////////////////
+
+    var chart_4 = anychart.column();
+    chart_4.data(lesDonnees2);
+    chart_4.title("Visites sur le site TMJ  (Colonnes)");
+    chart_4.bounds("50%", "50%", "50%", "40%");
+    chart_4.container(stage);
+    chart_4.draw();
+});
+</code></pre>
+
+<script>
+    anychart.onDocumentLoad(function () {
+
+    var stage = anychart.graphics.create("container");
+
+    // create variable for custom theme
+    var customTheme = {
+      "defaultFontSettings": {
+        "fontSize": 9
+      }
+    };
+    // apply custom theme
+    anychart.theme(customTheme);
+
+    var lesDonnees = [
+        ["Organisation", 5],
+        ["Initialisation", 3],
+        ["Environnement", 6],
+        ["Test", 1],
+        ["Conteneurisation", 5],
+        ["Déploiement", 9]
+    ];
+    var lesDonnees2 = [
+        ["Lundi 20/04", 132],
+        ["Mardi 21/04", 157],
+        ["Mercredi 22/04", 123],
+        ["Jeudi 23/04", 111],
+        ["Vendredi 24/04", 108]
+    ];
+
+    ////////////////////////
+    // Diagramme numéro 1 //
+    ////////////////////////
+    var chart_1 = anychart.polar();
+    chart_1.polygon(lesDonnees);
+    chart_1.xScale("ordinal");
+    chart_1.sortPointsByX(true);
+    chart_1.innerRadius(50);
+    chart_1.title("Les livrables TMJ-M par thème (Radar)");
+    chart_1.bounds(0, 0, "50%", "40%");
+    chart_1.container(stage);
+    chart_1.draw();
+
+    ////////////////////////
+    // Diagramme numéro 2 //
+    ////////////////////////
+    var chart_2 = anychart.pie();
+    chart_2.data(lesDonnees);
+    chart_2.title("Les livrables TMJ-M par thème (Camembert)");
+    chart_2.bounds("50%", 0, "50%", "40%");
+    chart_2.container(stage);
+    chart_2.draw();
+
+    ////////////////////////
+    // Diagramme numéro 3 //
+    ////////////////////////
+
+    var chart_3 = anychart.line();
+    chart_3.data(lesDonnees2);
+    chart_3.title("Visites sur le site TMJ  (Ligne)");
+    chart_3.bounds(0, "50%", "50%", "40%");
+    chart_3.container(stage);
+    chart_3.draw();
+
+    ////////////////////////
+    // Diagramme numéro 4 //
+    ////////////////////////
+
+    var chart_4 = anychart.column();
+    chart_4.data(lesDonnees2);
+    chart_4.title("Visites sur le site TMJ  (Colonnes)");
+    chart_4.bounds("50%", "50%", "50%", "40%");
+    chart_4.container(stage);
+    chart_4.draw();
+});
+</script>
+
+</body>
+</html>

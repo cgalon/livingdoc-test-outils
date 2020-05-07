@@ -333,3 +333,17 @@ Bibliothèque JS de génération graphique de diagrammes à partir écrits en te
 - Graphiques très beaux et très propres
 - Syntaxe très simple à écrire ou à générer 
 - Même syntaxe que pour PlantUML pour les diagrammes UML
+
+### Anychart
+
+Bibliothèque JS de génération graphique de diagrammes à partir de données en Javascript ou en JSON.
+
+[Site](https://www.anychart.com/) 
+
+**_Commentaires :_**
+
+- Très simple à utiliser (Juste une lib JS à ajouter dans une page HTML)
+- Graphiques très beaux et très propres
+- Beaucoup de styles de graphiques différents 
+- Un peu de JS à écrire
+- Pourrait aussi servir pour créer des tableaux de bord
