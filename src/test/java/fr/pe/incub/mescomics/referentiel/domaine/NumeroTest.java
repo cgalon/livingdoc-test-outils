@@ -53,7 +53,7 @@ public class NumeroTest {
         unNumero.ajouteUnEpisode(unAutreEpisode);
 
         assertThrows(EpisodeNonTrouveException.class, () -> {
-            Episode episodeIronMan = unNumero.recupereUnEpisodeParLeNomDuHeros("Spiderman");
+            unNumero.recupereUnEpisodeParLeNomDuHeros("Spiderman");
         });
     }
 

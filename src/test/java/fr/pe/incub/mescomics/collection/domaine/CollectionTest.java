@@ -14,7 +14,7 @@ public class CollectionTest {
     UtilitairesDeTest utilitairesDeTest = new UtilitairesDeTest();
 
     @Test
-    public void doitAjouterUnComicsALaCollection() {
+    public void doitDonnerLeNombreDeComicsDansLaCollection() {
         Collection maCollection = utilitairesDeTest.creeUneCollectionAvecUnComics();
 
         assertEquals(1, maCollection.recupereLeNombreDeComics());

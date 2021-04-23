@@ -347,3 +347,17 @@ Bibliothèque JS de génération graphique de diagrammes à partir de données e
 - Beaucoup de styles de graphiques différents 
 - Un peu de JS à écrire
 - Pourrait aussi servir pour créer des tableaux de bord
+
+### Cucumber
+
+Framework de test orienté BDD.
+
+[Site](https://cucumber.io/)
+
+**_Commentaires :_**
+
+- Tests lancés via un plugin Maven
+- Génère des rapports sobres mais propres et compréhensibles par tout le monde
+- Utilise des fichiers textes pour écrire les features testées
+- Les fichiers de features peuvent être repris par d'autres outils (cukedoctor, pickles...)
+

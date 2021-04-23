@@ -35,9 +35,24 @@ public class UtilitairesDeTest {
         return liste;
     }
 
+    public List<Comics> creeUneListeFinieDeComics(int nombreDeComics) {
+        List<Comics> liste = new ArrayList<>();
+        for (int i = 0; i < nombreDeComics; i++) {
+            liste.add(new Comics("Strange", i));
+        }
+        return liste;
+    }
+
     public Collection creeUneCollectionDeComics() {
         Collection maCollection = new Collection();
         Iterable<Comics> mesComics = creeUneListeDeComics();
+        mesComics.forEach(unComics->maCollection.ajouteUnNouveauComics(unComics));
+        return maCollection;
+    }
+
+    public Collection creeUneCollectionFinieDeComics(int nombreDeComics) {
+        Collection maCollection = new Collection();
+        Iterable<Comics> mesComics = creeUneListeFinieDeComics(nombreDeComics);
         mesComics.forEach(unComics->maCollection.ajouteUnNouveauComics(unComics));
         return maCollection;
     }
