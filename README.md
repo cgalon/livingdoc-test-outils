@@ -338,15 +338,31 @@ Bibliothèque JS de génération graphique de diagrammes à partir écrits en te
 
 Bibliothèque JS de génération graphique de diagrammes à partir de données en Javascript ou en JSON.
 
-[Site](https://www.anychart.com/) 
+[Site](https://www.anychart.com/)
 
 **_Commentaires :_**
 
 - Très simple à utiliser (Juste une lib JS à ajouter dans une page HTML)
 - Graphiques très beaux et très propres
-- Beaucoup de styles de graphiques différents 
+- Beaucoup de styles de graphiques différents
 - Un peu de JS à écrire
 - Pourrait aussi servir pour créer des tableaux de bord
+- **Attention** : La lib n'est pas gratuite
+
+### Chart.js
+
+Bibliothèque JS de création de graphiques à partir de données en Javascript ou en JSON.
+
+[Site](https://www.chartjs.org/)
+
+**_Commentaires :_**
+
+- Très simple à utiliser (Juste une lib JS à ajouter dans une page HTML)
+- Graphiques très propres
+- Tous les graphiques les plus classiques
+- Un peu de JS à écrire
+- Pourrait aussi servir pour créer des tableaux de bord
+- Gratuit
 
 ### Cucumber
 
