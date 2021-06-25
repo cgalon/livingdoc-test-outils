@@ -285,6 +285,26 @@
                             <forceSite>false</forceSite>
                         </configuration>
                     </plugin>
+                    <plugin>
+                        <groupId>com.github.ferstl</groupId>
+                        <artifactId>depgraph-maven-plugin</artifactId>
+                        <version>3.3.0</version>
+                        <configuration>
+                            <graphFormat>dot</graphFormat>
+                            <outputDirectory>${project.build.directory}/generated-docs</outputDirectory>
+                            <showGroupIds>true</showGroupIds>
+                            <showVersions>true</showVersions>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>dependency-graph</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>graph</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
                 </plugins>
             </build>
         </profile>

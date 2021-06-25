@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+    <script src="https://cpettitt.github.io/project/graphlib-dot/v0.4.10/graphlib-dot.min.js"></script>
+    <script src="https://cpettitt.github.io/project/dagre-d3/v0.1.5/dagre-d3.min.js"></script>
+</head>
+<style>
+    body {
+        padding: 2em;
+    }
+
+    svg {
+        overflow: hidden;
+        margin: 1em;
+    }
+
+    .node rect {
+        stroke: #333;
+        stroke-width: 2.5px;
+        fill: white;
+    }
+
+    .edgeLabel rect {
+        fill: white;
+    }
+
+    .edgePath {
+        stroke: #333;
+        stroke-width: 1.5px;
+        fill: none;
+    }
+</style>
+<script>
+  window.onload = function() {
+    // Parse the DOT syntax into a graphlib object.
+    var g = graphlibDot.parse(document.getElementById("dot").value);
+
+    // Render the graphlib object using d3.
+    var renderer = new dagreD3.Renderer();
+    renderer.run(g, d3.select("svg g"));
+
+
+    // Optional - resize the SVG element based on the contents.
+    var svg = document.querySelector('#graphContainer');
+    var bbox = svg.getBBox();
+    svg.style.width = bbox.width + 40.0 + "px";
+    svg.style.height = bbox.height + 40.0 + "px";
+  }
+</script>
+<body>
+<h2>Graphe des dépendances Maven</h2>
+<svg id="graphContainer">
+    <g/>
+</svg>
+<h2>Le code du .dot</h2>
+
+NB : Le véritable fichier généré par le plugin maven est ici : <a href="dependency-graph.dot">dependency-graph.dot</a>.
+Pour des raisons de simplification de l'exemple, son contenu a été inséré et simplifié (suppression des labels) ci-dessous.
+
+<textarea id="dot" rows="10">
+digraph "livingdoc" {
+  node [shape="box",style="rounded",fontname="Helvetica",fontsize="14"]
+  edge [fontsize="10",fontname="Helvetica"]
+
+  // Node Definitions:
+  "org.springframework.boot:spring-boot-starter:jar"
+  "org.springframework.boot:spring-boot:jar"
+  "ch.qos.logback:logback-classic:jar"
+  "ch.qos.logback:logback-core:jar"
+  "org.springframework.boot:spring-boot-starter-logging:jar"
+  "org.apache.logging.log4j:log4j-to-slf4j:jar"
+  "org.apache.logging.log4j:log4j-api:jar"
+  "org.slf4j:jul-to-slf4j:jar"
+  "javax.annotation:javax.annotation-api:jar"
+  "org.yaml:snakeyaml:jar"
+  "org.springframework.boot:spring-boot-starter-web:jar"
+  "org.springframework.boot:spring-boot-starter-json:jar"
+  "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:jar"
+  "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar"
+  "com.fasterxml.jackson.module:jackson-module-parameter-names:jar"
+  "org.springframework.boot:spring-boot-starter-tomcat:jar"
+  "org.apache.tomcat.embed:tomcat-embed-core:jar"
+  "org.apache.tomcat.embed:tomcat-embed-el:jar"
+  "org.apache.tomcat.embed:tomcat-embed-websocket:jar"
+  "org.hibernate.validator:hibernate-validator:jar"
+  "javax.validation:validation-api:jar"
+  "org.jboss.logging:jboss-logging:jar"
+  "org.springframework:spring-web:jar"
+  "org.springframework:spring-beans:jar"
+  "org.springframework:spring-webmvc:jar"
+  "org.springframework:spring-aop:jar"
+  "org.springframework:spring-context:jar"
+  "org.springframework:spring-expression:jar"
+  "fr.pe.cga.tests.livingdoc:livingdoc:jar"
+  "org.springframework.boot:spring-boot-starter-test:jar"
+  "org.springframework.boot:spring-boot-test:jar"
+  "org.assertj:assertj-core:jar"
+  "org.mockito:mockito-core:jar"
+  "net.bytebuddy:byte-buddy:jar"
+  "net.bytebuddy:byte-buddy-agent:jar"
+  "org.objenesis:objenesis:jar"
+  "org.hamcrest:hamcrest-core:jar"
+  "org.hamcrest:hamcrest-library:jar"
+  "org.skyscreamer:jsonassert:jar"
+  "com.vaadin.external.google:android-json:jar"
+  "org.springframework:spring-core:jar"
+  "org.springframework:spring-jcl:jar"
+  "org.springframework:spring-test:jar"
+  "org.xmlunit:xmlunit-core:jar"
+  "org.springframework.boot:spring-boot-starter-aop:jar"
+  "org.aspectj:aspectjweaver:jar"
+  "org.springframework.boot:spring-boot-starter-data-jpa:jar"
+  "org.springframework.boot:spring-boot-starter-jdbc:jar"
+  "com.zaxxer:HikariCP:jar"
+  "org.springframework:spring-jdbc:jar"
+  "javax.transaction:javax.transaction-api:jar"
+  "javax.xml.bind:jaxb-api:jar"
+  "javax.activation:javax.activation-api:jar"
+  "org.hibernate:hibernate-core:jar"
+  "javax.persistence:javax.persistence-api:jar"
+  "org.javassist:javassist:jar"
+  "antlr:antlr:jar"
+  "org.jboss:jandex:jar"
+  "org.dom4j:dom4j:jar"
+  "org.hibernate.common:hibernate-commons-annotations:jar"
+  "org.springframework.data:spring-data-jpa:jar"
+  "org.springframework.data:spring-data-commons:jar"
+  "org.springframework:spring-orm:jar"
+  "org.springframework:spring-tx:jar"
+  "org.springframework:spring-aspects:jar"
+  "com.h2database:h2:jar"
+  "net.minidev:accessors-smart:jar"
+  "org.ow2.asm:asm:jar"
+  "net.minidev:json-smart:jar"
+  "com.jayway.jsonpath:json-path:jar"
+  "org.slf4j:slf4j-api:jar"
+  "org.springframework.boot:spring-boot-test-autoconfigure:jar"
+  "org.springframework.boot:spring-boot-autoconfigure:jar"
+  "org.junit.jupiter:junit-jupiter-engine:jar"
+  "org.apiguardian:apiguardian-api:jar"
+  "org.junit.platform:junit-platform-engine:jar"
+  "org.opentest4j:opentest4j:jar"
+  "org.junit.platform:junit-platform-commons:jar"
+  "org.junit.jupiter:junit-jupiter-api:jar"
+  "org.junit.platform:junit-platform-launcher:jar"
+  "org.junit.vintage:junit-vintage-engine:jar"
+  "junit:junit:jar"
+  "org.mockito:mockito-junit-jupiter:jar"
+  "io.cucumber:cucumber-core:jar"
+  "io.cucumber:cucumber-gherkin:jar"
+  "io.cucumber:cucumber-gherkin-messages:jar"
+  "io.cucumber:messages:jar"
+  "io.cucumber:tag-expressions:jar"
+  "io.cucumber:cucumber-expressions:jar"
+  "io.cucumber:datatable:jar"
+  "io.cucumber:cucumber-plugin:jar"
+  "io.cucumber:docstring:jar"
+  "io.cucumber:html-formatter:jar"
+  "io.cucumber:create-meta:jar"
+  "io.cucumber:cucumber-java:jar"
+  "io.cucumber:cucumber-junit:jar"
+  "org.springframework.restdocs:spring-restdocs-mockmvc:jar"
+  "javax.servlet:javax.servlet-api:jar"
+  "org.springframework.restdocs:spring-restdocs-core:jar"
+  "io.springfox:springfox-swagger2:jar"
+  "io.swagger:swagger-annotations:jar"
+  "io.swagger:swagger-models:jar"
+  "io.springfox:springfox-spi:jar"
+  "io.springfox:springfox-core:jar"
+  "io.springfox:springfox-schema:jar"
+  "io.springfox:springfox-swagger-common:jar"
+  "io.springfox:springfox-spring-web:jar"
+  "org.reflections:reflections:jar"
+  "com.google.guava:guava:jar"
+  "com.fasterxml:classmate:jar"
+  "org.springframework.plugin:spring-plugin-core:jar"
+  "org.springframework.plugin:spring-plugin-metadata:jar"
+  "org.mapstruct:mapstruct:jar"
+  "io.springfox:springfox-swagger-ui:jar"
+  "com.thoughtworks.qdox:qdox:jar"
+  "com.fasterxml.jackson.core:jackson-databind:jar"
+  "com.fasterxml.jackson.core:jackson-annotations:jar"
+  "com.fasterxml.jackson.core:jackson-core:jar"
+  "io.qameta.allure:allure-java-commons:jar"
+  "io.qameta.allure:allure-model:jar"
+  "org.apache.tika:tika-core:jar"
+  "org.jooq:joor-java-8:jar"
+  "io.qameta.allure:allure-junit-platform:jar"
+  "io.qameta.allure:allure-junit5:jar"
+
+  // Edge Definitions:
+  "org.springframework.boot:spring-boot-starter:jar" -> "org.springframework.boot:spring-boot:jar"
+  "ch.qos.logback:logback-classic:jar" -> "ch.qos.logback:logback-core:jar"
+  "org.springframework.boot:spring-boot-starter-logging:jar" -> "ch.qos.logback:logback-classic:jar"
+  "org.apache.logging.log4j:log4j-to-slf4j:jar" -> "org.apache.logging.log4j:log4j-api:jar"
+  "org.springframework.boot:spring-boot-starter-logging:jar" -> "org.apache.logging.log4j:log4j-to-slf4j:jar"
+  "org.springframework.boot:spring-boot-starter-logging:jar" -> "org.slf4j:jul-to-slf4j:jar"
+  "org.springframework.boot:spring-boot-starter:jar" -> "org.springframework.boot:spring-boot-starter-logging:jar"
+  "org.springframework.boot:spring-boot-starter:jar" -> "javax.annotation:javax.annotation-api:jar"
+  "org.springframework.boot:spring-boot-starter:jar" -> "org.yaml:snakeyaml:jar"
+  "org.springframework.boot:spring-boot-starter-web:jar" -> "org.springframework.boot:spring-boot-starter:jar"
+  "org.springframework.boot:spring-boot-starter-json:jar" -> "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:jar"
+  "org.springframework.boot:spring-boot-starter-json:jar" -> "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar"
+  "org.springframework.boot:spring-boot-starter-json:jar" -> "com.fasterxml.jackson.module:jackson-module-parameter-names:jar"
+  "org.springframework.boot:spring-boot-starter-web:jar" -> "org.springframework.boot:spring-boot-starter-json:jar"
+  "org.springframework.boot:spring-boot-starter-tomcat:jar" -> "org.apache.tomcat.embed:tomcat-embed-core:jar"
+  "org.springframework.boot:spring-boot-starter-tomcat:jar" -> "org.apache.tomcat.embed:tomcat-embed-el:jar"
+  "org.springframework.boot:spring-boot-starter-tomcat:jar" -> "org.apache.tomcat.embed:tomcat-embed-websocket:jar"
+  "org.springframework.boot:spring-boot-starter-web:jar" -> "org.springframework.boot:spring-boot-starter-tomcat:jar"
+  "org.hibernate.validator:hibernate-validator:jar" -> "javax.validation:validation-api:jar"
+  "org.hibernate.validator:hibernate-validator:jar" -> "org.jboss.logging:jboss-logging:jar"
+  "org.springframework.boot:spring-boot-starter-web:jar" -> "org.hibernate.validator:hibernate-validator:jar"
+  "org.springframework:spring-web:jar" -> "org.springframework:spring-beans:jar"
+  "org.springframework.boot:spring-boot-starter-web:jar" -> "org.springframework:spring-web:jar"
+  "org.springframework:spring-webmvc:jar" -> "org.springframework:spring-aop:jar"
+  "org.springframework:spring-webmvc:jar" -> "org.springframework:spring-context:jar"
+  "org.springframework:spring-webmvc:jar" -> "org.springframework:spring-expression:jar"
+  "org.springframework.boot:spring-boot-starter-web:jar" -> "org.springframework:spring-webmvc:jar"
+  "fr.pe.cga.tests.livingdoc:livingdoc:jar" -> "org.springframework.boot:spring-boot-starter-web:jar"
+  "org.springframework.boot:spring-boot-starter-test:jar" -> "org.springframework.boot:spring-boot-test:jar"
+  "org.springframework.boot:spring-boot-starter-test:jar" -> "org.assertj:assertj-core:jar"
+  "org.mockito:mockito-core:jar" -> "net.bytebuddy:byte-buddy:jar"
+  "org.mockito:mockito-core:jar" -> "net.bytebuddy:byte-buddy-agent:jar"
+  "org.mockito:mockito-core:jar" -> "org.objenesis:objenesis:jar"
+  "org.springframework.boot:spring-boot-starter-test:jar" -> "org.mockito:mockito-core:jar"
+  "org.springframework.boot:spring-boot-starter-test:jar" -> "org.hamcrest:hamcrest-core:jar"
+  "org.springframework.boot:spring-boot-starter-test:jar" -> "org.hamcrest:hamcrest-library:jar"
+  "org.skyscreamer:jsonassert:jar" -> "com.vaadin.external.google:android-json:jar"
+  "org.springframework.boot:spring-boot-starter-test:jar" -> "org.skyscreamer:jsonassert:jar"
+  "org.springframework:spring-core:jar" -> "org.springframework:spring-jcl:jar"
+  "org.springframework.boot:spring-boot-starter-test:jar" -> "org.springframework:spring-core:jar"
+  "org.springframework.boot:spring-boot-starter-test:jar" -> "org.springframework:spring-test:jar"
+  "org.springframework.boot:spring-boot-starter-test:jar" -> "org.xmlunit:xmlunit-core:jar"
+  "fr.pe.cga.tests.livingdoc:livingdoc:jar" -> "org.springframework.boot:spring-boot-starter-test:jar"
+  "org.springframework.boot:spring-boot-starter-aop:jar" -> "org.aspectj:aspectjweaver:jar"
+  "org.springframework.boot:spring-boot-starter-data-jpa:jar" -> "org.springframework.boot:spring-boot-starter-aop:jar"
+  "org.springframework.boot:spring-boot-starter-jdbc:jar" -> "com.zaxxer:HikariCP:jar"
+  "org.springframework.boot:spring-boot-starter-jdbc:jar" -> "org.springframework:spring-jdbc:jar"
+  "org.springframework.boot:spring-boot-starter-data-jpa:jar" -> "org.springframework.boot:spring-boot-starter-jdbc:jar"
+  "org.springframework.boot:spring-boot-starter-data-jpa:jar" -> "javax.transaction:javax.transaction-api:jar"
+  "javax.xml.bind:jaxb-api:jar" -> "javax.activation:javax.activation-api:jar"
+  "org.springframework.boot:spring-boot-starter-data-jpa:jar" -> "javax.xml.bind:jaxb-api:jar"
+  "org.hibernate:hibernate-core:jar" -> "javax.persistence:javax.persistence-api:jar"
+  "org.hibernate:hibernate-core:jar" -> "org.javassist:javassist:jar"
+  "org.hibernate:hibernate-core:jar" -> "antlr:antlr:jar"
+  "org.hibernate:hibernate-core:jar" -> "org.jboss:jandex:jar"
+  "org.hibernate:hibernate-core:jar" -> "org.dom4j:dom4j:jar"
+  "org.hibernate:hibernate-core:jar" -> "org.hibernate.common:hibernate-commons-annotations:jar"
+  "org.springframework.boot:spring-boot-starter-data-jpa:jar" -> "org.hibernate:hibernate-core:jar"
+  "org.springframework.data:spring-data-jpa:jar" -> "org.springframework.data:spring-data-commons:jar"
+  "org.springframework.data:spring-data-jpa:jar" -> "org.springframework:spring-orm:jar"
+  "org.springframework.data:spring-data-jpa:jar" -> "org.springframework:spring-tx:jar"
+  "org.springframework.boot:spring-boot-starter-data-jpa:jar" -> "org.springframework.data:spring-data-jpa:jar"
+  "org.springframework.boot:spring-boot-starter-data-jpa:jar" -> "org.springframework:spring-aspects:jar"
+  "fr.pe.cga.tests.livingdoc:livingdoc:jar" -> "org.springframework.boot:spring-boot-starter-data-jpa:jar"
+  "fr.pe.cga.tests.livingdoc:livingdoc:jar" -> "com.h2database:h2:jar"
+  "net.minidev:accessors-smart:jar" -> "org.ow2.asm:asm:jar"
+  "net.minidev:json-smart:jar" -> "net.minidev:accessors-smart:jar"
+  "com.jayway.jsonpath:json-path:jar" -> "net.minidev:json-smart:jar"
+  "com.jayway.jsonpath:json-path:jar" -> "org.slf4j:slf4j-api:jar"
+  "fr.pe.cga.tests.livingdoc:livingdoc:jar" -> "com.jayway.jsonpath:json-path:jar"
+  "org.springframework.boot:spring-boot-test-autoconfigure:jar" -> "org.springframework.boot:spring-boot-autoconfigure:jar"
+  "fr.pe.cga.tests.livingdoc:livingdoc:jar" -> "org.springframework.boot:spring-boot-test-autoconfigure:jar"
+  "org.junit.jupiter:junit-jupiter-engine:jar" -> "org.apiguardian:apiguardian-api:jar"
+  "org.junit.platform:junit-platform-engine:jar" -> "org.opentest4j:opentest4j:jar"
+  "org.junit.platform:junit-platform-engine:jar" -> "org.junit.platform:junit-platform-commons:jar"
+  "org.junit.jupiter:junit-jupiter-engine:jar" -> "org.junit.platform:junit-platform-engine:jar"
+  "org.junit.jupiter:junit-jupiter-engine:jar" -> "org.junit.jupiter:junit-jupiter-api:jar"
+  "fr.pe.cga.tests.livingdoc:livingdoc:jar" -> "org.junit.jupiter:junit-jupiter-engine:jar"
+  "fr.pe.cga.tests.livingdoc:livingdoc:jar" -> "org.junit.platform:junit-platform-launcher:jar"
+  "org.junit.vintage:junit-vintage-engine:jar" -> "junit:junit:jar"
+  "fr.pe.cga.tests.livingdoc:livingdoc:jar" -> "org.junit.vintage:junit-vintage-engine:jar"
+  "fr.pe.cga.tests.livingdoc:livingdoc:jar" -> "org.mockito:mockito-junit-jupiter:jar"
+  "io.cucumber:cucumber-core:jar" -> "io.cucumber:cucumber-gherkin:jar"
+  "io.cucumber:cucumber-core:jar" -> "io.cucumber:cucumber-gherkin-messages:jar"
+  "io.cucumber:cucumber-core:jar" -> "io.cucumber:messages:jar"
+  "io.cucumber:cucumber-core:jar" -> "io.cucumber:tag-expressions:jar"
+  "io.cucumber:cucumber-core:jar" -> "io.cucumber:cucumber-expressions:jar"
+  "io.cucumber:cucumber-core:jar" -> "io.cucumber:datatable:jar"
+  "io.cucumber:cucumber-core:jar" -> "io.cucumber:cucumber-plugin:jar"
+  "io.cucumber:cucumber-core:jar" -> "io.cucumber:docstring:jar"
+  "io.cucumber:cucumber-core:jar" -> "io.cucumber:html-formatter:jar"
+  "io.cucumber:cucumber-core:jar" -> "io.cucumber:create-meta:jar"
+  "io.cucumber:cucumber-java:jar" -> "io.cucumber:cucumber-core:jar"
+  "fr.pe.cga.tests.livingdoc:livingdoc:jar" -> "io.cucumber:cucumber-java:jar"
+  "fr.pe.cga.tests.livingdoc:livingdoc:jar" -> "io.cucumber:cucumber-junit:jar"
+  "org.springframework.restdocs:spring-restdocs-mockmvc:jar" -> "javax.servlet:javax.servlet-api:jar"
+  "org.springframework.restdocs:spring-restdocs-mockmvc:jar" -> "org.springframework.restdocs:spring-restdocs-core:jar"
+  "fr.pe.cga.tests.livingdoc:livingdoc:jar" -> "org.springframework.restdocs:spring-restdocs-mockmvc:jar"
+  "io.springfox:springfox-swagger2:jar" -> "io.swagger:swagger-annotations:jar"
+  "io.springfox:springfox-swagger2:jar" -> "io.swagger:swagger-models:jar"
+  "io.springfox:springfox-spi:jar" -> "io.springfox:springfox-core:jar"
+  "io.springfox:springfox-swagger2:jar" -> "io.springfox:springfox-spi:jar"
+  "io.springfox:springfox-swagger2:jar" -> "io.springfox:springfox-schema:jar"
+  "io.springfox:springfox-swagger2:jar" -> "io.springfox:springfox-swagger-common:jar"
+  "io.springfox:springfox-spring-web:jar" -> "org.reflections:reflections:jar"
+  "io.springfox:springfox-swagger2:jar" -> "io.springfox:springfox-spring-web:jar"
+  "io.springfox:springfox-swagger2:jar" -> "com.google.guava:guava:jar"
+  "io.springfox:springfox-swagger2:jar" -> "com.fasterxml:classmate:jar"
+  "io.springfox:springfox-swagger2:jar" -> "org.springframework.plugin:spring-plugin-core:jar"
+  "io.springfox:springfox-swagger2:jar" -> "org.springframework.plugin:spring-plugin-metadata:jar"
+  "io.springfox:springfox-swagger2:jar" -> "org.mapstruct:mapstruct:jar"
+  "fr.pe.cga.tests.livingdoc:livingdoc:jar" -> "io.springfox:springfox-swagger2:jar"
+  "fr.pe.cga.tests.livingdoc:livingdoc:jar" -> "io.springfox:springfox-swagger-ui:jar"
+  "fr.pe.cga.tests.livingdoc:livingdoc:jar" -> "com.thoughtworks.qdox:qdox:jar"
+  "com.fasterxml.jackson.core:jackson-databind:jar" -> "com.fasterxml.jackson.core:jackson-annotations:jar"
+  "com.fasterxml.jackson.core:jackson-databind:jar" -> "com.fasterxml.jackson.core:jackson-core:jar"
+  "fr.pe.cga.tests.livingdoc:livingdoc:jar" -> "com.fasterxml.jackson.core:jackson-databind:jar"
+  "io.qameta.allure:allure-java-commons:jar" -> "io.qameta.allure:allure-model:jar"
+  "io.qameta.allure:allure-java-commons:jar" -> "org.apache.tika:tika-core:jar"
+  "io.qameta.allure:allure-java-commons:jar" -> "org.jooq:joor-java-8:jar"
+  "io.qameta.allure:allure-junit-platform:jar" -> "io.qameta.allure:allure-java-commons:jar"
+  "io.qameta.allure:allure-junit5:jar" -> "io.qameta.allure:allure-junit-platform:jar"
+  "fr.pe.cga.tests.livingdoc:livingdoc:jar" -> "io.qameta.allure:allure-junit5:jar"
+}
+</textarea>
+
+</p>
+</body>
+
+</html>
