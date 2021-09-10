@@ -1,5 +1,7 @@
-node_modules
 target
-allure-results
+.classpath
+.project
+.settings
 .allure
-.vscode
+allure-results
+node_modules
