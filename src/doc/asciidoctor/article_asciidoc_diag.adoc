@@ -1,5 +1,5 @@
 = Créer des diagrammes en Asciidoc
-Equipe SNED Incubateur <frederic.moreau@pole-emploi.fr>
+Equipe Incubateur <cgalon@free.fr>
 :toc2:
 :numbered:
 :nom-image-exemple-ditaa: exemple-ditaa

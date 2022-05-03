@@ -24,10 +24,6 @@ La liste d'achat (comics manquants) est générée par delta entre les séries d
 
 L'application est couverte par des tests unitaires et utilise l'architecture hexagonale pour chacun de ses contextes bornés.
 
-## Backlog
-
-[Lien public vers la backlog](http://kanboard.dckxm011.sii24.pole-emploi.intra/public/board/1acc2f5ea04b759e662e8fb3f42bc697f1c637fe1ee7fb124289796efd1e)
-
 ## Génération de la documentation
 
 Tous les outils testés (cf. chapitre ci-dessous) génèrent leurs docs dans le répertoire `target/generated-docs`. Ils sont tous référencés dans la page `index.html`.

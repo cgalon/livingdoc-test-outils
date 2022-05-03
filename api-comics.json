@@ -6,8 +6,8 @@
     "title": "Gestion d'une collection de comics",
     "contact": {
       "name": "Christophe Galon",
-      "url": "http://incubateur.git-scm.pole-emploi.intra",
-      "email": "christophe.galon@pole-emploi.fr"
+      "url": "",
+      "email": "cgalon@free.fr"
     }
   },
   "host": "localhost:8080",

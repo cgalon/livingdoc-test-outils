@@ -32,7 +32,7 @@ public class ConfigurationDeSwagger  extends WebMvcConfigurationSupport {
                 .title("Gestion d'une collection de comics")
                 .description("Application d'exemple de génération de documentation")
                 .version("1.0.0")
-                .contact(new Contact("Christophe Galon", "http://incubateur.git-scm.pole-emploi.intra", "christophe.galon@pole-emploi.fr"))
+                .contact(new Contact("Christophe Galon", "", "cgalon@free.fr"))
                 .build();
     }
 

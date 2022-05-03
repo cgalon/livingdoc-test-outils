@@ -4,12 +4,6 @@
     "version": "0.0.3",
     "description": "Projet de tests de génération de documentation",
     "private": true,
-    "artifactory": {
-        "docker": {
-            "snapshot": "docker-snapshots.artefact-repo.pole-emploi.intra",
-            "release": "docker-private.artefact-repo.pole-emploi.intra"
-        }
-    },
     "dependencies": {
         "gitlog": "^2.4.0",
         "raml2html": "^7.3.0",
