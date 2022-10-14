@@ -1,6 +1,5 @@
-package fr.pe.incub.mescomics.collection.ressource;
+package fr.pe.incub.mescomics.collection.api;
 
-import fr.pe.incub.mescomics.collection.api.MaCollectionDeComics;
 import fr.pe.incub.mescomics.collection.domaine.Comics;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

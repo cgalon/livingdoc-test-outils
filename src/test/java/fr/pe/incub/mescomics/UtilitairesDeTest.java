@@ -2,8 +2,8 @@ package fr.pe.incub.mescomics;
 
 import fr.pe.incub.mescomics.collection.domaine.Collection;
 import fr.pe.incub.mescomics.collection.domaine.Comics;
-import fr.pe.incub.mescomics.listeachat.infrastructure.NumeroPresent;
-import fr.pe.incub.mescomics.listeachat.infrastructure.RevueReferencee;
+import fr.pe.incub.mescomics.listeachat.domaine.NumeroPresent;
+import fr.pe.incub.mescomics.listeachat.domaine.RevueReferencee;
 import fr.pe.incub.mescomics.referentiel.domaine.Numero;
 import fr.pe.incub.mescomics.referentiel.domaine.Revue;
 import fr.pe.incub.mescomics.referentiel.infrastructure.NumeroDAO;
@@ -149,13 +149,5 @@ public class UtilitairesDeTest {
 
     public Numero creeUnPremierNumeroDeStrange() {
         return new Numero("Strange",1, LocalDate.of(1970, 1, 1));
-    }
-
-    public Optional<RevueDAO> creeUneRevueDAOStrange() {
-        return Optional.of(new RevueDAO("Strange", 20, "Lug", false));
-    }
-
-    public Optional<NumeroDAO> creeUnPremierNumeroDAODeStrange() {
-        return Optional.of(new NumeroDAO("Strange",1, LocalDate.of(1970, 1, 1)));
     }
 }

@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface EntrepotDeNumeros extends CrudRepository<NumeroDAO, String> {
+public interface EntrepotDeNumerosSpring extends CrudRepository<NumeroDAO, String> {
 
 }

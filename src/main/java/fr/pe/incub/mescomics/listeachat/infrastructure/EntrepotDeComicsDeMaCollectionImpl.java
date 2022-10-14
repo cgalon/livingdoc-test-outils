@@ -2,20 +2,23 @@ package fr.pe.incub.mescomics.listeachat.infrastructure;
 
 import fr.pe.incub.mescomics.collection.api.MaCollectionDeComics;
 import fr.pe.incub.mescomics.collection.domaine.Comics;
+import fr.pe.incub.mescomics.listeachat.domaine.EntrepotDeComicsDeMaCollection;
+import fr.pe.incub.mescomics.listeachat.domaine.NumeroPresent;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-@Service
-public class RecuperateurDeComicsDeMaCollection {
+@Component
+public class EntrepotDeComicsDeMaCollectionImpl implements EntrepotDeComicsDeMaCollection{
 
     private MaCollectionDeComics maCollectionDeComics;
 
     @Autowired
-    public RecuperateurDeComicsDeMaCollection(MaCollectionDeComics maCollectionDeComics) {
+    public EntrepotDeComicsDeMaCollectionImpl(MaCollectionDeComics maCollectionDeComics) {
         this.maCollectionDeComics = maCollectionDeComics;
     }
 

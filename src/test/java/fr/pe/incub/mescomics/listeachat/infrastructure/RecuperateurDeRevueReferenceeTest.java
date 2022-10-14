@@ -1,6 +1,7 @@
 package fr.pe.incub.mescomics.listeachat.infrastructure;
 
 import fr.pe.incub.mescomics.UtilitairesDeTest;
+import fr.pe.incub.mescomics.listeachat.domaine.RevueReferencee;
 import fr.pe.incub.mescomics.referentiel.api.ReferentielDeRevues;
 import fr.pe.incub.mescomics.referentiel.domaine.Revue;
 import org.junit.jupiter.api.Test;
@@ -27,7 +28,7 @@ public class RecuperateurDeRevueReferenceeTest {
         Revue strange = utilitairesDeTest.creeUneRevueStrange();
         when(referentielDeRevuesBouchon.retrouveLaRevuePourCeTitre("Strange")).thenReturn(Optional.of(strange));
         when(referentielDeRevuesBouchon.retrouveLePremierNumeroPourCetteRevue(strange)).thenReturn(Optional.of(utilitairesDeTest.creeUnPremierNumeroDeStrange()));
-        RecuperateurDeRevueReferencee recuperateurDeRevueReferencee = new RecuperateurDeRevueReferencee(referentielDeRevuesBouchon);
+        EntrepotDeRevueReferenceeImpl recuperateurDeRevueReferencee = new EntrepotDeRevueReferenceeImpl(referentielDeRevuesBouchon);
 
         RevueReferencee revueStrange = recuperateurDeRevueReferencee.retrouveLaRevuePourCeTitre("Strange");
 
@@ -38,7 +39,7 @@ public class RecuperateurDeRevueReferenceeTest {
     @Test
     public void doitRamenerNullPourUneRevueInexistante() {
         when(referentielDeRevuesBouchon.retrouveLaRevuePourCeTitre("Conan")).thenReturn(Optional.ofNullable(null));
-        RecuperateurDeRevueReferencee recuperateurDeRevueReferencee = new RecuperateurDeRevueReferencee(referentielDeRevuesBouchon);
+        EntrepotDeRevueReferenceeImpl recuperateurDeRevueReferencee = new EntrepotDeRevueReferenceeImpl(referentielDeRevuesBouchon);
 
         RevueReferencee conan = recuperateurDeRevueReferencee.retrouveLaRevuePourCeTitre("Conan");
 

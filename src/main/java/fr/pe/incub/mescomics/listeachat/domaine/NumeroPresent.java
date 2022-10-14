@@ -1,4 +1,4 @@
-package fr.pe.incub.mescomics.listeachat.infrastructure;
+package fr.pe.incub.mescomics.listeachat.domaine;
 
 import java.util.Objects;
 

@@ -5,5 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface EntrepotDeComics extends CrudRepository<Comics, Integer> {
+public interface EntrepotDeComicsSpring extends CrudRepository<Comics, Integer> {
+
 }

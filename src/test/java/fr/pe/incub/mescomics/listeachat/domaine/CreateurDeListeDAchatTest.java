@@ -1,8 +1,8 @@
 package fr.pe.incub.mescomics.listeachat.domaine;
 
 import fr.pe.incub.mescomics.UtilitairesDeTest;
-import fr.pe.incub.mescomics.listeachat.infrastructure.RecuperateurDeComicsDeMaCollection;
-import fr.pe.incub.mescomics.listeachat.infrastructure.RecuperateurDeRevueReferencee;
+import fr.pe.incub.mescomics.listeachat.infrastructure.EntrepotDeComicsDeMaCollectionImpl;
+import fr.pe.incub.mescomics.listeachat.infrastructure.EntrepotDeRevueReferenceeImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -15,10 +15,10 @@ import static org.mockito.Mockito.when;
 public class CreateurDeListeDAchatTest {
 
     @Mock
-    private RecuperateurDeComicsDeMaCollection recuperateurDeMaCollectionDeComicsBouchon;
+    private EntrepotDeComicsDeMaCollectionImpl recuperateurDeMaCollectionDeComicsBouchon;
 
     @Mock
-    private RecuperateurDeRevueReferencee recuperateurDeRevueReferenceeBouchon;
+    private EntrepotDeRevueReferenceeImpl recuperateurDeRevueReferenceeBouchon;
 
     UtilitairesDeTest utilitairesDeTest = new UtilitairesDeTest();
 

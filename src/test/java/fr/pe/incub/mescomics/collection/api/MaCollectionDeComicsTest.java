@@ -2,7 +2,8 @@ package fr.pe.incub.mescomics.collection.api;
 
 import fr.pe.incub.mescomics.UtilitairesDeTest;
 import fr.pe.incub.mescomics.collection.domaine.Comics;
-import fr.pe.incub.mescomics.collection.infrastructure.ServiceDeCollection;
+import fr.pe.incub.mescomics.collection.domaine.ServiceDeCollection;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;

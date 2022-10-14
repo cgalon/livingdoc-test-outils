@@ -1,7 +1,5 @@
-package fr.pe.incub.mescomics.referentiel.infrastructure;
+package fr.pe.incub.mescomics.referentiel.domaine;
 
-import fr.pe.incub.mescomics.referentiel.domaine.Numero;
-import fr.pe.incub.mescomics.referentiel.domaine.Revue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,14 +18,12 @@ public class ServiceDeRevue {
 
     public Revue retrouveLaRevuePourCeTitre(String titre) {
         String identifiantDeLaRevue = retrouveLIdentifiantDuneRevueParSonTitre(titre);
-        RevueDAO revueDAO = entrepotDeRevues.findById(identifiantDeLaRevue).get();
-        return new Revue(revueDAO.titre, revueDAO.recupereLeNombreDeNumeros(), revueDAO.nomDeLEditeur, revueDAO.encoreDesNumerosAParaitre());
+        return entrepotDeRevues.retrouveLaRevueParSonIdentifiant(identifiantDeLaRevue);
     }
 
     public Numero retrouveLePremierNumeroPourCetteRevue(Revue revue) {
         String identifiantDeLaRevue = retrouveLIdentifiantDuneRevueParSonTitre(revue.titre);
-        NumeroDAO numeroDAO = entrepotDeNumeros.findById(identifiantDeLaRevue).get();
-        return new Numero(numeroDAO.nomDeLaRevue, numeroDAO.numeroDansLaSerie, numeroDAO.dateDeParution);
+        return entrepotDeNumeros.retrouveLePremierNumeroDeLaRevue(identifiantDeLaRevue);
     }
 
     private String retrouveLIdentifiantDuneRevueParSonTitre(String titre) {

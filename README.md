@@ -405,4 +405,21 @@ Plugin Maven de génération d'un graphe de dépendances.
 - Plusieurs formats en sortie : dot, json, text...
 - Nécessite un composant d'affichage du fichier de résultat.
 
+### ArchUnit
+
+Framework de vérification de règles d'architecture d'un composant.
+
+[Site](https://www.archunit.org/)
+
+```xml
+<dependency>
+    <groupId>com.tngtech.archunit</groupId>
+    <artifactId>archunit-junit5</artifactId>
+    <version>1.0.0</version>
+    <scope>test</scope>
+</dependency>
+```
+- Pas un module de living doc au sens strict.
+- Permet de vérifier que les règles d'architecture pour un composant sont respectées.
+- Peut être distribué sous forme de jar à intégrer dans les tests unitaires des composants d'une organisation.
 

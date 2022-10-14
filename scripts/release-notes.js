@@ -10,7 +10,7 @@ const getDirectories = source =>
     readdirSync(source).map(name => join(source, name)).filter(isDirectory);
 
 
-var cheminDuProjetRacineGit = "/home/icga1070/git/incubateur-cdv";
+var cheminDuProjetRacineGit = "/home/icga1070/git/github.com/cgalon";
 var listeDesProjetsGit = getDirectories(cheminDuProjetRacineGit);
 
 var listeDesFeaturesDeTousLesProjets = {};

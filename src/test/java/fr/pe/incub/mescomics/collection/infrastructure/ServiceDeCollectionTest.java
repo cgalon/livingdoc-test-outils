@@ -3,6 +3,9 @@ package fr.pe.incub.mescomics.collection.infrastructure;
 import fr.pe.incub.mescomics.UtilitairesDeTest;
 import fr.pe.incub.mescomics.collection.domaine.Collection;
 import fr.pe.incub.mescomics.collection.domaine.Comics;
+import fr.pe.incub.mescomics.collection.domaine.EntrepotDeComics;
+import fr.pe.incub.mescomics.collection.domaine.ServiceDeCollection;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -22,7 +25,7 @@ public class ServiceDeCollectionTest {
     @Test
     public void doitCreerUneCollectionDeComicsAPartirDUnIterable() {
         Iterable<Comics> maListeIterable = utilitairesDeTest.creeUneListeDeComics();
-        when(entrepotDeComicsBouchon.findAll()).thenReturn(maListeIterable);
+        when(entrepotDeComicsBouchon.retrouveTousLesComics()).thenReturn(maListeIterable);
         ServiceDeCollection serviceDeCollection = new ServiceDeCollection(entrepotDeComicsBouchon);
 
         Collection maCollectionComplete = serviceDeCollection.recupererMaCollectionCompleteDeComics();

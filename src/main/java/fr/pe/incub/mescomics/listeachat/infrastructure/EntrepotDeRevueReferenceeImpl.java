@@ -1,5 +1,7 @@
 package fr.pe.incub.mescomics.listeachat.infrastructure;
 
+import fr.pe.incub.mescomics.listeachat.domaine.EntrepotDeRevueReferencee;
+import fr.pe.incub.mescomics.listeachat.domaine.RevueReferencee;
 import fr.pe.incub.mescomics.referentiel.api.ReferentielDeRevues;
 import fr.pe.incub.mescomics.referentiel.domaine.Numero;
 import fr.pe.incub.mescomics.referentiel.domaine.Revue;
@@ -10,12 +12,12 @@ import java.util.Optional;
 
 
 @Service
-public class RecuperateurDeRevueReferencee {
+public class EntrepotDeRevueReferenceeImpl implements EntrepotDeRevueReferencee {
 
     ReferentielDeRevues referentielDeRevues;
 
     @Autowired
-    public RecuperateurDeRevueReferencee(ReferentielDeRevues referentielDeRevues) {
+    public EntrepotDeRevueReferenceeImpl(ReferentielDeRevues referentielDeRevues) {
         this.referentielDeRevues = referentielDeRevues;
     }
 

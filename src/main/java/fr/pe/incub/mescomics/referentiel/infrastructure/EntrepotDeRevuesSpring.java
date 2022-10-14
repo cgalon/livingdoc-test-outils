@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface EntrepotDeRevues extends CrudRepository<RevueDAO, String> {
+public interface EntrepotDeRevuesSpring extends CrudRepository<RevueDAO, String> {
 
 }

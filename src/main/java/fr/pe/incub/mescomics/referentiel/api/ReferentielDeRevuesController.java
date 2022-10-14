@@ -1,6 +1,5 @@
-package fr.pe.incub.mescomics.referentiel.ressource;
+package fr.pe.incub.mescomics.referentiel.api;
 
-import fr.pe.incub.mescomics.referentiel.api.ReferentielDeRevues;
 import fr.pe.incub.mescomics.referentiel.domaine.Numero;
 import fr.pe.incub.mescomics.referentiel.domaine.Revue;
 import io.swagger.annotations.Api;

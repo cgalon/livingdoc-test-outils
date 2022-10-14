@@ -1,7 +1,5 @@
-package fr.pe.incub.mescomics.collection.infrastructure;
+package fr.pe.incub.mescomics.collection.domaine;
 
-import fr.pe.incub.mescomics.collection.domaine.Collection;
-import fr.pe.incub.mescomics.collection.domaine.Comics;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +15,7 @@ public class ServiceDeCollection {
 
     public Collection recupererMaCollectionCompleteDeComics() {
         Collection maCollection = new Collection();
-        Iterable<Comics> mesComics = entrepotDeComics.findAll();
+        Iterable<Comics> mesComics = entrepotDeComics.retrouveTousLesComics();
         mesComics.forEach(unComics->maCollection.ajouteUnNouveauComics(unComics));
         return maCollection;
     }
