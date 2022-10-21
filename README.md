@@ -225,9 +225,11 @@ Permet de générer un rapport d'exécution de tests de composants REST écrits 
 
 ### Swagger UI
 
-Permet de générer une documentation de ressources REST.
+Permet de générer une documentation de ressources REST au format OpenAPI.
+Ici utilisé au travers de SpringFox.
 
 [Site](https://swagger.io/tools/swagger-ui/)
+[SpringFox](https://springfox.github.io/springfox/)
 [Pour débuter](https://springframework.guru/spring-boot-restful-api-documentation-with-swagger-2/)
 
 ```xml
@@ -253,6 +255,7 @@ Permet de générer une documentation de ressources REST.
 - Génère une documentation très claire et très agréable à consulter.
 - La documentation produite permet de tester les ressources.
 - Ne produit que de la documentation de ressources REST, pas documentation "métier".
+- Implémentation du standard OpenAPI.
 
 ### QDox
 
