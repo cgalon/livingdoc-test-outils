@@ -109,106 +109,6 @@ Permet de générer un changelog à partir des commits Git.
 - Le rapport peut facilement être customisé.
 - Pas d'accès direct à l'historique de Git.
 
-### Plugin Maven de LivingDoc
-
-Plugin Maven "multi-usage" proposant des outils de génération de documentation à partir du code.
-
-**NB :** Les 3 outils suivants nécessitent la récupération de ressources spécifiques afin que le rendu des résultats fonctionne correctement.
-
-```xml
-<plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-remote-resources-plugin</artifactId>
-    <version>1.5</version>
-    <configuration>
-        <resourceBundles>
-            <resourceBundle>io.github.livingdocumentation:shared-resources:0.3</resourceBundle>
-        </resourceBundles>
-        <outputDirectory>target/generated-docs</outputDirectory>
-    </configuration>
-    <executions>
-        <execution>
-            <goals>
-                <goal>process</goal>
-            </goals>
-        </execution>
-    </executions>
-</plugin>
-```
-
-#### Génération de glossaire
-
-Permet de générer de la doc à partir d'une annotation @Glossary
-
-[Sources](https://github.com/LivingDocumentation/livingdoc-maven-plugin)
-
-```xml
-<plugin>
-    <groupId>io.github.livingdocumentation</groupId>
-    <artifactId>livingdoc-maven-plugin</artifactId>
-    <version>0.3</version>
-    ...
-    <goals>
-        <goal>glossary</goal>
-    </goals>
-</plugin>
-```
-
-**_Commentaires :_**
-
-- Rendu très sobre.
-- Utilise la javadoc pour la définition.  
-- Génère du .adoc et du .html.  
-- Pourrait être amélioré ou réécrit pour ajouter des paramètres, par exemple.  
-
-#### Génération d'un nuage de mots
-
-Permet de générer un nuage mots à partir du code source
-
-[Sources](https://github.com/LivingDocumentation/livingdoc-maven-plugin)
-
-```xml
-<plugin>
-    <groupId>io.github.livingdocumentation</groupId>
-    <artifactId>livingdoc-maven-plugin</artifactId>
-    <version>0.3</version>
-    ...
-    <goals>
-        <goal>wordcloud</goal>
-    </goals>
-</plugin>
-```
-
-**_Commentaires :_**
-
-- Rendu assez joli.  
-- Surtout utilisé pour vérifier que le code "parle" bien du métier plutôt que de la technique.
-
-#### Génération d'un diagramme basé sur l'architecture hexagonale
-
-Permet de générer un diagramme basé sur l'architecture hexagonale pour aider à vérifier la conception du domaine.
-
-[Sources](https://github.com/LivingDocumentation/livingdoc-maven-plugin)
-
-```xml
-<plugin>
-    <groupId>io.github.livingdocumentation</groupId>
-    <artifactId>livingdoc-maven-plugin</artifactId>
-    <version>0.3</version>
-    ...
-    <goals>
-        <goal>diagram</goal>
-    </goals>
-</plugin>
-```
-
-**_Commentaires :_**  
-
-- Fonctionne avec la lib viz.js.
-- Ne prend pas en compte toutes les dépendances d'une classe vers d'autres classes (seuls les attributs d'instance ont l'air d'être pris en compte).  
-- Le visuel n'est pas parfait mais il permet de vérifier certaines dépendances (et le sens de ces dépendances) entre les objets.
-- L'idée parait intéressante mais il faudrait améliorer le plugin.
-
 ### Plugin de génération de doc d'API à partir de RAML
 
 [Sources](https://github.com/raml2html/raml2html)
@@ -446,3 +346,106 @@ Framework de vérification de règles d'architecture d'un composant.
 - Permet de vérifier que les règles d'architecture pour un composant sont respectées.
 - Peut être distribué sous forme de jar à intégrer dans les tests unitaires des composants d'une organisation.
 
+## Archives
+
+Les outils suivants ont été supprimés des tests des outils de génération de doc pour diverses raisons (obsolètes, fonctionnent mal...).
+
+### Plugin Maven de LivingDoc
+
+Plugin Maven "multi-usage" proposant des outils de génération de documentation à partir du code.
+
+**NB :** Les 3 outils suivants nécessitent la récupération de ressources spécifiques afin que le rendu des résultats fonctionne correctement.
+
+```xml
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-remote-resources-plugin</artifactId>
+    <version>1.5</version>
+    <configuration>
+        <resourceBundles>
+            <resourceBundle>io.github.livingdocumentation:shared-resources:0.3</resourceBundle>
+        </resourceBundles>
+        <outputDirectory>target/generated-docs</outputDirectory>
+    </configuration>
+    <executions>
+        <execution>
+            <goals>
+                <goal>process</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+```
+
+#### Génération de glossaire
+
+Permet de générer de la doc à partir d'une annotation @Glossary
+
+[Sources](https://github.com/LivingDocumentation/livingdoc-maven-plugin)
+
+```xml
+<plugin>
+    <groupId>io.github.livingdocumentation</groupId>
+    <artifactId>livingdoc-maven-plugin</artifactId>
+    <version>0.3</version>
+    ...
+    <goals>
+        <goal>glossary</goal>
+    </goals>
+</plugin>
+```
+
+**_Commentaires :_**
+
+- Rendu très sobre.
+- Utilise la javadoc pour la définition.
+- Génère du .adoc et du .html.
+- Pourrait être amélioré ou réécrit pour ajouter des paramètres, par exemple.
+
+#### Génération d'un nuage de mots
+
+Permet de générer un nuage mots à partir du code source
+
+[Sources](https://github.com/LivingDocumentation/livingdoc-maven-plugin)
+
+```xml
+<plugin>
+    <groupId>io.github.livingdocumentation</groupId>
+    <artifactId>livingdoc-maven-plugin</artifactId>
+    <version>0.3</version>
+    ...
+    <goals>
+        <goal>wordcloud</goal>
+    </goals>
+</plugin>
+```
+
+**_Commentaires :_**
+
+- Rendu assez joli.
+- Surtout utilisé pour vérifier que le code "parle" bien du métier plutôt que de la technique.
+
+#### Génération d'un diagramme basé sur l'architecture hexagonale
+
+Permet de générer un diagramme basé sur l'architecture hexagonale pour aider à vérifier la conception du domaine.
+
+[Sources](https://github.com/LivingDocumentation/livingdoc-maven-plugin)
+
+```xml
+<plugin>
+    <groupId>io.github.livingdocumentation</groupId>
+    <artifactId>livingdoc-maven-plugin</artifactId>
+    <version>0.3</version>
+    ...
+    <goals>
+        <goal>diagram</goal>
+    </goals>
+</plugin>
+```
+
+**_Commentaires :_**
+
+- Fonctionne avec la lib viz.js.
+- Ne prend pas en compte toutes les dépendances d'une classe vers d'autres classes (seuls les attributs d'instance ont l'air d'être pris en compte).
+- Le visuel n'est pas parfait mais il permet de vérifier certaines dépendances (et le sens de ces dépendances) entre les objets.
+- L'idée parait intéressante mais il faudrait améliorer le plugin.
