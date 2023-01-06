@@ -2,12 +2,32 @@
 
 Projet de test sur la génération de documentation à partir du code.
 
-## Utilisation
+## Utilisation du projet
+
+### Prérequis
+Pour faire fonctionner ce projet, vous avez besoin de :
+- Linux
+- Java 11 minimum
+- Maven
+- [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+  - Une fois NPM installé, ne pas oublier de lancer la commande `npm install` à la racine du projet.
+- Firefox
+
+**NB :** Pour installer Java et Maven vous pouvez utiliser [SDKMan](https://sdkman.io/).
+
+### Exécution des commandes
 
 - `npm run nettoie` => Supprime tous les répertoires de génération (exécutables ou documentation).
 - `npm run construit` => `nettoie` et créé les exécutables.
 - `npm run lance-dev` => `nettoie`, construit et lance le jar SpringBoot.
 - `npm run genere-la-doc` => Génère la documentation du projet.
+
+Pour générer la documentation du projet, il faut lancer les commandes suivantes :
+- `npm run construit`
+- `npm run genere-la-doc`
+
+L'ensemble des documents générés est accessible via la page d'index ouverte dans firefox depuis cette adresse :
+
 
 ## L'application de support
 
