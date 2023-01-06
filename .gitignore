@@ -6,3 +6,5 @@ target
 allure-results
 node_modules
 package-lock.json
+.idea
+ajcore.*
