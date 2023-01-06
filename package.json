@@ -16,7 +16,7 @@
     "scripts": {
         "nettoie": "mvn clean",
         "construit": "npm run nettoie && mvn package -P springboot",
-        "lance-dev": "npm run nettoie && mvn spring-boot:run",
+        "lance-dev": "mvn spring-boot:run",
         "genere-la-doc": "npm run nettoie && ./scripts/genere-la-doc.sh"
     }
 }

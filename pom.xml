@@ -18,6 +18,7 @@
         <java.version>11</java.version>
         <junit-jupiter.version>5.5.1</junit-jupiter.version>
         <aspectj.version>1.9.5</aspectj.version>
+        <cucumber.version>6.10.3</cucumber.version>
     </properties>
 
     <build>
@@ -67,12 +68,12 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-site-plugin</artifactId>
-                        <version>3.7.1</version>
+                        <version>3.10.0</version>
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-project-info-reports-plugin</artifactId>
-                        <version>3.1.1</version>
+                        <version>3.2.1</version>
                     </plugin>
                     <!--
                     =======================================
@@ -305,14 +306,13 @@
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>6.10.3</version>
+            <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-junit</artifactId>
-            <version>6.10.3</version>
+            <artifactId>cucumber-junit-platform-engine</artifactId>
+            <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
 

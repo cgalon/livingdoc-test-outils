@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-mvn verify -P documentation
+mvn verify -P documentation,springboot
 
 cp $PWD/src/doc/index/index.html target/generated-docs/
 
@@ -21,9 +21,9 @@ docker run --rm -v $PWD/target/generated-docs/test-spring-restdocs:/documents/ a
 
 java -cp target/livingdoc-jar-with-dependencies.jar fr.pe.incub.livingdoc.qdox.ExplorateurDeClasses
 
-mvn site:site
+mvn site:site -P documentation,springboot
 
-mvn io.qameta.allure:allure-maven:report -P documentation
+mvn io.qameta.allure:allure-maven:report -P documentation,springboot
 
 cp -f $PWD/src/doc/graphiques_js/*.html target/generated-docs/
 

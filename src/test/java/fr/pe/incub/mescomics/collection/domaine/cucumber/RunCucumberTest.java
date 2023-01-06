@@ -1,11 +1,8 @@
 package fr.pe.incub.mescomics.collection.domaine.cucumber;
 
-import io.cucumber.junit.CucumberOptions;
-import io.cucumber.junit.Cucumber;
-import org.junit.runner.RunWith;
+import io.cucumber.junit.platform.engine.Cucumber;
 
-@RunWith(Cucumber.class)
-@CucumberOptions(plugin = { "pretty", "html:target/generated-docs/cucumber-report.html" })
+@Cucumber
 public class RunCucumberTest {
 
 }

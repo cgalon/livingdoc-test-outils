@@ -1,0 +1,23 @@
+<project name="Site de test de la livingdoc" combine.self="override">
+
+    <bannerLeft>
+        <name>Project Name</name>
+        <src>https://maven.apache.org/images/apache-maven-project-2.png</src>
+        <href>https://maven.apache.org/</href>
+    </bannerLeft>
+    <bannerRight>
+        <src>https://maven.apache.org/images/maven-logo-2.gif</src>
+    </bannerRight>
+    <publishDate position="right"/>
+    <version position="right"/>
+    <poweredBy>
+        <logo name="Maven" href="https://maven.apache.org/"
+          img="https://maven.apache.org/images/logos/maven-feather.png"/>
+    </poweredBy>
+
+    <body>
+        <menu ref="reports" />
+        <menu ref="parent" />
+        <menu ref="modules" />
+  </body>
+</project>

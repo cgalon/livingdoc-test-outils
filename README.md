@@ -18,16 +18,13 @@ Pour faire fonctionner ce projet, vous avez besoin de :
 ### Exécution des commandes
 
 - `npm run nettoie` => Supprime tous les répertoires de génération (exécutables ou documentation).
-- `npm run construit` => `nettoie` et créé les exécutables.
-- `npm run lance-dev` => `nettoie`, construit et lance le jar SpringBoot.
+- `npm run construit` => `nettoie` et crée les exécutables.
+- `npm run lance-dev` => Compile et lance l'application SpringBoot.
 - `npm run genere-la-doc` => Génère la documentation du projet.
 
-Pour générer la documentation du projet, il faut lancer les commandes suivantes :
-- `npm run construit`
-- `npm run genere-la-doc`
+Pour générer la documentation du projet, il suffit de lancer la commande `npm run genere-la-doc`.
 
-L'ensemble des documents générés est accessible via la page d'index ouverte dans firefox depuis cette adresse :
-
+L'ensemble des documents générés est accessible via la page d'index ouverte dans firefox depuis cette adresse : "target/generated-docs/index.html"
 
 ## L'application de support
 
