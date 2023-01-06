@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 mvn verify -P documentation
 
+cp $PWD/src/doc/index/index.html target/generated-docs/
+
 raml2html api-securisee.raml > target/generated-docs/raml-api-securisee.html
 raml2html api-comics.raml > target/generated-docs/raml-api-comics.html
 
@@ -17,8 +19,6 @@ cp $PWD/src/doc/asciidoctor/*.png target/generated-docs/
 cp $PWD/src/doc/index/index-test-spring-restdocs.adoc target/generated-docs/test-spring-restdocs
 docker run --rm -v $PWD/target/generated-docs/test-spring-restdocs:/documents/ asciidoctor/docker-asciidoctor asciidoctor *.adoc
 
-firefox target/generated-docs/index.html &
-
 java -cp target/livingdoc-jar-with-dependencies.jar fr.pe.incub.livingdoc.qdox.ExplorateurDeClasses
 
 mvn site:site
@@ -26,3 +26,5 @@ mvn site:site
 mvn io.qameta.allure:allure-maven:report -P documentation
 
 cp -f $PWD/src/doc/graphiques_js/*.html target/generated-docs/
+
+firefox target/generated-docs/index.html &
