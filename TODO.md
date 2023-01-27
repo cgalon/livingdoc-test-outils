@@ -7,22 +7,24 @@
 
 ## Applications à tester
 
-[ ] Antora
+[ ] Kodemo  
+[ ] Antora  
 [ ] Docsify
 
 ## Refactoring / améliorations
 
 [ ] Modulariser le projet  
-- Un module avec le code source et les tests unitaires
-- Un module avec les tests d'intégration
-- Un module Maven par outil à tester
-- Chaque module produit sa page de test/résultats
-- Scripts npm pour lancer ce que l'on veut
-- Un module/script supplémentaire pour tout agréger
-- Chaque module embarque les dépendances minimales pour fonctionner
-- Chaque module de test d'outil dépend du module des sources
+- Utiliser les profils Maven  
+- Un profil par outil à tester  
+- Chaque profil utilise le minimum de dépendances possibles  
+- Scripts npm pour lancer ce que l'on veut (1 profil ou tous)
+- Créer un répertoire par outil dans target/generated-docs
+
+[ ] Revoir/ordonnancer le script genere-la-doc.sh
+
+[ ] Refaire la page des outils testés (avec Kodemo?)
 
 ## Divers
-[ ] Revoir la liste des outils et applications à tester
+[ ] Revoir la liste des outils et applications à tester  
 [ ] Créer une liste des liens utiles concernant la living doc
 
