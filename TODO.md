@@ -21,6 +21,8 @@
 - Créer un répertoire par outil dans target/generated-docs
 
 [ ] Revoir/ordonnancer le script genere-la-doc.sh
+- Un script pour sujet/outil
+- Créer un répertoire de sortie par script dans target/generated-docs
 
 [ ] Refaire la page des outils testés (avec Kodemo?)
 
