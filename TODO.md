@@ -13,18 +13,10 @@
 
 ## Refactoring / améliorations
 
-[ ] Modulariser le projet  
-- Utiliser les profils Maven  
-- Un profil par outil à tester  
-- Chaque profil utilise le minimum de dépendances possibles  
-- Scripts npm pour lancer ce que l'on veut (1 profil ou tous)
-- Créer un répertoire par outil dans target/generated-docs
-
-[ ] Revoir/ordonnancer le script genere-la-doc.sh
-- Un script pour sujet/outil
-- Créer un répertoire de sortie par script dans target/generated-docs
-
-[ ] Refaire la page des outils testés (avec Kodemo?)
+[ ] Refaire la page des outils testés (avec Kodemo?) à sortir les infos du README  
+[ ] Résoudre les erreurs/warnings dans le build liées à AspectJ  
+[ ] Faire fonctionner la classe de parsing des sources utilisant QDox (et décommenter son utilisation dans le script de génération)  
+[ ] Ajouter des styles à la page d'index des résultats (Bootstrap?)
 
 ## Divers
 [ ] Revoir la liste des outils et applications à tester  
