@@ -7,18 +7,22 @@
 
 ## Applications à tester
 
-[ ] Kodemo  
-[ ] Antora  
-[ ] Docsify
+[ ] Kodemo  (https://diataxis.fr/)  
+[ ] Antora  (https://diataxis.fr/)  
+[ ] Docsify (https://diataxis.fr/)
+
+## Autre à tester
+
+[ ] Diataxis (https://diataxis.fr/)
 
 ## Refactoring / améliorations
 
-[ ] Refaire la page des outils testés (avec Kodemo?) à sortir les infos du README  
+[ ] Créer une page de rendu des outils testés (avec Kodemo?) et sortir les infos du README  
 [ ] Résoudre les erreurs/warnings dans le build liées à AspectJ  
 [ ] Faire fonctionner la classe de parsing des sources utilisant QDox (et décommenter son utilisation dans le script de génération)  
 [ ] Ajouter des styles à la page d'index des résultats (Bootstrap?)
 
 ## Divers
-[ ] Revoir la liste des outils et applications à tester  
-[ ] Créer une liste des liens utiles concernant la living doc
+[X] Revoir la liste des outils et applications à tester  
+[ ] Créer une page de liens utiles concernant la living doc
 
