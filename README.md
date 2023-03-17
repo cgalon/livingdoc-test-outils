@@ -254,6 +254,8 @@ Framework de mise en forme de rapports de test. Ici, test du plugin Maven pour l
 - Soucis de compatibilité (CORS) avec les navigateurs récents.
 - Fournit un petit serveur Web intégré pour répondre au problème des CORS.
 
+**_Désactivé car l'utilisation d'AspectJ pose des problèmes de compatibilité avec Spring_**
+
 ### Mermaid
 
 Bibliothèque JS de génération graphique de diagrammes à partir écrits en texte.

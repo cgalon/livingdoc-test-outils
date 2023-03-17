@@ -7,18 +7,19 @@
 
 ## Applications à tester
 
-[ ] Kodemo  (https://diataxis.fr/)  
-[ ] Antora  (https://diataxis.fr/)  
-[ ] Docsify (https://diataxis.fr/)
+[ ] Kodemo  (https://kodemo.com/)  
+[ ] Antora  (https://antora.org/)  
+[ ] Docsify (https://docsify.js.org/)
 
 ## Autre à tester
 
 [ ] Diataxis (https://diataxis.fr/)
+[ ] Allure (https://github.com/allure-framework/allure2)
 
 ## Refactoring / améliorations
 
 [ ] Créer une page de rendu des outils testés (avec Kodemo?) et sortir les infos du README  
-[ ] Résoudre les erreurs/warnings dans le build liées à AspectJ  
+[X] Résoudre les erreurs/warnings dans le build liées à AspectJ  
 [ ] Faire fonctionner la classe de parsing des sources utilisant QDox (et décommenter son utilisation dans le script de génération)  
 [ ] Ajouter des styles à la page d'index des résultats (Bootstrap?)
 
