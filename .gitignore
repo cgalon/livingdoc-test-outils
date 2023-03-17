@@ -9,3 +9,4 @@ package-lock.json
 .idea
 ajcore.*
 nohup.out
+.vscode

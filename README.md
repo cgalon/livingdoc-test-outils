@@ -20,11 +20,28 @@ Pour faire fonctionner ce projet, vous avez besoin de :
 - `npm run nettoie` => Supprime tous les répertoires de génération (exécutables ou documentation).
 - `npm run construit` => `nettoie` et crée les exécutables.
 - `npm run lance-dev` => Compile et lance l'application SpringBoot.
-- `npm run genere-la-doc` => Génère la documentation du projet.
+- `npm run genere-la-doc` => Génère la documentation complète du projet.
 
 Pour générer la documentation du projet, il suffit de lancer la commande `npm run genere-la-doc`.
 
 L'ensemble des documents générés est accessible via la page d'index ouverte dans firefox depuis cette adresse : "target/generated-docs/index.html"
+
+### Utilisation des profils Maven
+
+Plusieurs profils Maven ont été définis pour résoudre les problèmes de conflit entre les dépendances.
+Ces profils peuvent utilisés séparément pour des besoins de test. 
+Certains nécessitent simplement la création du dossier `target/generated-docs/`.
+
+La commande `npm run genere-la-doc` permet de tous les lancer au travers de plusieurs scripts qui s'enchaînent.
+
+```mermaid
+flowchart LR
+    A[npm run genere-la-doc] -->|scripts| B[genere-toute-la-documentation.sh]
+    B --> C[genere-la-doc-des-tests.sh]
+    B --> D[genere-la-doc-avec-asciidoc.sh]
+    B --> E[genere-la-doc-de-l-api.sh]
+    B --> F[genere-la-doc-de-changelog.sh]
+```
 
 ## L'application de support
 
