@@ -6,6 +6,19 @@
 [ ] AsyncAPI (https://www.asyncapi.com/)
 [ ] openapi-generator  (https://github.com/OpenAPITools/openapi-generator) (génération du schéma OpenAPI et génération des classes clientes)
 [ ] linkcheck(http://maven.apache.org/plugins/maven-linkcheck-plugin/)
+[X] Allure
+[X] Anychart
+[X] ArchUnit
+[X] Asciidoctor
+[X] Changelogs
+[X] chart.js
+[X] Cucumber
+[X] DepGraph
+[X] Mermaid
+[X] QDox
+[X] RAML
+[X] Spring-Restdocs
+[X] Swagger
 
 ## Applications à tester
 
