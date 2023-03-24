@@ -4,6 +4,7 @@
 
 [ ] ApprovalTests (https://approvaltests.com/)  
 [ ] AsyncAPI (https://www.asyncapi.com/)
+[ ] openapi-generator  (https://github.com/OpenAPITools/openapi-generator) (génération du schéma OpenAPI et génération des classes clientes)
 
 ## Applications à tester
 
@@ -26,4 +27,3 @@
 ## Divers
 [X] Revoir la liste des outils et applications à tester  
 [ ] Créer une page de liens utiles concernant la living doc
-
