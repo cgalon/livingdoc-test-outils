@@ -38,4 +38,6 @@ Ici utilisé au travers de SpringFox.
 - Génère une documentation très claire et très agréable à consulter.
 - La documentation produite permet de tester les ressources.
 - Ne produit que de la documentation de ressources REST, pas documentation "métier".
-- Implémentation du standard OpenAPI.
+- Implémentation du standard OpenAPI V2.
+
+**WARNING** : L'utilisation de Springfox est incompatible avec l'utilisation de springdoc-openapi-ui pour avoir une doc openAPI V3

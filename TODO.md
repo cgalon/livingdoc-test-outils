@@ -4,8 +4,8 @@
 
 [ ] ApprovalTests (https://approvaltests.com/)  
 [ ] AsyncAPI (https://www.asyncapi.com/)
-[ ] openapi-generator  (https://github.com/OpenAPITools/openapi-generator) (génération du schéma OpenAPI et génération des classes clientes)
 [ ] linkcheck(http://maven.apache.org/plugins/maven-linkcheck-plugin/)
+[X] openapi-generator  (https://github.com/OpenAPITools/openapi-generator) (génération du schéma OpenAPI et génération des classes clientes)
 [X] Allure
 [X] Anychart
 [X] ArchUnit
@@ -33,11 +33,12 @@
 
 ## Refactoring / améliorations
 
-[X] Créer une page de rendu des outils testés et sortir les infos du README  
-[X] Résoudre les erreurs/warnings dans le build liées à AspectJ  
+[ ] Migrer la doc de l'API de OpenAPI V2 vers OpenAPI V3 (https://springdoc.org/migrating-from-springfox.html)
 [ ] Faire fonctionner la classe de parsing des sources utilisant QDox (et décommenter son utilisation dans le script de génération)  
 [ ] Ajouter des styles à la page d'index des résultats (Bootstrap?)
+[X] Créer une page de rendu des outils testés et sortir les infos du README  
+[X] Résoudre les erreurs/warnings dans le build liées à AspectJ  
 
 ## Divers
-[X] Revoir la liste des outils et applications à tester  
 [ ] Créer une page de liens utiles concernant la living doc
+[X] Revoir la liste des outils et applications à tester  
