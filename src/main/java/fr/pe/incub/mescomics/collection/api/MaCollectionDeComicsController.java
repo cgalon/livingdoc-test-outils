@@ -1,10 +1,10 @@
 package fr.pe.incub.mescomics.collection.api;
 
 import fr.pe.incub.mescomics.collection.domaine.Comics;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +16,8 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/collection/titre")
-@Api(value="Collection de comics", description="Ressource de gestion de la collection de Comics détenus par l'utilisateur.")
+@Tag(name="Collection de comics", description="Ressource de gestion de la collection de Comics détenus par " +
+        "l'utilisateur.")
 public class MaCollectionDeComicsController {
 
     MaCollectionDeComics maCollectionDeComics;
@@ -26,12 +27,12 @@ public class MaCollectionDeComicsController {
         this.maCollectionDeComics = maCollectionDeComics;
     }
 
-    @ApiOperation(value ="Retourne une liste de comics pour la titre passé en paramètre.")
+    @Operation(description ="Retourne une liste de comics pour la titre passé en paramètre.")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Liste trouvée"),
-            @ApiResponse(code = 401, message = "Opération non autorisée"),
-            @ApiResponse(code = 403, message = "Opération interdite"),
-            @ApiResponse(code = 404, message = "Pas de comics trouvé pour ce titre")
+            @ApiResponse(responseCode = "200", description = "Liste trouvée"),
+            @ApiResponse(responseCode = "401", description = "Opération non autorisée"),
+            @ApiResponse(responseCode = "403", description = "Opération interdite"),
+            @ApiResponse(responseCode = "404", description = "Pas de comics trouvé pour ce titre")
     })
     @RequestMapping(method = RequestMethod.GET)
     public List<Comics> retourneMaListeDeComicsPourCeTitre(@RequestParam String titre) {
@@ -42,12 +43,12 @@ public class MaCollectionDeComicsController {
      * Non implémenté. Existe juste pour tester la génération de documentation.
      * @param titre
      */
-    @ApiOperation(value ="Supprime la liste de comics correspondants au titre passé en paramètre.")
+    @Operation(description ="Supprime la liste de comics correspondants au titre passé en paramètre.")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Suppression effectuée avec succès"),
-            @ApiResponse(code = 401, message = "Opération non autorisée"),
-            @ApiResponse(code = 403, message = "Opération interdite"),
-            @ApiResponse(code = 404, message = "Pas de comics à supprimer pour ce titre")
+            @ApiResponse(responseCode = "200", description = "Suppression effectuée avec succès"),
+            @ApiResponse(responseCode = "401", description = "Opération non autorisée"),
+            @ApiResponse(responseCode = "403", description = "Opération interdite"),
+            @ApiResponse(responseCode = "404", description = "Pas de comics à supprimer pour ce titre")
     })
     @RequestMapping(method = RequestMethod.DELETE)
     @ResponseStatus(value = HttpStatus.OK)

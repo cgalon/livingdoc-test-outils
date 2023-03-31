@@ -5,6 +5,8 @@
 Permet de générer une documentation de ressources REST au format OpenAPI.
 Ici utilisé au travers de SpringFox.
 
+**Désactivé suite au passage en OpenAPI V3 avec Springdoc-openapi**
+
 ### Site / docs complémentaires
 
 [Site](https://swagger.io/tools/swagger-ui/)
@@ -39,5 +41,5 @@ Ici utilisé au travers de SpringFox.
 - La documentation produite permet de tester les ressources.
 - Ne produit que de la documentation de ressources REST, pas documentation "métier".
 - Implémentation du standard OpenAPI V2.
-
-**WARNING** : L'utilisation de Springfox est incompatible avec l'utilisation de springdoc-openapi-ui pour avoir une doc openAPI V3
+- L'utilisation de Springfox est incompatible avec l'utilisation de springdoc-openapi-ui pour avoir une doc openAPI V3
+- Springfox n'est plus maintenu

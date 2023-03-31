@@ -2,8 +2,7 @@ package fr.pe.incub.mescomics.referentiel.domaine;
 
 import fr.pe.incub.livingdoc.glossaire.Glossary;
 import fr.pe.incub.mescomics.referentiel.domaine.exception.EpisodeNonTrouveException;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -15,16 +14,16 @@ import java.util.Objects;
 /**
  * Parution d'une instance de revue à une date précise. Un numéro peut contenir un ou plusieurs épisodes de un ou plusieurs héros.
  */
-@ApiModel(description = "Les informations particulière à un numéro d'une revue.")
+@Schema(description = "Les informations particulière à un numéro d'une revue.")
 public class Numero {
 
-    @ApiModelProperty(notes = "Titre de la revue")
+    @Schema(description = "Titre de la revue")
     public final String nomDeLaRevue;
-    @ApiModelProperty(notes = "Numéro de la revue")
+    @Schema(description = "Numéro de la revue")
     public final int numeroDansLaSerie;
-    @ApiModelProperty(notes = "Date de parution du numéro")
+    @Schema(description = "Date de parution du numéro")
     public final LocalDate dateDeParution;
-    @ApiModelProperty(notes = "Liste des histoires présentes dans le numéro")
+    @Schema(description = "Liste des histoires présentes dans le numéro")
     private List<Episode> listeDesEpisodes = new ArrayList<>();
 
     public Numero(String nomDeLaRevue, int numero, LocalDate dateDeParution) {

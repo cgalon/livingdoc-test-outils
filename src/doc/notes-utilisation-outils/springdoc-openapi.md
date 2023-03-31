@@ -24,7 +24,4 @@ Il suffit d'ajouter une dépendance dans le pom.xml :
 
 - Doc disponible uniquement au runtime
 - Ajoute une ressource `v3/api-docs`
-
-**WARNING** : L'utilisation de Springfox (pour la doc openAPI V2) est incompatible avec l'utilisation de springdoc-openapi-ui pour avoir une doc openAPI V3.
-
-**Actuellement désactivé**
+- Annotations de documentation différentes de celles de Springfox. La migration n'est pas transparente.

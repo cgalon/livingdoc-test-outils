@@ -1,8 +1,7 @@
 package fr.pe.incub.mescomics.referentiel.domaine;
 
 import fr.pe.incub.livingdoc.glossaire.Glossary;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.util.Objects;
 
@@ -10,14 +9,14 @@ import java.util.Objects;
 /**
  * Morceau d'histoire d'un héros paru dans un numéro d'une revue.
  */
-@ApiModel(description = "Les informations d'une histoire d'un héros dans un numéro d'une revue.")
+@Schema(description = "Les informations d'une histoire d'un héros dans un numéro d'une revue.")
 public class Episode{
 
-    @ApiModelProperty(notes = "Nom du héros de l'histoire.")
+    @Schema(description = "Nom du héros de l'histoire.")
     private final String heros;
-    @ApiModelProperty(notes = "Titre de l'épisode.")
+    @Schema(description = "Titre de l'épisode.")
     private final String titre;
-    @ApiModelProperty(notes = "Dessinateur de l'épisode.")
+    @Schema(description = "Dessinateur de l'épisode.")
     private final String dessinateur;
 
     public Episode(String heros, String nomDeLEpisode, String dessinateur) {

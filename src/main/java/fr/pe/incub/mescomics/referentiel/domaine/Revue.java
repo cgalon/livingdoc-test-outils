@@ -2,8 +2,7 @@ package fr.pe.incub.mescomics.referentiel.domaine;
 
 import fr.pe.incub.livingdoc.glossaire.Glossary;
 import fr.pe.incub.mescomics.referentiel.domaine.exception.ParutionRevueTermineeException;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.util.Objects;
 
@@ -11,15 +10,15 @@ import java.util.Objects;
 /**
  * Une parution sortant régulièrement (généralement mensuellement) et relatant les aventures de un ou plusieurs héros.
  */
-@ApiModel(description = "Les informations d'une revue de référence.")
+@Schema(description = "Les informations d'une revue de référence.")
 public class Revue {
-    @ApiModelProperty(notes = "Titre de la revue")
+    @Schema(description = "Titre de la revue")
     public final String titre;
-    @ApiModelProperty(notes = "Nombre de numéros existants pour cette revue")
+    @Schema(description = "Nombre de numéros existants pour cette revue")
     private int nombreDeNumeros;
-    @ApiModelProperty(notes = "Nom de l'éditeur de la revue")
+    @Schema(description = "Nom de l'éditeur de la revue")
     public final String nomDeLEditeur;
-    @ApiModelProperty(notes = "Est-ce que la série continue de paraître?")
+    @Schema(description = "Est-ce que la série continue de paraître?")
     private boolean serieEnCours;
 
     public Revue(String titre, int nombreDeNumeros, String editeur, boolean serieEnCours) {

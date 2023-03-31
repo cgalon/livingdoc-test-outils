@@ -1,8 +1,7 @@
 package fr.pe.incub.mescomics.collection.domaine;
 
 import fr.pe.incub.livingdoc.glossaire.Glossary;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -13,11 +12,11 @@ import java.util.stream.Collectors;
 /**
  * La liste des comics détenus par l'utilisateur.
  */
-@ApiModel(description = "Une collection de comics possédés par l'utilisateur.")
+@Schema(description = "Une collection de comics possédés par l'utilisateur.")
 public class Collection {
 
     private List<Comics> tousLesComics = new ArrayList<>();
-    @ApiModelProperty(notes = "La date du dernier ajout d'un nouveau comics dans la collection.")
+    @Schema(description = "La date du dernier ajout d'un nouveau comics dans la collection.")
     private LocalDate dateDuDernierAjout;
 
     public void ajouteUnNouveauComics(Comics unNouveauComics) {

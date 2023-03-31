@@ -1,5 +1,8 @@
 package fr.pe.incub.mescomics;
 
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Contact;
+import io.swagger.v3.oas.models.info.Info;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -46,4 +49,18 @@ public class ConfigurationDeLApplication {
         JpaVendorAdapter jva = new HibernateJpaVendorAdapter();
         return jva;
     }
+
+    @Bean
+    public OpenAPI configureLesMetadataDeLaDocumentation() {
+        return new OpenAPI()
+                .info(new Info()
+                        .title("Gestion d'une collection de comics")
+                        .description("Application d'exemple de génération de documentation")
+                        .version("1.0.0")
+                        .contact(new Contact()
+                                .name("Christophe Galon")
+                                .email("cgalon@free.fr")
+                                .url("https://github.com/cgalon")));
+    }
+
 }
