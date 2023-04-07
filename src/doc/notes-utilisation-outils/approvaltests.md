@@ -7,8 +7,8 @@ Permet d'enregistrer le comportement d'une API "en boite noire" puis de vérifie
 
 ### Site / docs complémentaires
 
-[Site](https://approvaltests.com/)
-[ApprovalTests.Java](https://github.com/approvals/ApprovalTests.Java)
+[Site](https://approvaltests.com/)  
+[ApprovalTests.Java](https://github.com/approvals/ApprovalTests.Java)  
 
 ### Intégration
 
@@ -31,4 +31,5 @@ Seulement deux dépendances à ajouter (Approval + sérialisation JSON) :
 - Les fichiers de référence sont produits automatiquement, mais nécessitent un renommage pour être pris en compte comme référence.
 - Parait très intéressant pour tester et "acter" le comportement d'un SUT en boite noire puis pour le refactorer.
 - C'est du "test after".
-- En l'état, ne sert pas vraiment à documenter, mais à assurer de la non-regression pour de la maintenance ou du refactoring. 
+- En l'état, ne sert pas vraiment à documenter, mais à assurer de la non-regression pour de la maintenance ou du refactoring.
+
