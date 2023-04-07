@@ -20,4 +20,8 @@ public class ListeDAchat {
     public void ajouteUnNumeroManquant(NumeroManquant numeroManquant) {
         listeDeNumeroManquants.add(numeroManquant);
     }
+
+    public NumeroManquant[] listeDesNumerosManquants() {
+        return listeDeNumeroManquants.toArray(listeDeNumeroManquants.toArray(new NumeroManquant[listeDeNumeroManquants.size()]));
+    }
 }

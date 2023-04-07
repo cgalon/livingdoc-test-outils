@@ -1,0 +1,14 @@
+Numéro de Strange manquant[00] = NumeroManquant{serie='Strange', numero=2}
+Numéro de Strange manquant[01] = NumeroManquant{serie='Strange', numero=3}
+Numéro de Strange manquant[02] = NumeroManquant{serie='Strange', numero=4}
+Numéro de Strange manquant[03] = NumeroManquant{serie='Strange', numero=6}
+Numéro de Strange manquant[04] = NumeroManquant{serie='Strange', numero=7}
+Numéro de Strange manquant[05] = NumeroManquant{serie='Strange', numero=8}
+Numéro de Strange manquant[06] = NumeroManquant{serie='Strange', numero=9}
+Numéro de Strange manquant[07] = NumeroManquant{serie='Strange', numero=13}
+Numéro de Strange manquant[08] = NumeroManquant{serie='Strange', numero=14}
+Numéro de Strange manquant[09] = NumeroManquant{serie='Strange', numero=16}
+Numéro de Strange manquant[10] = NumeroManquant{serie='Strange', numero=17}
+Numéro de Strange manquant[11] = NumeroManquant{serie='Strange', numero=18}
+Numéro de Strange manquant[12] = NumeroManquant{serie='Strange', numero=19}
+Numéro de Strange manquant[13] = NumeroManquant{serie='Strange', numero=20}

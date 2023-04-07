@@ -1,0 +1,10 @@
+Numéro de Titan manquant[00] = NumeroManquant{serie='Titan', numero=1}
+Numéro de Titan manquant[01] = NumeroManquant{serie='Titan', numero=2}
+Numéro de Titan manquant[02] = NumeroManquant{serie='Titan', numero=3}
+Numéro de Titan manquant[03] = NumeroManquant{serie='Titan', numero=4}
+Numéro de Titan manquant[04] = NumeroManquant{serie='Titan', numero=5}
+Numéro de Titan manquant[05] = NumeroManquant{serie='Titan', numero=6}
+Numéro de Titan manquant[06] = NumeroManquant{serie='Titan', numero=7}
+Numéro de Titan manquant[07] = NumeroManquant{serie='Titan', numero=8}
+Numéro de Titan manquant[08] = NumeroManquant{serie='Titan', numero=9}
+Numéro de Titan manquant[09] = NumeroManquant{serie='Titan', numero=10}

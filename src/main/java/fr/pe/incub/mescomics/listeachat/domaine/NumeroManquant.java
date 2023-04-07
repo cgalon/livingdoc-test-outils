@@ -22,4 +22,11 @@ public class NumeroManquant {
         this.editeur = editeur;
     }
 
+    @Override
+    public String toString() {
+        return "NumeroManquant{" +
+                "serie='" + serie + '\'' +
+                ", numero=" + numero +
+                '}';
+    }
 }
