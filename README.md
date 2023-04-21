@@ -75,3 +75,8 @@ Fonctionnement :
   - Finir de remplir la fiche
 - Toutes les fiches seront prises en compte au moment de la génération de la doc
 - Le contenu généré à partir des fiches sera disponible dans la page `target/generated-docs/index.html`.
+
+## La page des liens
+
+La [page de liens](liens-utiles.html) sur tous les sujets concernant la documentation vivante est rendue dynamique par l'utilisation de [Vue.js](https://vuejs.org/).
+Le contenu est généré à partir du fichier `liens-utiles.js` qui contient toutes les données au format JSON.

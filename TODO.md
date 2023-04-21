@@ -33,6 +33,7 @@
 
 ## Refactoring / améliorations
 
+[ ] Compléter la page des liens  
 [X] Faire fonctionner la classe de parsing des sources utilisant QDox (et décommenter son utilisation dans le script de génération)  
 [X] Ajouter des styles à la page d'index des résultats (Bootstrap?)  
 [X] Migrer la doc de l'API de OpenAPI V2 vers OpenAPI V3 (https://springdoc.org/migrating-from-springfox.html)  
@@ -40,5 +41,5 @@
 [X] Résoudre les erreurs/warnings dans le build liées à AspectJ  
 
 ## Divers
-[ ] Créer une page de liens utiles concernant la living doc  
+[X] Créer une page de liens utiles concernant la living doc  
 [X] Revoir la liste des outils et applications à tester  
