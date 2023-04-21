@@ -34,7 +34,7 @@
 ## Refactoring / améliorations
 
 [X] Faire fonctionner la classe de parsing des sources utilisant QDox (et décommenter son utilisation dans le script de génération)  
-[ ] Ajouter des styles à la page d'index des résultats (Bootstrap?)  
+[X] Ajouter des styles à la page d'index des résultats (Bootstrap?)  
 [X] Migrer la doc de l'API de OpenAPI V2 vers OpenAPI V3 (https://springdoc.org/migrating-from-springfox.html)  
 [X] Créer une page de rendu des outils testés et sortir les infos du README  
 [X] Résoudre les erreurs/warnings dans le build liées à AspectJ  
