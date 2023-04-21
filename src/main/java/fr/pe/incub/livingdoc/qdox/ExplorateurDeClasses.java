@@ -14,8 +14,8 @@ public class ExplorateurDeClasses {
     public static void main(String[] args) throws IOException {
         ExplorateurDeClasses explorateurDeClasses = new ExplorateurDeClasses();
 
-        File repertoireDesSources = new File("/home/icga1070/git/documentation/livingdoc/src/main/java/fr/pe/incub/mescomics");
-        File repertoireDeDestination = new File("/home/icga1070/git/documentation/livingdoc/target/generated-docs/resultat-scan-qdox.json");
+        File repertoireDesSources = new File("src/main/java/fr/pe/incub/mescomics");
+        File repertoireDeDestination = new File("target/generated-docs/resultat-scan-qdox.json");
         explorateurDeClasses.scanneUnDossierDeSourcesEtEnvoieLeResultatEnJSON(repertoireDesSources, repertoireDeDestination);
     }
 

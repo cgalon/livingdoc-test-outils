@@ -21,8 +21,8 @@ API donnant accès au contenu de classes Java d'un répertoire.
 ### Commentaires
 
 - Lit les fichiers sources du projet.
-- Permet d'extraire toutes les informations d'une classe sous forme d'objets Java.
+- Permet d'extraire toutes les informations d'une classe sous forme d'objets Java (attributs, méthodes, pamaètres, annotations...).
 - API très simple à utiliser et très complète.
-- Pas de formattage en sortie. chacun doit se débrouiller avec les informations brutes.
+- Pas de module de formattage en sortie. Chacun doit se débrouiller avec les informations brutes.
 - Très intéressant pour générer de la doc à partir de code source.
 

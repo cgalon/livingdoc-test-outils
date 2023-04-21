@@ -19,9 +19,7 @@ echo "******************** Récupération des exemples Javascript **************
 cp -f $PWD/src/doc/graphiques_js/*.html target/generated-docs/
 
 # Génération de docs à partir du parsing du code source
-# Commenté car ne fonctionne pas actuellement.
-# cf. TODO
-#java -cp target/livingdoc-jar-with-dependencies.jar fr.pe.incub.livingdoc.qdox.ExplorateurDeClasses
+java -cp target/livingdoc-jar-with-dependencies.jar fr.pe.incub.livingdoc.qdox.ExplorateurDeClasses
 
 echo "******************** Affichage des résultats ********************"
 nohup firefox target/generated-docs/index.html &
