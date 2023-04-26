@@ -29,7 +29,6 @@
 ## Autre à tester
 
 [ ] Diataxis (https://diataxis.fr/)  
-[ ] Allure (https://github.com/allure-framework/allure2)  
 
 ## Refactoring / améliorations
 
