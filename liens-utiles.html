@@ -24,7 +24,7 @@
             </thead>
             <tbody>
             <tr v-for="lien in theme.liste">
-                <td><a href="{{ lien.url }}" target="_blank">{{ lien.url }}</a></td>
+                <td><a v-bind:href="lien.url" target="_blank">{{ lien.url }}</a></td>
                 <td>{{ lien.description }}</td>
             </tr>
             </tbody>
