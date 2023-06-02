@@ -8,3 +8,7 @@ raml2html api-comics.raml > target/generated-docs/raml-api-comics.html
 # Nécessite d'avoir exécuté les tests avant
 cp $PWD/src/doc/index/index-test-spring-restdocs.adoc target/generated-docs/test-spring-restdocs
 docker run --rm -v $PWD/target/generated-docs/test-spring-restdocs:/documents/ asciidoctor/docker-asciidoctor asciidoctor *.adoc
+
+# Génère la doc de l'API asynchrone
+mkdir target/generated-docs/async
+asyncapi generate fromTemplate asyncapi.yaml @asyncapi/html-template -o target/generated-docs/async

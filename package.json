@@ -5,6 +5,8 @@
     "description": "Projet de tests de génération de documentation",
     "private": true,
     "dependencies": {
+        "@asyncapi/cli": "^0.47.0",
+        "@asyncapi/generator": "^1.10.4",
         "gitlog": "^2.4.0",
         "raml2html": "^7.3.0",
         "viz.js": "^1.8.0"

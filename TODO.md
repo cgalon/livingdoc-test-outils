@@ -2,9 +2,9 @@
 
 ## Outils à tester
 
-[ ] AsyncAPI (https://www.asyncapi.com/)  
 [ ] linkcheck(http://maven.apache.org/plugins/maven-linkcheck-plugin/)  
 [ ] openapi-generator  (https://github.com/OpenAPITools/openapi-generator) (génération du schéma OpenAPI et génération des classes clientes)  
+[X] AsyncAPI (https://www.asyncapi.com/)  
 [X] ApprovalTests (https://approvaltests.com/)  
 [X] Allure  
 [X] Anychart  

@@ -1,0 +1,92 @@
+asyncapi: '2.6.0'
+info:
+  title: Gestion des achats de comics
+  version: '1.0.0'
+  description: |
+    API asynchrone permettant d'interagir sur la collection de comics.
+
+    ### Attention
+    Il n'y a pas d'implémentation correspondante dans le code.
+    Le but de ce fichier est seulement de tester la génération de la documentation correspondante à cette API asynchrone.
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+
+defaultContentType: application/json
+channels:
+  fr.cga.test.event.manquant:
+    description: Le topic où on publie les informations sur les numéros manquants dans la collection.
+    parameters:
+      nomSerie:
+        $ref: '#/components/parameters/nomSerie'
+      numero:
+        $ref: '#/components/parameters/numero'
+    publish:
+      summary: Notifie l'ajout d'un numéro manquant dans une série.
+      operationId: ajouteNumeroManquant
+      message:
+        $ref: '#/components/messages/ajoutNumeroManquant'
+  fr.cga.test.event.achat:
+    parameters:
+      nomSerie:
+        $ref: '#/components/parameters/nomSerie'
+      numero:
+        $ref: '#/components/parameters/numero'
+    subscribe:
+      operationId: achatNumero
+      message:
+        $ref: '#/components/messages/achatNumero'
+components:
+  messages:
+    ajoutNumeroManquant:
+      name: ajoutNumeroManquant
+      title: Ajout d'un numéro manquant
+      summary: Notifie de l'ajout d'un numéro manquant dans la collection.
+      contentType: application/json
+      payload:
+        $ref: "#/components/schemas/ajoutNumeroManquant"
+    achatNumero:
+      name: achatNumeroManquant
+      title: Achat d'un numéro manquant
+      summary: Notifie de l'achat d'un numéro manquant pour ajout dans la collection.
+      contentType: application/json
+      payload:
+        $ref: "#/components/schemas/achatNumeroManquant"
+  schemas:
+    ajoutNumeroManquant:
+      type: object
+      properties:
+        dateDeParution:
+          type: string
+          format: date
+          description: Date de parution du numéro manquant.
+        editeur:
+          type: string
+          description: Editeur de la série du numéro manquant.
+        envoyeA:
+          $ref: "#/components/schemas/envoyeA"
+    achatNumeroManquant:
+      type: object
+      properties:
+        dateAchat:
+          type: string
+          format: date
+          description: Date de l'achat du numéro.
+        prix:
+          type: integer
+          description: Prix d'achat du numéro manquant.
+        sentAt:
+          $ref: "#/components/schemas/envoyeA"
+    envoyeA:
+      type: string
+      format: date-time
+      description: Date and heure d'envoi du message.
+  parameters:
+    nomSerie:
+      description: Nom de la série dont au moins un numéro est manquant.
+      schema:
+        type: string
+    numero:
+      description: Numéro manquant dans la série.
+      schema:
+        type: integer
