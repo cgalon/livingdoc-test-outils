@@ -3,8 +3,10 @@
 
 ### Description
 
-Fournit une documentation dynamique de l'API asynchrone du projet.
-Utilise le standard AsyncAPI basé sur OpenAPI (pour le synchrone).
+Fournit une documentation dynamique de l'API asynchrone du projet.  
+Utilise le standard AsyncAPI basé sur OpenAPI (pour le synchrone).  
+
+**NB :** Teste uniquement la génération de doc, pas les autres fonctionnalités liées à AsyncAPI (génération de code...)
 
 ### Site / docs complémentaires
 
@@ -21,6 +23,7 @@ npm install @asyncapi/generator
 
 ### Commentaires
 
-- Génération assez longue
+- Génération de ma doc assez longue
 - Editeur en ligne très pratique pour tester la validité du fichier de définition
 - Rendu très propre et très clair de la documentation générée
+
