@@ -22,7 +22,7 @@
 
 [ ] Kodemo  (https://kodemo.com/)    
 [ ] Antora  (https://antora.org/)  
-[ ] Docsify (https://docsify.js.org/)  
+[X] Docsify (https://docsify.js.org/)  
 
 ## Autre à tester
 

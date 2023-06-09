@@ -80,13 +80,3 @@ Fonctionnement :
 
 La [page de liens](liens-utiles.html) sur tous les sujets concernant la documentation vivante est rendue dynamique par l'utilisation de [Vue.js](https://vuejs.org/).
 Le contenu est généré à partir du fichier `liens-utiles.js` qui contient toutes les données au format JSON.
-
-## Les produits de création de site documentaire
-
-### Docsify
-
-Pour accéder à la doc de test de Docsify :  
-* Lancer la commande `npm run lance-docsify`
-* Puis cliquer sur le lien qui apparaît dans la console du type `http://localhost:[port_aléatoire]` 
-
-Les documents utilisés pour les tests sont le README de ce projet et une série d'Architectural Design Record d'un autre projet

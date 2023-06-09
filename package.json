@@ -7,6 +7,7 @@
     "dependencies": {
         "@asyncapi/cli": "^0.47.0",
         "@asyncapi/generator": "^1.10.4",
+        "docsify-cli": "^4.4.4",
         "gitlog": "^2.4.0",
         "raml2html": "^7.3.0",
         "viz.js": "^1.8.0"
@@ -19,6 +20,7 @@
         "nettoie": "mvn clean",
         "construit": "npm run nettoie && mvn package",
         "lance-dev": "mvn spring-boot:run",
-        "genere-la-doc": "npm run nettoie && ./scripts/genere-toute-la-documentation.sh"
+        "genere-la-doc": "npm run nettoie && ./scripts/genere-toute-la-documentation.sh",
+        "lance-docsify": "docsify serve ./products/docsify"
     }
 }
